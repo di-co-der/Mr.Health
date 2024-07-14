@@ -18,10 +18,10 @@ const FilterBar = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="py-4 px-3 flex space-x-2 border-t-2 border-b-2 border-gray-300">
+    <div className="py-3 px-2 text-sm flex space-x-1 border-t-2 border-b-2 border-gray-300">
       <button
         onClick={handleOpen247Change}
-        className={`px-2 py-2 rounded-full border-2  ${
+        className={`px-2 py-2 rounded-full border-2 text-gray-700  ${
           open247
             ? "bg-blue-500 text-white border-blue-500"
             : " border-gray-400 "
@@ -34,7 +34,7 @@ const FilterBar = ({ onFilterChange }) => {
         <select
           value={distance}
           onChange={handleDistanceChange}
-          className=" text-gray-700 appearance-none outline-none cursor-pointer"
+          className=" text-gray-700 bg-white appearance-none outline-none cursor-pointer"
         >
           <option value={5}>Within 5 Km</option>
           <option value={10}>Within 10 Km</option>
@@ -52,8 +52,8 @@ const FilterBar = ({ onFilterChange }) => {
         </style>
       </div>
       {/* <div className="line border-l-1 border-zinc-700 h-10 w-1 bg-gray-100"></div> */}
-      <button className="px-4 rounded-full text-[#0b237c] inline-flex items-center font-medium">
-        <FaFilter className="mt-[3px]" />
+      <button className="px-4 rounded-full text-[#0b237c] text-sm inline-flex items-center font-medium">
+        <FaFilter className="mt-[3px] mr-1" />
         Apply Filters
       </button>
     </div>
