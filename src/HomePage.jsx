@@ -23,7 +23,7 @@ const HomePage = () => {
         <FixedHeader
         // onSearch={handleSearch}
         />
-        <div className="pt-[22.5vh]">
+        <div className="pt-[21.5vh]">
           {" "}
           <AppointmentCard />
           <ServiceGrid />
