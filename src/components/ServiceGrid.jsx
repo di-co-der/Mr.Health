@@ -40,7 +40,7 @@ const ServiceGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4 px-4 py-5 border-t-zinc-300 border-t-2">
+    <div className="grid grid-cols-3 gap-4 px-4 py-5">
       {services.map((service) => (
         <div
           key={service.name}

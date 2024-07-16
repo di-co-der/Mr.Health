@@ -11,7 +11,7 @@ const HomepageHeader = ({ companyName = "Medico" }) => {
   };
 
   return (
-    <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
+    <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between sticky top-0 z-10">
       <div className="flex items-center">
         <FaUserCircle className="text-gray-600 text-2xl cursor-pointer" />
       </div>
