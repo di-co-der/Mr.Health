@@ -40,33 +40,35 @@ const AppointmentCard = () => {
             </svg>
           </button>
         </div>
-        <div className="mt-2 flex items-center">
-          <div className="text-sm text-gray-200 pr-4 border-r border-r-white ">
+        <div className="mt-1 flex items-center">
+          <div className="text-md text-gray-200 pr-4 border-r border-r-white">
             Sat, 9 Sep; 11:45 AM
           </div>
-          <div className="flex items-center text-sm text-gray-200 ml-4">
+          <div className="flex items-end text-md text-gray-200 ml-4">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
               fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-4 h-4 mr-1"
+              xmlns="http://www.w3.org/2000/svg"
+              className=" mr-1"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8 12h8m-4 8V4m0 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"
+                d="M8.16675 3.72222V8L10.889 9.55556M15.1667 8C15.1667 8.91925 14.9857 9.82951 14.6339 10.6788C14.2821 11.5281 13.7665 12.2997 13.1165 12.9497C12.4665 13.5998 11.6948 14.1154 10.8455 14.4672C9.99625 14.8189 9.086 15 8.16675 15C7.2475 15 6.33724 14.8189 5.48796 14.4672C4.63868 14.1154 3.86701 13.5998 3.217 12.9497C2.56699 12.2997 2.05137 11.5281 1.69959 10.6788C1.34781 9.82951 1.16675 8.91925 1.16675 8C1.16675 6.14348 1.90425 4.36301 3.217 3.05025C4.52976 1.7375 6.31023 1 8.16675 1C10.0233 1 11.8037 1.7375 13.1165 3.05025C14.4292 4.36301 15.1667 6.14348 15.1667 8Z"
+                stroke="white"
+                stroke-width="1.16667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
             </svg>
-            Tomorrow
+            <div className="leading-none">Tomorrow</div>
           </div>
         </div>
         <hr className="my-2 mt-4 mb-3 border-gray-200" />
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
             <img
-            src={doctorImage}
+              src={doctorImage}
               alt="Doctor"
               className="w-12 h-12 rounded-full"
             />
@@ -75,7 +77,7 @@ const AppointmentCard = () => {
               <div className="text-sm text-gray-200">Kaveri Healthcare</div>
             </div>
           </div>
-          <div className="leading-none mt-2 text-sm text-gray-200 mr-4">
+          <div className="leading-none text-sm text-gray-200 mr-4">
             <svg
               width="18"
               height="24"
