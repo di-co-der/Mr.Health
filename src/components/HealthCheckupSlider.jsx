@@ -125,7 +125,7 @@ const HealthCheckupSlider = () => {
         </div>
         <Slider {...settings} className="pb-5">
           {images.map((image, index) => (
-            <div key={index} className="pl-[10p4x] outline-none">
+            <div key={index} className="pl-[104px] outline-none">
               <div className="relative bg-white pb-12 rounded-t-xl w-36 h-full flex flex-col items-center">
                 <img
                   src={image.src}
