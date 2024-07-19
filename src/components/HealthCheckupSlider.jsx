@@ -59,7 +59,7 @@ const HealthCheckupSlider = () => {
       {
         breakpoint: 768, // breakpoint for mobile devices
         settings: {
-          slidesToShow: 2.8,
+          slidesToShow: 2.4,
           centerMode: true,
           centerPadding: "0%",
         },
@@ -98,7 +98,7 @@ const HealthCheckupSlider = () => {
           background-color: #00cccc;
         }
       `}</style>
-      <div className="flex items-start gap-5 px-4 pt-6">
+      <div className="flex items-start gap-5 pl-4 pr-2 tracking-tight pt-6">
         <div className="w-20 h-20">
           <img
             src={HealthCheckupHeadingSVG}
@@ -125,7 +125,7 @@ const HealthCheckupSlider = () => {
         </div>
         <Slider {...settings} className="pb-5">
           {images.map((image, index) => (
-            <div key={index} className="px-10 outline-none">
+            <div key={index} className="pl-[100px] outline-none">
               <div className="relative bg-white pb-12 rounded-t-xl w-36 h-full flex flex-col items-center">
                 <img
                   src={image.src}
