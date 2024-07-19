@@ -21,7 +21,7 @@ const GeneralPhysicianPage = () => {
       name: "Dr. Samir Mukharjee",
       specialty: "General Physician",
       image:
-        "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+        "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7",
       rating: 92,
       stories: 1421,
       experience: "24 Years",

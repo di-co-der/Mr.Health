@@ -7,17 +7,19 @@ const HomepageHeader = ({ companyName = "Medico" }) => {
 
   const handleNotificationClick = () => {
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // Hide alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
     <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between sticky top-0 z-10">
-      <div className="flex items-center">
+      <div className="flex items-center mt-1">
         <FaUserCircle className="text-gray-600 text-2xl cursor-pointer" />
       </div>
 
       <div className="flex-1 text-center">
-        <h1 className="text-2xl font-semibold text-gray-800">{companyName}</h1>
+        <h1 className="text-2xl font-semibold text-gray-800">
+          {/* {companyName} */}
+        </h1>
       </div>
 
       <div className="flex items-center">

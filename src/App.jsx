@@ -1,27 +1,29 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './HomePage';
-import BookAppointmentPage from './BookAppointmentPage';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
+import MyAppointments from "./MyAppointments";
+import BookAppointmentPage from "./BookAppointmentPage";
 import OnlineConsultation from "./pages/OnlineConsultation";
 import GetMedicines from "./pages/GetMedicines";
 import BookLabTests from "./pages/BookLabTests";
 import DiscoverHospitals from "./pages/DiscoverHospitals";
 import InsurancePlans from "./pages/InsurancePlans";
 
-import GeneralPhysicianPage from './GeneralPhysicianPage';
-import DentalCarePage from './DentalCarePage';
-import SkinHairPage from './SkinHairPage';
-import BoneJointsPage from './BoneJointsPage';
-import WomensHealthPage from './WomensHealthPage';
-import ChildSpecialistPage from './ChildSpecialistPage';
-import SexualDisordersPage from './SexualDisordersPage';
-import MentalWellnessPage from './MentalWellnessPage';
+import GeneralPhysicianPage from "./GeneralPhysicianPage";
+import DentalCarePage from "./DentalCarePage";
+import SkinHairPage from "./SkinHairPage";
+import BoneJointsPage from "./BoneJointsPage";
+import WomensHealthPage from "./WomensHealthPage";
+import ChildSpecialistPage from "./ChildSpecialistPage";
+import SexualDisordersPage from "./SexualDisordersPage";
+import MentalWellnessPage from "./MentalWellnessPage";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/my-appointments" element={<MyAppointments />} />
         <Route path="/book-appointment" element={<BookAppointmentPage />} />
         <Route path="/online-consultation" element={<OnlineConsultation />} />
         <Route path="/get-medicines" element={<GetMedicines />} />
