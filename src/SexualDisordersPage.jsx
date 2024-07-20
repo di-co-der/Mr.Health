@@ -71,7 +71,7 @@ const SexualDisordersPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
-      <div className="max-w-md w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
         <Header title="Sexual Disorders" />
         <LocationDropdown
           locations={locations}

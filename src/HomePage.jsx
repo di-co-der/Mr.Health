@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <div className="select-none min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="max-w-md w-full bg-white  rounded-lg overflow-hidden relative">
+      <div className="max-w-sm w-full bg-white  rounded-lg overflow-hidden relative">
         <FixedHeader />
         <div className="pt-[10.2rem]">
           {" "}

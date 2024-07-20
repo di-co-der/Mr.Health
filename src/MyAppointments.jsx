@@ -175,7 +175,7 @@ const Appointments = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto">
+    <div className="p-4 max-w-sm mx-auto">
       <div className="flex items-center mb-4">
         <button className="mr-2 text-blue-500">&lt; Back</button>
         <h1 className="text-xl font-bold">My Appointments</h1>

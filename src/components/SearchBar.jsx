@@ -39,7 +39,7 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div className="flex justify-center sticky top-16 bg-white z-10 ">
       <div
-        className={`flex items-center w-full max-w-md p-1 my-4 mx-4 rounded-xl bg-white ${
+        className={`flex items-center w-full max-w-sm p-1 my-4 mx-4 rounded-xl bg-white ${
           isFocused ? "border-black" : "border-gray-400"
         } border-2`}
       >
