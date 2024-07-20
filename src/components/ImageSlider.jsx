@@ -19,8 +19,8 @@ const ImageSlider = () => {
     autoplaySpeed: 2000,
     centerMode: true,
     centerPadding: '5%',
-    beforeChange: (current, next) => console.log("before change", current, next),
-    afterChange: current => console.log("after change", current)
+    // beforeChange: (current, next) => console.log("before change", current, next),
+    // afterChange: current => console.log("after change", current)
   };
 
   return (

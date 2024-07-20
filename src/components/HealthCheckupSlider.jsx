@@ -42,7 +42,7 @@ const images = [
 const HealthCheckupSlider = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    // slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -59,16 +59,16 @@ const HealthCheckupSlider = () => {
       {
         breakpoint: 768, // breakpoint for mobile devices
         settings: {
-          slidesToShow: 2.4,
+          slidesToShow: 2.3,
           centerMode: true,
           centerPadding: "0%",
         },
       },
       {
-        // breakpoint: 480, // breakpoint for very small devices
+        // breakpoint: 300, // breakpoint for very small devices
         // settings: {
-        //   slidesToShow: 3,
-        //   centerMode: false,
+        //   slidesToShow: 1,
+        //   centerMode: true,
         // },
       },
     ],
@@ -125,7 +125,7 @@ const HealthCheckupSlider = () => {
         </div>
         <Slider {...settings} className="pb-5">
           {images.map((image, index) => (
-            <div key={index} className="pl-[104px] outline-none">
+            <div key={index} className="pl-[76px] outline-none">
               <div className="relative bg-white pb-12 rounded-t-xl w-36 h-full flex flex-col items-center">
                 <img
                   src={image.src}
