@@ -24,7 +24,7 @@ const HomePage = () => {
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />
-          <ImageSlider />
+          <div>Testing</div>
         </div>
       </div>
     </div>
