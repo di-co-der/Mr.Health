@@ -4,9 +4,10 @@ import FixedHeader from "./components/FixedHeader";
 import AppointmentCard from "./components/AppointmentCard";
 import ServiceGrid from "./components/ServiceGrid";
 import ImageSlider from "./components/ImageSlider";
-import CategoryList from "./components/CategoryList";
 import HealthCheckupSlider from "./components/HealthCheckupSlider";
 import SymptomsTracker from "./components/SymptomsTracker";
+import BookYourAppointments from "./components/BookYourAppointments";
+import FooterList from "./components/FooterList";
 
 
 const HomePage = () => {
@@ -24,6 +25,8 @@ const HomePage = () => {
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />
+          <BookYourAppointments />
+          <FooterList/>
         </div>
       </div>
     </div>
