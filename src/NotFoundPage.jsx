@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaTools } from "react-icons/fa";
+import { FaExclamationTriangle } from "react-icons/fa"; 
 import { motion } from "framer-motion";
 
-const WorkUnderConstruction = () => {
+const NotFoundPage = () => {
   const navigate = useNavigate();
 
   return (
@@ -21,7 +21,7 @@ const WorkUnderConstruction = () => {
             style={{ backgroundSize: "200% 200%" }}
           />
           <motion.div
-            className="text-yellow-400 text-7xl mb-4 mx-auto"
+            className="text-red-400 text-7xl mb-4 mx-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
