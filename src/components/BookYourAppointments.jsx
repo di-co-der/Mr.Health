@@ -33,12 +33,6 @@ function BookYourAppointments() {
         <p className="font-[Lato] text-md">View All Specialists</p>
       </div>
     </div>
-
-    {/* footer */}
-
-    
-
-
     </div>
   )
 }
