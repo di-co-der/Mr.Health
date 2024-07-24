@@ -16,7 +16,8 @@ import BoneJointsPage from "./BoneJointsPage";
 import WomensHealthPage from "./WomensHealthPage";
 import ChildSpecialistPage from "./ChildSpecialistPage";
 import SexualDisordersPage from "./SexualDisordersPage";
-import MentalWellnessPage from "./MentalWellnessPage";
+// import MentalWellnessPage from "./MentalWellnessPage";
+import BookYourAppointment3Page from "./BookYourAppointment3Page";
 
 const App = () => {
   return (
@@ -38,7 +39,8 @@ const App = () => {
         <Route path="/womens-health" element={<WomensHealthPage />} />
         <Route path="/child-specialist" element={<ChildSpecialistPage />} />
         <Route path="/sexual-disorders" element={<SexualDisordersPage />} />
-        <Route path="/mental-wellness" element={<MentalWellnessPage />} />
+        {/* <Route path="/mental-wellness" element={<MentalWellnessPage />} /> */}
+        <Route path="/mental-wellness" element={<BookYourAppointment3Page />} />
       </Routes>
     </Router>
   );
