@@ -13,7 +13,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="max-w-sm w-full bg-white rounded-lg overflow-hidden relative">
         <FixedHeader />
-        <div className="pt-[10.2rem]">
+        <div className="pt-[9.6rem]">
           {" "}
           <AppointmentCard />
           <ServiceGrid />
