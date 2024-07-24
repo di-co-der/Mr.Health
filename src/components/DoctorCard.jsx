@@ -2,9 +2,12 @@ import React from "react";
 import { MdThumbUp } from "react-icons/md";
 import { MdMessage } from "react-icons/md";
 
-const DoctorCard = ({ doctor }) => {
+const DoctorCard = ({ doctor, onClick }) => {
   return (
-    <div className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer hover:bg-gray-100">
+    <div
+      className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer hover:bg-gray-100"
+      onClick={onClick}
+    >
       <div className="flex items-center">
         <img
           src={doctor.image}

@@ -7,6 +7,7 @@ import ConsultedDoctor from "./components/ConsultedDoctor";
 import CategoryList from "./components/CategoryList";
 import NearbyDoctors from "./components/NearbyDoctors";
 
+// assets
 import generalPhysicianIcon from "./assets/general_physician.png";
 import dentalIcon from "./assets/dental.png";
 import skinHairIcon from "./assets/skin_hair.png";
@@ -15,10 +16,10 @@ import womensHealthIcon from "./assets/womens_health.png";
 import childSpecialistIcon from "./assets/child_specialist.png";
 import sexualDisordersIcon from "./assets/sexual_disorders.png";
 import mentalWellnessIcon from "./assets/mental_wellness.png";
-import doctorImage from "./assets/doctor_image_url.png"; 
+import doctorImage from "./assets/doctor_image_url.png";
 import doctorImage2 from "./assets/doctor_image2_url.png";
 
-const HomePage = () => {
+const BookAppointmentPage = () => {
   const navigate = useNavigate();
 
   const locations = [
@@ -52,39 +53,38 @@ const HomePage = () => {
   const doctorsNearby = [
     {
       name: "Doctor Nearby 1",
-      image: doctorImage, 
+      image: doctorImage,
     },
     {
       name: "Doctor Nearby 2",
-      image: doctorImage2, 
+      image: doctorImage2,
     },
     {
       name: "Doctor Nearby 1",
-      image: doctorImage, 
+      image: doctorImage,
     },
     {
       name: "Doctor Nearby 2",
-      image: doctorImage2, 
+      image: doctorImage2,
     },
   ];
 
   const handleCategoryClick = (categoryName) => {
     const routeMap = {
-      "General Physician": "/general-physician",
-      "Dental Care": "/dental-care",
-      "Skin & Hair": "/skin-hair",
-      "Bone & Joints": "/bone-joints",
-      "Women’s Health": "/womens-health",
-      "Child Specialist": "/child-specialist",
-      "Sexual Disorders": "/sexual-disorders",
-      "Mental Wellness": "/mental-wellness",
+      "General Physician": "/book-appointment/general-physician",
+      "Dental Care": "/book-appointment/dental-care",
+      "Skin & Hair": "/book-appointment/skin-hair",
+      "Bone & Joints": "/book-appointment/bone-joints",
+      "Women’s Health": "/book-appointment/womens-health",
+      "Child Specialist": "/book-appointment/child-specialist",
+      "Sexual Disorders": "/book-appointment/sexual-disorders",
+      "Mental Wellness": "/book-appointment/mental-wellness",
     };
     const route = routeMap[categoryName];
     if (route) {
       navigate(route);
     }
   };
-
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
@@ -106,4 +106,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default BookAppointmentPage;

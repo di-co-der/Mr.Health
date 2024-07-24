@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import LocationDropdown from "./components/LocationDropdown";
@@ -18,6 +19,7 @@ const GeneralPhysicianPage = () => {
 
   const [doctors, setDoctors] = useState([
     {
+      id: 1,
       name: "Dr. Samir Mukharjee",
       specialty: "General Physician",
       image:
@@ -31,10 +33,11 @@ const GeneralPhysicianPage = () => {
       open247: true,
     },
     {
+      id: 2,
       name: "Dr. Raja Selvarajan",
       specialty: "General Physician",
       image:
-        "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+        "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4",
       rating: 88,
       stories: 549,
       experience: "15 Years",
@@ -44,6 +47,7 @@ const GeneralPhysicianPage = () => {
       open247: false,
     },
     {
+      id: 3,
       name: "Dr. Renu Sachdeva",
       specialty: "General Physician",
       image:
@@ -82,6 +86,13 @@ const GeneralPhysicianPage = () => {
     }
   };
 
+  const handleDoctorClick = (doctorId, specialty) => {
+    // navigate(`doctor/${doctorId}`);
+    // navigate(`/book-appointment/${specialty}/doctor/${doctorId}`);
+    navigate(`/book-appointment/general-physician/doctor/${doctorId}`);
+  };
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
@@ -94,7 +105,11 @@ const GeneralPhysicianPage = () => {
         <FilterBar onFilterChange={handleFilterChange} />
         <div className="p-4">
           {filteredDoctors.map((doctor, index) => (
-            <DoctorCard key={index} doctor={doctor} />
+            <DoctorCard
+              key={index}
+              doctor={doctor}
+              onClick={() => handleDoctorClick(doctor.id)}
+            />
           ))}
         </div>
       </div>

@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const NotFoundPage = () => {
+const WorkUnderConstruction = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-purple-200 ">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-purple-200">
       {/* Rotating Background Element */}
       <div className="max-w-sm w-full mx-2 bg-white shadow-xl rounded-lg overflow-hidden relative">
-        <div className="text-center p-6 z-10 ">
+        <div className="text-center p-6 z-10">
           <motion.div
             className="absolute inset-5 bg-blue-200 opacity-30"
             animate={{
@@ -21,13 +21,13 @@ const NotFoundPage = () => {
             style={{ backgroundSize: "200% 200%" }}
           />
           <motion.div
-            className="text-red-500 text-7xl mb-4 mx-auto"
+            className="text-yellow-400 text-7xl mb-4 mx-auto"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <FaExclamationTriangle />
-          </motion.div>
+            </motion.div>
           <motion.h1
             className="text-2xl font-bold text-gray-800 mb-3"
             initial={{ opacity: 0, y: -20 }}
@@ -35,7 +35,7 @@ const NotFoundPage = () => {
             transition={{ duration: 0.6 }}
           >
             Oops! Page Not Found
-          </motion.h1>
+            </motion.h1>
           <motion.p
             className="text-gray-600 mb-6 text-sm"
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ const NotFoundPage = () => {
           >
             It seems like the page you’re looking for doesn’t exist or has been
             moved.
-          </motion.p>
+            </motion.p>
           <motion.button
             onClick={() => navigate("/")}
             className="px-6 py-3 relative bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105"
@@ -52,7 +52,7 @@ const NotFoundPage = () => {
             whileTap={{ scale: 0.95 }}
           >
             Go to Home
-          </motion.button>
+            </motion.button>
         </div>
       </div>
     </div>

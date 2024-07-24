@@ -18,27 +18,34 @@ import ChildSpecialistPage from "./ChildSpecialistPage";
 import SexualDisordersPage from "./SexualDisordersPage";
 import MentalWellnessPage from "./MentalWellnessPage";
 
+import BookDoctorPage from "./BookDoctorPage";
+import NotFoundPage from "./NotFoundPage";
+
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/my-appointments" element={<MyAppointments />} />
+
         <Route path="/book-appointment" element={<BookAppointmentPage />} />
+        <Route path="/book-appointment/general-physician" element={<GeneralPhysicianPage />} />
+        <Route path="/book-appointment/dental-care" element={<DentalCarePage />} />
+        <Route path="/book-appointment/skin-hair" element={<SkinHairPage />} />
+        <Route path="/book-appointment/bone-joints" element={<BoneJointsPage />} />
+        <Route path="/book-appointment/womens-health" element={<WomensHealthPage />} />
+        <Route path="/book-appointment/child-specialist" element={<ChildSpecialistPage />} />
+        <Route path="/book-appointment/sexual-disorders" element={<SexualDisordersPage />} />
+        <Route path="/book-appointment/mental-wellness" element={<MentalWellnessPage />} />
+        <Route path="/book-appointment/:specialty/doctor/:doctorId" element={<BookDoctorPage />} />
+
         <Route path="/online-consultation" element={<OnlineConsultation />} />
         <Route path="/get-medicines" element={<GetMedicines />} />
         <Route path="/book-lab-tests" element={<BookLabTests />} />
         <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
         <Route path="/insurance-plans" element={<InsurancePlans />} />
 
-        <Route path="/general-physician" element={<GeneralPhysicianPage />} />
-        <Route path="/dental-care" element={<DentalCarePage />} />
-        <Route path="/skin-hair" element={<SkinHairPage />} />
-        <Route path="/bone-joints" element={<BoneJointsPage />} />
-        <Route path="/womens-health" element={<WomensHealthPage />} />
-        <Route path="/child-specialist" element={<ChildSpecialistPage />} />
-        <Route path="/sexual-disorders" element={<SexualDisordersPage />} />
-        <Route path="/mental-wellness" element={<MentalWellnessPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );

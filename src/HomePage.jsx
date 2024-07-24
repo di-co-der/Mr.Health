@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import FixedHeader from "./components/FixedHeader";
 import AppointmentCard from "./components/AppointmentCard";
 import ServiceGrid from "./components/ServiceGrid";
@@ -9,13 +8,10 @@ import SymptomsTracker from "./components/SymptomsTracker";
 import BookYourAppointments from "./components/BookYourAppointments";
 import FooterList from "./components/FooterList";
 
-
 const HomePage = () => {
-  // const navigate = useNavigate();
-
   return (
     <div className="select-none min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="max-w-sm w-full bg-white  rounded-lg overflow-hidden relative">
+      <div className="max-w-sm w-full bg-white rounded-lg overflow-hidden relative">
         <FixedHeader />
         <div className="pt-[10.2rem]">
           {" "}
@@ -26,7 +22,7 @@ const HomePage = () => {
           <HealthCheckupSlider />
           <ImageSlider />
           <BookYourAppointments />
-          <FooterList/>
+          <FooterList />
         </div>
       </div>
     </div>
