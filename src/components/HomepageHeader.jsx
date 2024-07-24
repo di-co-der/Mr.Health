@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
+// import MedicoFullName from "../assets/MedicoFullName.svg";
+import HomePageUserIcon from "../assets/HomePageUserIcon.svg";
 
 const HomepageHeader = ({ companyName = "Medico" }) => {
   const [showAlert, setShowAlert] = useState(false);
@@ -11,20 +12,20 @@ const HomepageHeader = ({ companyName = "Medico" }) => {
   };
 
   return (
-    <header className="bg-white shadow-md py-4 px-6 flex items-center justify-between sticky top-0 z-10">
-      <div className="flex items-center mt-1">
-        <FaUserCircle className="text-gray-600 text-2xl cursor-pointer" />
+    <header className="bg-white shadow-md pt-3 px-6 flex items-center justify-between sticky top-0 z-10">
+      <div className="mt-1 flex items-center">
+        <img src={HomePageUserIcon} alt="HomePageUserIcon" className="text-gray-500 text-2xl cursor-pointer" />
       </div>
 
-      <div className="flex-1 text-center">
+      <div className=" text-center">
         <h1 className="text-2xl font-semibold text-gray-800">
-          {/* {companyName} */}
+          {/* <img src={MedicoFullName} alt="Medico" className="h-8" /> */}
         </h1>
       </div>
 
-      <div className="flex items-center">
+      <div className="flex items-end">
         <button
-          className="relative text-gray-600 text-2xl"
+          className="relative text-gray-500 text-[32px] mt-1"
           onClick={handleNotificationClick}
         >
           <IoNotifications />
