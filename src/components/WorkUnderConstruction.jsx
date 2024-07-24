@@ -9,7 +9,7 @@ const WorkUnderConstruction = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-purple-200">
       {/* Rotating Background Element */}
-      <div className="max-w-sm w-full mx-2 bg-white shadow-xl rounded-lg overflow-hidden relative">
+      <div className=" w-full mx-2 bg-white shadow-xl rounded-lg overflow-hidden relative">
         <div className="text-center p-6 z-10">
           <motion.div
             className="absolute inset-5 bg-blue-200 opacity-30"
