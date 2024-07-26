@@ -17,6 +17,7 @@ const GeneralPhysicianPage = () => {
   ];
   const defaultLocation = "Mumbai";
 
+  
   const [doctors, setDoctors] = useState([
     {
       id: 1,
@@ -86,9 +87,7 @@ const GeneralPhysicianPage = () => {
     }
   };
 
-  const handleDoctorClick = (doctorId, specialty) => {
-    // navigate(`doctor/${doctorId}`);
-    // navigate(`/book-appointment/${specialty}/doctor/${doctorId}`);
+  const handleDoctorClick = (doctorId) => {
     navigate(`/book-appointment/general-physician/doctor/${doctorId}`);
   };
   const navigate = useNavigate();

@@ -22,7 +22,6 @@ import MentalWellnessPage from "./MentalWellnessPage";
 
 import BookDoctorPage from "./BookDoctorPage";
 import NotFoundPage from "./NotFoundPage";
-import BookYourAppointment3Page from "./BookYourAppointment3Page";
 import BookSlotsPage from "./BookSlotsPage";
 
 const App = () => {
@@ -80,7 +79,7 @@ const App = () => {
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
           <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
-          <Route path="/insurance-plans" element={<BookYourAppointment3Page />} />
+          <Route path="/insurance-plans" element={<InsurancePlans />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
