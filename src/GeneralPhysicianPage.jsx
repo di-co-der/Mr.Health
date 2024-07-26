@@ -85,18 +85,23 @@ const GeneralPhysicianPage = () => {
       setFilteredDoctors(doctors);
     }
   };
+  
+  const navigate = useNavigate();
 
   const handleDoctorClick = (doctorId, specialty) => {
     // navigate(`doctor/${doctorId}`);
     // navigate(`/book-appointment/${specialty}/doctor/${doctorId}`);
     navigate(`/book-appointment/general-physician/doctor/${doctorId}`);
   };
-  const navigate = useNavigate();
+
+  const handleAppointmentClick = () => {
+    navigate("/my-appointments");
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <Header title="General Physician" />
+        <Header title="General Physician" onClick={handleAppointmentClick} />
         <LocationDropdown
           locations={locations}
           defaultLocation={defaultLocation}

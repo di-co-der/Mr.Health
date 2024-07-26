@@ -67,7 +67,7 @@ const BookAppointmentPage = () => {
       image: doctorImage2,
     },
   ];
-  
+
   const navigate = useNavigate();
   
   const handleCategoryClick = (categoryName) => {
@@ -94,7 +94,7 @@ const BookAppointmentPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <Header onClick={handleAppointmentClick} />
+        <Header title="Book Appointment" onClick={handleAppointmentClick} />
         <LocationDropdown
           locations={locations}
           defaultLocation={defaultLocation}

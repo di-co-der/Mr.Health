@@ -11,7 +11,6 @@ const BookDoctorPage = () => {
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
         <h1>{specialty} - Doctor ID: {doctorId}</h1>
-
       </div>
     </div>
   );
