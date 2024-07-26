@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import MyAppointments from "./MyAppointments";
+import MyAppointments2 from "./MyAppointments2";
+
 import BookAppointmentPage from "./BookAppointmentPage";
 import OnlineConsultation from "./pages/OnlineConsultation";
 import GetMedicines from "./pages/GetMedicines";
@@ -30,6 +32,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/my-appointments" element={<MyAppointments />} />
+          <Route path="/my-appointments2" element={<MyAppointments2 />} />
 
           <Route path="/book-appointment" element={<BookAppointmentPage />} />
           <Route

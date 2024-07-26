@@ -26,7 +26,7 @@ const WorkUnderConstruction = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <FaTools />
+            <FaTools className="animate-pulse" />
           </motion.div>
           <motion.h1
             className="text-2xl font-bold text-gray-800 mb-3"
