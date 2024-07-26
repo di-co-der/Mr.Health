@@ -20,6 +20,8 @@ import MentalWellnessPage from "./MentalWellnessPage";
 
 import BookDoctorPage from "./BookDoctorPage";
 import NotFoundPage from "./NotFoundPage";
+import BookYourAppointment3Page from "./BookYourAppointment3Page";
+import BookSlotsPage from "./BookSlotsPage";
 
 const App = () => {
   return (
@@ -67,11 +69,15 @@ const App = () => {
             element={<BookDoctorPage />}
           />
 
+          <Route
+            path="/book-appointment/:specialty/doctor/:doctorId/slot"
+            element={<BookSlotsPage />}
+          />
           <Route path="/online-consultation" element={<OnlineConsultation />} />
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
           <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
-          <Route path="/insurance-plans" element={<InsurancePlans />} />
+          <Route path="/insurance-plans" element={<BookYourAppointment3Page />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
