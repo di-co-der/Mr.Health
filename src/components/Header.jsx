@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BackArrowIcon from "../assets/BackArrow.svg";
 import MyAppointmentsIcon from "../assets/MyAppointmentsIcon.svg";
 
-const Header = ({ title = "Book Appointment", onClick }) => {
+const Header = ({ title , onClick }) => {
   const navigate = useNavigate();
   const [isScaled, setIsScaled] = useState(false);
 

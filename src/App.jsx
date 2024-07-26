@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage";
 import MyAppointments from "./MyAppointments";
-import MyAppointments2 from "./MyAppointments2";
 
 import BookAppointmentPage from "./BookAppointmentPage";
 import OnlineConsultation from "./pages/OnlineConsultation";
@@ -21,6 +20,8 @@ import SexualDisordersPage from "./SexualDisordersPage";
 import MentalWellnessPage from "./MentalWellnessPage";
 
 import BookDoctorPage from "./BookDoctorPage";
+import BookingDetailsPage from "./BookingDetailsPage";
+// import BookingDetailsPage2 from "./BookingDetailsPage2";
 import NotFoundPage from "./NotFoundPage";
 import BookSlotsPage from "./BookSlotsPage";
 
@@ -31,7 +32,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/my-appointments" element={<MyAppointments />} />
-          <Route path="/my-appointments2" element={<MyAppointments2 />} />
 
           <Route path="/book-appointment" element={<BookAppointmentPage />} />
           <Route
@@ -70,6 +70,14 @@ const App = () => {
             path="/book-appointment/:specialty/doctor/:doctorId"
             element={<BookDoctorPage />}
           />
+          <Route
+            path="/book-appointment/:specialty/doctor/:doctorId/slot/booking-details"
+            element={<BookingDetailsPage />}
+          />
+          {/* <Route
+            path="/book-appointment/:specialty/doctor/:doctorId/slot/booking-details2"
+            element={<BookingDetailsPage2 />}
+          /> */}
 
           <Route
             path="/book-appointment/:specialty/doctor/:doctorId/slot"

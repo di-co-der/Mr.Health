@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import LocationDropdown from "./components/LocationDropdown";
@@ -18,6 +19,7 @@ const ChildSpecialistPage = () => {
 
   const [doctors, setDoctors] = useState([
     {
+      id: 1,
       name: "Dr. Grace Yellow",
       specialty: "Pediatrician",
       image:
@@ -31,6 +33,7 @@ const ChildSpecialistPage = () => {
       open247: true,
     },
     {
+      id: 2,
       name: "Dr. Hank Green",
       specialty: "Pediatrician",
       image:
@@ -69,10 +72,22 @@ const ChildSpecialistPage = () => {
     }
   };
 
+  const navigate = useNavigate();
+
+  const handleDoctorClick = (doctorId, specialty) => {
+    // navigate(`doctor/${doctorId}`);
+    // navigate(`/book-appointment/${specialty}/doctor/${doctorId}`);
+    navigate(`/book-appointment/child-specialist/doctor/${doctorId}`);
+  };
+
+  const handleAppointmentClick = () => {
+    navigate("/my-appointments");
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <Header title="Child Specialist" />
+        <Header title="Child Specialist" onClick={handleAppointmentClick} />
         <LocationDropdown
           locations={locations}
           defaultLocation={defaultLocation}
@@ -81,8 +96,12 @@ const ChildSpecialistPage = () => {
         <FilterBar onFilterChange={handleFilterChange} />
         <div className="p-4">
           {filteredDoctors.map((doctor, index) => (
-            <DoctorCard key={index} doctor={doctor} />
-          ))}
+            <DoctorCard
+            key={index}
+            doctor={doctor}
+            onClick={() => handleDoctorClick(doctor.id)}
+          />
+        ))}
         </div>
       </div>
     </div>
