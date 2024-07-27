@@ -1,3 +1,5 @@
+import mapIMage from "../assets/mapImage.jpg";
+
 export const doctors = [
   {
     id: 1,
@@ -12,6 +14,10 @@ export const doctors = [
     location: "1.2 Km",
     nextSlot: "10 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 2,
@@ -26,6 +32,10 @@ export const doctors = [
     location: "2.2 Km",
     nextSlot: "11 Sept",
     open247: true,
+    patients: "1500",
+    education: "MBBS, MD in Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 3,
@@ -40,6 +50,10 @@ export const doctors = [
     location: "14.2 Km",
     nextSlot: "12 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -55,6 +69,10 @@ export const doctors = [
     location: "1.2 Km",
     nextSlot: "15 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 5,
@@ -69,6 +87,10 @@ export const doctors = [
     location: "2.5 Km",
     nextSlot: "18 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -84,6 +106,10 @@ export const doctors = [
     location: "2.5 Km",
     nextSlot: "21 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 7,
@@ -98,6 +124,10 @@ export const doctors = [
     location: "4.0 Km",
     nextSlot: "23 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -113,6 +143,10 @@ export const doctors = [
     location: "3.0 Km",
     nextSlot: "25 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 9,
@@ -127,6 +161,10 @@ export const doctors = [
     location: "5.0 Km",
     nextSlot: "27 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -142,6 +180,10 @@ export const doctors = [
     location: "2.0 Km",
     nextSlot: "20 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 11,
@@ -156,6 +198,10 @@ export const doctors = [
     location: "3.5 Km",
     nextSlot: "22 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -171,6 +217,10 @@ export const doctors = [
     location: "3.0 Km",
     nextSlot: "14 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 13,
@@ -185,6 +235,10 @@ export const doctors = [
     location: "5.5 Km",
     nextSlot: "16 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -200,6 +254,10 @@ export const doctors = [
     location: "4.0 Km",
     nextSlot: "17 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 15,
@@ -214,6 +272,10 @@ export const doctors = [
     location: "6.0 Km",
     nextSlot: "19 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -229,6 +291,10 @@ export const doctors = [
     location: "4.0 Km",
     nextSlot: "23 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -244,6 +310,10 @@ export const doctors = [
     location: "6.0 Km",
     nextSlot: "19 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -259,6 +329,10 @@ export const doctors = [
     location: "3.2 Km",
     nextSlot: "20 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 
   {
@@ -274,6 +348,10 @@ export const doctors = [
     location: "2.0 Km",
     nextSlot: "13 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 20,
@@ -288,6 +366,10 @@ export const doctors = [
     location: "3.0 Km",
     nextSlot: "14 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 21,
@@ -302,6 +384,10 @@ export const doctors = [
     location: "3.5 Km",
     nextSlot: "16 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 22,
@@ -316,6 +402,10 @@ export const doctors = [
     location: "4.0 Km",
     nextSlot: "17 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 23,
@@ -330,6 +420,10 @@ export const doctors = [
     location: "2.8 Km",
     nextSlot: "18 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 24,
@@ -344,6 +438,10 @@ export const doctors = [
     location: "3.3 Km",
     nextSlot: "19 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 25,
@@ -358,6 +456,10 @@ export const doctors = [
     location: "4.2 Km",
     nextSlot: "23 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 26,
@@ -372,6 +474,9 @@ export const doctors = [
     location: "5.1 Km",
     nextSlot: "25 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    mapImage: { mapIMage },
   },
   {
     id: 27,
@@ -386,6 +491,10 @@ export const doctors = [
     location: "3.1 Km",
     nextSlot: "26 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 28,
@@ -400,6 +509,10 @@ export const doctors = [
     location: "4.4 Km",
     nextSlot: "27 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 29,
@@ -414,6 +527,10 @@ export const doctors = [
     location: "4.5 Km",
     nextSlot: "28 Sept",
     open247: true,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
   {
     id: 30,
@@ -428,5 +545,9 @@ export const doctors = [
     location: "5.8 Km",
     nextSlot: "29 Sept",
     open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapIMage },
   },
 ];

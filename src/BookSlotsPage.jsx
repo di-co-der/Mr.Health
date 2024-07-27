@@ -81,11 +81,8 @@ function BookSlotsPage() {
 
   const handleBookingClick = () => {
     navigate(
-      `/book-appointment/${specialty
-        .toLowerCase()
-        .replace(/ /g, "-")}/${doctorName
-        .toLowerCase()
-        .replace(/[\s.]+/g, "-")}/${doctorId}/slot/booking`
+      `/book-appointment/${specialty}/${doctorName
+    }/${doctorId}/slot/booking`
     );
   };
 
