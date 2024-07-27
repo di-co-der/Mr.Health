@@ -18,6 +18,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 2,
@@ -36,6 +37,7 @@ export const doctors = [
     education: "MBBS, MD in Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 3,
@@ -54,6 +56,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -73,6 +76,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 5,
@@ -91,6 +95,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -110,6 +115,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 7,
@@ -128,6 +134,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -147,6 +154,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 9,
@@ -165,6 +173,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -184,6 +193,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 11,
@@ -202,6 +212,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -221,6 +232,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 13,
@@ -239,6 +251,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -258,6 +271,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 15,
@@ -276,6 +290,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -295,6 +310,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -314,6 +330,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -333,6 +350,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 
   {
@@ -352,6 +370,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 20,
@@ -370,6 +389,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 21,
@@ -388,6 +408,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 22,
@@ -406,6 +427,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 23,
@@ -424,6 +446,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 24,
@@ -442,6 +465,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 25,
@@ -460,6 +484,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 26,
@@ -477,7 +502,9 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
+
   {
     id: 27,
     name: "Dr. Olivia Green",
@@ -495,6 +522,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 28,
@@ -513,6 +541,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 29,
@@ -531,6 +560,7 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
   {
     id: 30,
@@ -549,5 +579,6 @@ export const doctors = [
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     mapImage: { mapIMage },
+    coordinates: [40.7128, -74.006],
   },
 ];

@@ -1,7 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "./components/Header";
+import MapComponent from "./components/MapComponent";
 import mapSvg from "../src/assets/svgs/map.svg";
 import userAvatar from "../src/assets/User_Avatar.jpg";
 import starGroup from "../src/assets/Star Group.jpg";
@@ -36,9 +36,8 @@ const BookDoctorPage = () => {
   };
 
   //Handle book your slot button
-  const navigate1 = useNavigate();
   const handleBookYourSlotClick = (doctorId, doctorName, specialty) => {
-    navigate1(`/book-appointment/${specialty}/${doctorName}/${doctorId}/slot`);
+    navigate(`/book-appointment/${specialty}/${doctorName}/${doctorId}/slot`);
   };
 
   return (
@@ -61,7 +60,7 @@ const BookDoctorPage = () => {
         </div>
 
         {/* info cards */}
-        <div className="flex justify-center items-center flex-wrap gap-[10px] border-b-[1px] pb-4 mb-4">
+        <div className="flex justify-center items-center flex-wrap gap-[10px] border-b-[2px] pb-4 mb-4">
           <div className="text-center border-[1px] border-[#00CCCC] pl-2 pr-2">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.patients}
@@ -97,25 +96,26 @@ const BookDoctorPage = () => {
         </div>
 
         {/* locaton */}
-        <div className="border-b-[1px] pb-4 mb-4">
-          <div className="flex justify-center items-center gap-3 p-2">
-            <img src={mapSvg}></img>
-            <div className=" text-[14px] text-[#525252] leading-none">
+        <div className="border-b-[2px] p-2">
+          <div className="flex justify-center items-start gap-3">
+            <img src={mapSvg} className="mt-1"></img>
+            <div className=" text-[14px] text-[#525252] font-medium pb-2">
               {" "}
               {doctor.map}
             </div>
           </div>
-          <div>
-            <img
-              src={doctor.mapImage.mapIMage}
-              alt=""
-              className="m-auto pt-4 cursor-pointer"
-            />
+          <div className="">
+            <div className="flex justify-center items-center gap-3">
+              <MapComponent
+                coordinates={doctor.coordinates}
+                location={doctor.map}
+              />{" "}
+            </div>
           </div>
         </div>
 
         {/* patient stories */}
-        <div className="border-b-[1px] p-2 pb-4 mb-4">
+        <div className="border-b-[2px] p-2 pb-4 mb-4">
           <div className="font-semibold text-[#0086FF] ">Patient Stories</div>
           <div className="text-[10px] text-[#525252] leading-none">
             These stories represent patient opinions and experiences. They do
@@ -124,7 +124,7 @@ const BookDoctorPage = () => {
         </div>
 
         {/* recommendation */}
-        <div className="flex justify-center items-center border-b-[1px] p-2 pb-4 mb-4">
+        <div className="flex justify-center items-center border-b-[2px] p-2 pb-4 mb-4">
           <div className="flex justify-center items-center border-r-[1px]">
             <img src={like}></img>
             <div className="m-3 font-semibold text-[18p">92%</div>
@@ -145,7 +145,7 @@ const BookDoctorPage = () => {
         </div>
 
         {/* user story */}
-        <div className="main-div border-b-[1px] mt-3 pb-3">
+        <div className="main-div border-b-[2px] mt-3 pb-3">
           <div className="flex justify-between items-center p-2">
             <div className="flex justify-center items-center gap-4">
               <div className="avatar">
@@ -176,7 +176,7 @@ const BookDoctorPage = () => {
 
           {/* more about doctor  */}
           <div className=" font-semibold p-2 mb-4">More about Doctor name</div>
-          <div className="flex justify-between items-center p-2 border-b-[1px]">
+          <div className="flex justify-between items-center p-2 border-b-[2px]">
             <div className="text-[14px] text-[#525252]">
               Specialization and Services
             </div>
@@ -184,7 +184,7 @@ const BookDoctorPage = () => {
               <img src={sideArrow}></img>
             </div>
           </div>
-          <div className="flex justify-between items-center p-2 border-b-[1px]">
+          <div className="flex justify-between items-center p-2 border-b-[2px]">
             <div className="text-[14px] text-[#525252]">
               Awards and Recognitions
             </div>
@@ -192,7 +192,7 @@ const BookDoctorPage = () => {
               <img src={sideArrow}></img>
             </div>
           </div>
-          <div className="flex justify-between items-center p-2 border-b-[1px] mb-14">
+          <div className="flex justify-between items-center p-2 border-b-[2px] mb-14">
             <div className="text-[14px] text-[#525252]">Experience</div>
             <div className="cursor-pointer">
               <img src={sideArrow}></img>
