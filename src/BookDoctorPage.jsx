@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Header from "./components/Header";
 import mapSvg from "../src/assets/svgs/map.svg";
-import userAvatar from "../src/assets/User_Avatar.jpg"
-import starGroup from "../src/assets/Star Group.jpg"
-import messageIcon from "../src/assets/svgs/messageIcon.svg"
-import like from "../src/assets/svgs/Like.svg"
-import sideArrow from "../src/assets/svgs/Side-arrow.svg"
-import {userData} from "../src/data/userStories"
+import userAvatar from "../src/assets/User_Avatar.jpg";
+import starGroup from "../src/assets/Star Group.jpg";
+import messageIcon from "../src/assets/svgs/messageIcon.svg";
+import like from "../src/assets/svgs/Like.svg";
+import sideArrow from "../src/assets/svgs/Side-arrow.svg";
+import { userData } from "../src/data/userStories";
 import { doctors } from "./data/doctors";
 // import StarRating from "./components/StarRating";
 
@@ -148,16 +148,20 @@ const BookDoctorPage = () => {
         <div className="main-div border-b-[1px] mt-3 pb-3">
           <div className="flex justify-between items-center p-2">
             <div className="flex justify-center items-center gap-4">
-              <div className="avatar"><img src={userAvatar} alt="" /></div>
+              <div className="avatar">
+                <img src={userAvatar} alt="" />
+              </div>
               <div>
                 <div className=" text-[12px] font-semibold cursor-pointer">
-                  User Name 
+                  User Name
                 </div>
                 <div className=" text-[12px] text-[#525252]">X days ago</div>
               </div>
             </div>
             {/* <StarRating /> */}
-            <div className="rating"><img src={starGroup} alt="" /></div>
+            <div className="rating">
+              <img src={starGroup} alt="" />
+            </div>
           </div>
           <div className={`text-[12px] font-semibold ml-14 p-1 `}>
             Visited for thyroid disorder treatment
@@ -185,28 +189,29 @@ const BookDoctorPage = () => {
               Awards and Recognitions
             </div>
             <div className="cursor-pointer">
-            <img src={sideArrow}></img>
+              <img src={sideArrow}></img>
             </div>
           </div>
           <div className="flex justify-between items-center p-2 border-b-[1px] mb-14">
             <div className="text-[14px] text-[#525252]">Experience</div>
             <div className="cursor-pointer">
-            <img src={sideArrow}></img>
+              <img src={sideArrow}></img>
             </div>
           </div>
         </div>
         {/* button */}
-        <div className=" p-3 pb-0 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-full">
-          <div
-            className="bg-[#0086FF] rounded-md text-center p-3 text-white font-bold cursor-pointer"
+
+        <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
+          <div className="flex justify-between mb-4"></div>
+          <button
+            className="w-full bg-blue-500 text-white py-2 rounded"
             onClick={() =>
               handleBookYourSlotClick(doctor.id, doctor.name, doctor.specialty)
             }
           >
-            {" "}
-            Proceed to Book Your Slot
-          </div>
-        </div>
+            Proceed To Book Your Slot
+          </button>
+        </footer>
       </div>
     </div>
   );

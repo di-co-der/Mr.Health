@@ -81,8 +81,7 @@ function BookSlotsPage() {
 
   const handleBookingClick = () => {
     navigate(
-      `/book-appointment/${specialty}/${doctorName
-    }/${doctorId}/slot/booking`
+      `/book-appointment/${specialty}/${doctorName}/${doctorId}/slot/booking`
     );
   };
 
@@ -154,14 +153,15 @@ function BookSlotsPage() {
           </div>
 
           {/* button  */}
-          <div className="p-3 pb-0 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-full">
-            <div
-              className="bg-[#0086FF] rounded-md text-center p-3 text-white font-bold cursor-pointer"
+          <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
+            <div className="flex justify-between mb-4"></div>
+            <button
+              className="w-full bg-blue-500 text-white py-2 rounded"
               onClick={handleBookingClick}
             >
               Confirm Booking
-            </div>
-          </div>
+            </button>
+          </footer>
         </div>
       </div>
     </div>
