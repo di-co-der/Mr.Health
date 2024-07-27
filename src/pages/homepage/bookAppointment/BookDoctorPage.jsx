@@ -60,8 +60,8 @@ const BookDoctorPage = () => {
         </div>
 
         {/* info cards */}
-        <div className="flex justify-center items-center flex-wrap gap-[10px] border-b-[2px] pb-4 mb-4">
-          <div className="text-center border-[1px] border-[#00CCCC] pl-2 pr-2">
+        <div className="flex justify-center items-center flex-wrap gap-3 border-b-[2px] pb-3 mb-1">
+          <div className="text-center grow basis-1/5 border-[1px] border-[#00CCCC] pl-2 pr-2">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.patients}
             </div>
@@ -69,7 +69,7 @@ const BookDoctorPage = () => {
               Patients
             </div>
           </div>
-          <div className="text-center border-[1px] border-[#00CCCC] pl-2 pr-2">
+          <div className="text-center grow basis-1/5 border-[1px] border-[#00CCCC] ">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.experience}
             </div>
@@ -77,7 +77,7 @@ const BookDoctorPage = () => {
               Experience
             </div>
           </div>
-          <div className="text-center border-[1px] border-[#00CCCC] pl-2 pr-2">
+          <div className="text-center grow basis-1/5 border-[1px] border-[#00CCCC]">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.location}
             </div>
@@ -85,7 +85,7 @@ const BookDoctorPage = () => {
               Location
             </div>
           </div>
-          <div className="text-center border-[1px] border-[#00CCCC] pl-2 pr-2">
+          <div className="text-center grow basis-1/5 border-[1px] border-[#00CCCC]">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.fees}
             </div>
