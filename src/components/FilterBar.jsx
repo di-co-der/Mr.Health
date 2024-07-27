@@ -30,11 +30,11 @@ const FilterBar = ({ onFilterChange }) => {
         24/7 Open
       </button>
 
-      <div className="flex items-center border-2 border-gray-400 rounded-full px-2 gap-1">
+      <div className="flex items-center border-2 border-gray-400 rounded-full px-2 gap-1 cursor-pointer">
         <select
           value={distance}
           onChange={handleDistanceChange}
-          className=" text-gray-700 bg-white appearance-none outline-none cursor-pointer"
+          className=" text-gray-700 bg-white appearance-none outline-none"
         >
           <option value={5}>Within 5 Km</option>
           <option value={10}>Within 10 Km</option>

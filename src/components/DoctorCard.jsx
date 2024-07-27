@@ -5,7 +5,7 @@ import { MdMessage } from "react-icons/md";
 const DoctorCard = ({ doctor, onClick }) => {
   return (
     <div
-      className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer hover:bg-gray-100"
+      className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer hover:bg-slate-50 hover:outline outline-2 outline-gray-200"
       onClick={onClick}
     >
       <div className="flex items-center">

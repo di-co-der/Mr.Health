@@ -1,9 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { FaMapMarkerAlt, FaBell } from "react-icons/fa";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "./components/Header";
 
 const BookingDetailsPage = () => {
+  const { specialty, doctorName, doctorId } = useParams();
+  
+  const doctor = {
+    id: doctorId,
+    name: doctorName,
+    specialty: specialty,
+    image: "https://via.placeholder.com/50",
+    distance: "589 m",
+  };
+  
 
   const navigate = useNavigate();
 
@@ -11,29 +20,31 @@ const BookingDetailsPage = () => {
     navigate("/my-appointments");
   };
 
+  const handlePaymentClick = () => {
+    navigate(
+      `/book-appointment/${doctor.specialty
+        .toLowerCase()
+        .replace(/ /g, "-")}/${doctor.name
+        .toLowerCase()
+        .replace(/[\s.]+/g, "-")}/${doctor.id}/slot/booking/payment`
+    );
+  };
+
   return (
-    <div className="flex flex-col justify-center h-screen max-w-sm mx-auto  shadow-md rounded-lg">
-      {/* <header className="flex items-center justify-between border-b p-4">
-        <button className="text-lg font-bold">&larr;</button>
-        <h1 className="text-lg font-bold">Booking Details</h1>
-        <button className="relative">
-          <FaBell />
-          <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
-        </button>
-      </header> */}
+    <div className="flex flex-col justify-center h-screen max-w-sm mx-auto shadow-md rounded-lg">
       <Header title="Booking Details" onClick={handleAppointmentClick} />
       <main className="flex-1 overflow-y-auto p-4 hide-scrollbar">
         <div className="flex items-center mb-4">
           <img
             className="rounded-full mr-4 w-12 h-12"
-            src="https://via.placeholder.com/50"
+            src={doctor.image}
             alt="Doctor"
           />
           <div>
-            <h3 className="text-lg font-medium">Dr. Raja Selvarajan</h3>
-            <p className="text-gray-500">General Physician</p>
+            <h3 className="text-lg font-medium">Dr. {doctor.name}</h3>
+            <p className="text-gray-500">{doctor.specialty}</p>
           </div>
-          <div className="ml-auto text-blue-500">589 m</div>
+          <div className="ml-auto text-blue-500">{doctor.distance}</div>
         </div>
         <div className="border-b border-gray-300 mb-4"></div>
         <div className="mb-4">
@@ -99,7 +110,10 @@ const BookingDetailsPage = () => {
           <p className="text-[#8f8f8f] text-sm">Total amount</p>
           <p className="text-lg text-[#3d3d3d]">₹ 500</p>
         </div>
-        <button className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]">
+        <button
+          className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+          onClick={handlePaymentClick}
+        >
           Proceed To Pay
         </button>
       </footer>

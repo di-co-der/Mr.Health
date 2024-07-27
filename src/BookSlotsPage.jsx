@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "./components/Header";
 import image from "./assets/doctor_image_url.png";
 import Slider from "react-slick";
@@ -16,7 +17,6 @@ const getFormattedDate = (date) => {
   const [month, day] = monthDay.split(" ");
   return `${weekday}, ${day} ${month}`;
 };
-
 
 //Generate the slot date
 const getDates = () => {
@@ -66,18 +66,34 @@ const settings = {
 };
 
 function BookSlotsPage() {
-
+  const { specialty, doctorName, doctorId } = useParams();
   const [currentDate, setCurrentDate] = useState("Today");
 
   const handleDateClick = (date) => {
     setCurrentDate(date);
   };
 
+  const navigate = useNavigate();
+
+  const handleAppointmentClick = () => {
+    navigate("/my-appointments");
+  };
+
+  const handleBookingClick = () => {
+    navigate(
+      `/book-appointment/${specialty
+        .toLowerCase()
+        .replace(/ /g, "-")}/${doctorName
+        .toLowerCase()
+        .replace(/[\s.]+/g, "-")}/${doctorId}/slot/booking`
+    );
+  };
+
   return (
     <div>
       <div className="min-h-screen bg-gray-100 flex justify-center">
         <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-          <Header title="Slot Booking" />
+          <Header title="Slot Booking" onClick={handleAppointmentClick} />
 
           {/* doctorcard  */}
           <div className="flex justify-center items-center p-2 gap-28 border-b-[1px]">
@@ -88,8 +104,8 @@ function BookSlotsPage() {
                 className="rounded-full h-[60px] w-[60px]"
               />
               <div>
-                <div className="text-[18px] font-medium">Doctor Name</div>
-                <div className="text-[14px] text-[#525252]">Specialty</div>
+                <div className="text-[18px] font-medium">{doctorName}</div>
+                <div className="text-[14px] text-[#525252]">{specialty}</div>
               </div>
             </div>
             <div>
@@ -122,11 +138,11 @@ function BookSlotsPage() {
           <div>
             <Slider {...settings}>
               {slotData.map((slot, index) => (
-                <SlotCard 
-                key={index} 
-                date={slot.date} 
-                slots={slot.slots}
-                onClick={() => handleDateClick(slot.date)}
+                <SlotCard
+                  key={index}
+                  date={slot.date}
+                  slots={slot.slots}
+                  onClick={() => handleDateClick(slot.date)}
                 />
               ))}
             </Slider>
@@ -142,8 +158,10 @@ function BookSlotsPage() {
 
           {/* button  */}
           <div className="p-3 pb-0 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-full">
-            <div className="bg-[#0086FF] rounded-md text-center p-3 text-white font-bold cursor-pointer">
-              {" "}
+            <div
+              className="bg-[#0086FF] rounded-md text-center p-3 text-white font-bold cursor-pointer"
+              onClick={handleBookingClick}
+            >
               Confirm Booking
             </div>
           </div>

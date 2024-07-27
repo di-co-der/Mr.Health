@@ -10,6 +10,9 @@ import BookLabTests from "./pages/BookLabTests";
 import DiscoverHospitals from "./pages/DiscoverHospitals";
 import InsurancePlans from "./pages/InsurancePlans";
 
+// import { doctors } from "./data/doctors";
+// import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
+
 import GeneralPhysicianPage from "./GeneralPhysicianPage";
 import DentalCarePage from "./DentalCarePage";
 import SkinHairPage from "./SkinHairPage";
@@ -21,9 +24,14 @@ import MentalWellnessPage from "./MentalWellnessPage";
 
 import BookDoctorPage from "./BookDoctorPage";
 import BookingDetailsPage from "./BookingDetailsPage";
-// import BookingDetailsPage2 from "./BookingDetailsPage2";
-import NotFoundPage from "./NotFoundPage";
+import BookingDetailsPage2 from "./BookingDetailsPage2";
 import BookSlotsPage from "./BookSlotsPage";
+import PaymentPage from "./PaymentPage";
+import ConfirmationPage from "./ConfirmationPage";
+
+import NotFoundPage from "./NotFoundPage";
+
+// Any Alternate and Better Routing Structure ?
 
 const App = () => {
   return (
@@ -34,6 +42,7 @@ const App = () => {
           <Route path="/my-appointments" element={<MyAppointments />} />
 
           <Route path="/book-appointment" element={<BookAppointmentPage />} />
+          {/* <Route path="/book-appointment/:specialty" element={<SpecialtyDoctorsPage />} /> */}
           <Route
             path="/book-appointment/general-physician"
             element={<GeneralPhysicianPage />}
@@ -67,22 +76,30 @@ const App = () => {
             element={<MentalWellnessPage />}
           />
           <Route
-            path="/book-appointment/:specialty/doctor/:doctorId"
+            path="/book-appointment/:specialty/:doctorName/:doctorId"
             element={<BookDoctorPage />}
           />
           <Route
-            path="/book-appointment/:specialty/doctor/:doctorId/slot/booking-details"
-            element={<BookingDetailsPage />}
-          />
-          {/* <Route
-            path="/book-appointment/:specialty/doctor/:doctorId/slot/booking-details2"
-            element={<BookingDetailsPage2 />}
-          /> */}
-
-          <Route
-            path="/book-appointment/:specialty/doctor/:doctorId/slot"
+            path="/book-appointment/:specialty/:doctorName/:doctorId/slot"
             element={<BookSlotsPage />}
           />
+          <Route
+            path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking"
+            element={<BookingDetailsPage />}
+          />
+          <Route
+            path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking2"
+            element={<BookingDetailsPage2 />}
+          />
+          <Route
+            path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking/payment"
+            element={<PaymentPage />}
+          />
+          <Route
+            path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking/payment/confirmation"
+            element={<ConfirmationPage />}
+          />
+
           <Route path="/online-consultation" element={<OnlineConsultation />} />
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
