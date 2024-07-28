@@ -42,7 +42,10 @@ const BookDoctorPage = () => {
 
   return (
     <div className="min-h-screen max-w-sm mx-auto bg-green-100 items-center">
-      <Header title={doctor.name} onClick={handleAppointmentClick} />
+      <header className="pt-[44px]">
+        <Header title={doctor.name} onClick={handleAppointmentClick} />
+      </header>
+
       {/* <DoctorDetails doctor={doctor} /> */}
       <div className="bg-white p-6 rounded-lg shadow-md">
         {/* doctor info card  */}
@@ -171,7 +174,7 @@ const BookDoctorPage = () => {
             <div className=" text-[12px] text-[#0086FF] cursor-pointer ">
               Read all stories (number)
             </div>
-            <div className=" text-[12px] cursor-pointer">Share Your Story</div> 
+            <div className=" text-[12px] cursor-pointer">Share Your Story</div>
           </div>
 
           {/* more about doctor  */}
@@ -201,7 +204,7 @@ const BookDoctorPage = () => {
         </div>
         {/* button */}
 
-        <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
+        {/* <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
           <div className="flex justify-between mb-4"></div>
           <button
             className="w-full bg-blue-500 text-white py-2 rounded"
@@ -211,6 +214,17 @@ const BookDoctorPage = () => {
           >
             Proceed To Book Your Slot
           </button>
+        </footer> */}
+
+        <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
+          <button
+            className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+            onClick={() =>
+              handleBookYourSlotClick(doctor.id, doctor.name, doctor.specialty)
+            }
+          >
+            Proceed To Book Your Slot
+            </button>
         </footer>
       </div>
     </div>

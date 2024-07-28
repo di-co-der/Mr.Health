@@ -89,7 +89,9 @@ function BookSlotsPage() {
     <div>
       <div className="min-h-screen bg-gray-100 flex justify-center">
         <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-          <Header title="Slot Booking" onClick={handleAppointmentClick} />
+          <header className="pt-[64px]">
+            <Header title="Slot Booking" onClick={handleAppointmentClick} />
+          </header>
 
           {/* doctorcard  */}
           <div className="flex justify-center items-center p-2 gap-28 border-b-[1px]">
@@ -153,14 +155,26 @@ function BookSlotsPage() {
           </div>
 
           {/* button  */}
-          <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
-            <div className="flex justify-between mb-4"></div>
+            {/* <div className="flex justify-between mb-4"></div>
             <button
               className="w-full bg-blue-500 text-white py-2 rounded"
-              onClick={handleBookingClick}
+              onClick={}
             >
               Confirm Booking
             </button>
+          </footer> */}
+          {/* <div className="flex justify-start items-center gap-3 font-medium mb-2"> */}
+            {/* <p className="text-[#8f8f8f] text-sm">Total amount</p>
+            <p className="text-lg text-[#3d3d3d]">₹ 500</p> */}
+          {/* </div> */}
+
+            <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
+          <button
+            className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+            onClick={handleBookingClick}
+          >
+            Confirm Booking
+          </button>
           </footer>
         </div>
       </div>

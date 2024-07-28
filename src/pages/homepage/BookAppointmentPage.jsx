@@ -20,7 +20,6 @@ import doctorImage from "../../assets/doctor_image_url.png";
 import doctorImage2 from "../../assets/doctor_image2_url.png";
 
 const BookAppointmentPage = () => {
-  
   const locations = [
     "Agra",
     "Bengaluru",
@@ -30,14 +29,14 @@ const BookAppointmentPage = () => {
     "Mumbai",
   ];
   const defaultLocation = "Mumbai";
-  
+
   const doctor = {
     name: "Dr. Raja Selvarajan",
     specialty: "General Physician",
     lastConsultation: "Consulted on 5 Sept, 11:00 am",
     image: doctorImage,
   };
-  
+
   const categories = [
     { name: "General Physician", icon: generalPhysicianIcon },
     { name: "Dental Care", icon: dentalIcon },
@@ -48,7 +47,7 @@ const BookAppointmentPage = () => {
     { name: "Sexual Disorders", icon: sexualDisordersIcon },
     { name: "Mental Wellness", icon: mentalWellnessIcon },
   ];
-  
+
   const doctorsNearby = [
     {
       name: "Doctor Nearby 1",
@@ -69,7 +68,7 @@ const BookAppointmentPage = () => {
   ];
 
   const navigate = useNavigate();
-  
+
   const handleCategoryClick = (categoryName) => {
     const routeMap = {
       "General Physician": "/book-appointment/general-physician",
@@ -94,7 +93,9 @@ const BookAppointmentPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <Header title="Book Appointment" onClick={handleAppointmentClick} />
+        <header className="pt-14">
+          <Header title="Book Appointment" onClick={handleAppointmentClick} />
+        </header>
         <LocationDropdown
           locations={locations}
           defaultLocation={defaultLocation}

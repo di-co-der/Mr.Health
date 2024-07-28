@@ -45,11 +45,11 @@ const PaymentPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col w-full max-w-sm mx-auto">
-      <header className="fixed inset-x-0 top-0">
+        <header className="pt-[56px]">
         <Header title="Payment" onClick={handleAppointmentClick} />
       </header>
 
-      <div className="pt-5 mt-14 flex-grow overflow-y-auto ">
+      <div className="pt-5 pb-36 flex-grow overflow-y-auto ">
         <div className="px-4 border-b-[#d9d9d9be] border-b-[6px]">
           <h1 className="font-semibold text-lg">Choose mode of payment</h1>
           <div className="400 p-4 mt-2 mb-4 rounded-xl outline outline-1 outline-gray-200">
@@ -107,7 +107,7 @@ const PaymentPage = () => {
               </div>
             </div>
 
-            <div className="pt-6 px-4 mb-28">
+            <div className="pt-6 px-4">
               <h1 className="font-semibold text-lg">Card Payment</h1>
               <div className="400 p-4 mt-2 rounded-xl shadow-xl outline outline-1 outline-gray-200">
                 <PaymentOption
@@ -144,7 +144,7 @@ const PaymentPage = () => {
                   onChange={setCardMethod}
                 />
               </div>
-            </div>y
+            </div>
           </>
         )}
 
@@ -152,13 +152,13 @@ const PaymentPage = () => {
       </div>
 
 
-      <footer className="fixed bottom-0 inset-x-0 p-4 bg-white shadow-md">
-        <div className="flex justify-between items-center mb-2">
-          <p className="text-sm text-gray-600">Total amount</p>
-          <p className="text-lg font-medium text-gray-800">₹ 500</p>
-        </div>
+      <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-2 pb-3 px-8 bg-[#fafafa]">
+      <div className="flex justify-start items-center gap-3 font-medium mb-2">
+      <p className="text-[#8f8f8f] text-sm">Total amount</p>
+      <p className="text-lg text-[#3d3d3d]">₹ 500</p>
+      </div>
         <button
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+          className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
           onClick={handleConfirmClick}
         >
           Pay Now

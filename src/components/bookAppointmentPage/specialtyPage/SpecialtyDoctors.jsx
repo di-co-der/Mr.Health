@@ -74,7 +74,10 @@ const SpecialtyDoctorsPage = ({ specialty, title }) => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center">
       <div className="max-w-sm w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <Header title={title} onClick={handleAppointmentClick} />
+        <header className="pt-14">
+          <Header title={title} onClick={handleAppointmentClick} />
+        </header>
+
         <LocationDropdown
           locations={locations}
           defaultLocation={defaultLocation}
