@@ -1,35 +1,35 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./HomePage";
-import MyAppointments from "./MyAppointments";
+import HomePage from "./pages/HomePage";
+import MyAppointments from "./pages/MyAppointments";
 
-import BookAppointmentPage from "./BookAppointmentPage";
-import OnlineConsultation from "./pages/OnlineConsultation";
-import GetMedicines from "./pages/GetMedicines";
-import BookLabTests from "./pages/BookLabTests";
-import DiscoverHospitals from "./pages/DiscoverHospitals";
-import InsurancePlans from "./pages/InsurancePlans";
+import BookAppointmentPage from "./pages/homepage/BookAppointmentPage";
+import OnlineConsultation from "./pages/homepage/OnlineConsultation";
+import GetMedicines from "./pages/homepage/GetMedicines";
+import BookLabTests from "./pages/homepage/BookLabTests";
+import DiscoverHospitals from "./pages/homepage/DiscoverHospitals";
+import InsurancePlans from "./pages/homepage/InsurancePlans";
 
 // import { doctors } from "./data/doctors";
 // import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
 
-import GeneralPhysicianPage from "./GeneralPhysicianPage";
-import DentalCarePage from "./DentalCarePage";
-import SkinHairPage from "./SkinHairPage";
-import BoneJointsPage from "./BoneJointsPage";
-import WomensHealthPage from "./WomensHealthPage";
-import ChildSpecialistPage from "./ChildSpecialistPage";
-import SexualDisordersPage from "./SexualDisordersPage";
-import MentalWellnessPage from "./MentalWellnessPage";
+import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
+import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
+import SkinHairPage from "./pages/homepage/bookAppointment/categories/SkinHairPage";
+import BoneJointsPage from "./pages/homepage/bookAppointment/categories/BoneJointsPage";
+import WomensHealthPage from "./pages/homepage/bookAppointment/categories/WomensHealthPage";
+import ChildSpecialistPage from "./pages/homepage/bookAppointment/categories/ChildSpecialistPage";
+import SexualDisordersPage from "./pages/homepage/bookAppointment/categories/SexualDisordersPage";
+import MentalWellnessPage from "./pages/homepage/bookAppointment/categories/MentalWellnessPage";
 
-import BookDoctorPage from "./BookDoctorPage";
-import BookingDetailsPage from "./BookingDetailsPage";
-import BookingDetailsPage2 from "./BookingDetailsPage2";
-import BookSlotsPage from "./BookSlotsPage";
-import PaymentPage from "./PaymentPage";
-import ConfirmationPage from "./ConfirmationPage";
+import BookDoctorPage from "./pages/homepage/bookAppointment/BookDoctorPage";
+import BookingDetailsPage from "./pages/homepage/bookAppointment/BookingDetailsPage";
+import BookingDetailsPage2 from "./pages/homepage/bookAppointment/BookingDetailsPage2";
+import BookSlotsPage from "./pages/homepage/bookAppointment/BookSlotsPage";
+import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
+import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
 
-import NotFoundPage from "./NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 // Any Alternate and Better Routing Structure ?
 
