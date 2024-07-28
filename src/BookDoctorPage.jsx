@@ -22,12 +22,12 @@ const BookDoctorPage = () => {
   }
 
   //Handle UserStories
-  // const { userId } = useParams();
-  // const user = userData.find((u) => u.id === parseInt(userId));
+  const { userId } = useParams();
+  const user = userData.find((u) => u.id === parseInt(userId));
 
-  // if (!user) {
-  //   return <div>User not found!</div>;
-  // }
+  if (!user) {
+    return <div>User not found!</div>;
+  }
 
   //Handle MyAppointment
   const navigate = useNavigate();
