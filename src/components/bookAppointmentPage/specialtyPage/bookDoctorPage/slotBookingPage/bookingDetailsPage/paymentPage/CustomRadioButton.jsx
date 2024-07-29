@@ -2,7 +2,7 @@ import React from "react";
 
 const CustomRadioButton = ({ value, label, selected, onChange }) => (
   <div
-    className={`flex items-center justify-between px-5 py-2 rounded-lg cursor-pointer outline outline-1 outline-gray-200 hover:outline-gray-300 ${
+    className={`flex items-center justify-between px-5 py-2 rounded-lg cursor-pointer outline outline-1 outline-gray-200 hover:outline-gray-400 ${
       selected === value ? "" : ""
     }`}
     onClick={() => onChange(value)}

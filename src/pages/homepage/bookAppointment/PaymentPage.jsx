@@ -64,8 +64,6 @@ const PaymentPage = () => {
             />
           </div>
         </div>
-        {/* <div className="w-full bg-[#] pt-1.5"></div> */}
-
         {paymentMethod === "online" && (
           <>
             <div className="pt-4 px-4">

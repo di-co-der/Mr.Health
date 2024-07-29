@@ -1,15 +1,21 @@
 import React from "react";
 
+//assets
+import ClinicCardLogo from "../../../../../../../assets/ClinicCardLogo.png";
+import { FaClinicMedical } from "react-icons/fa";
+
 const ClinicInfo = () => (
   <div className="p-4 m-4 bg-gradient-to-br from-slate-100 to-slate-300 rounded-lg shadow-md mt-4">
     <h2 className="text-lg font-semibold mb-2">Clinic Information</h2>
     <div className="flex flex-col space-y-2">
       <div className="flex items-center">
-        <img
-          src="https://via.placeholder.com/50"
+        {/* <img
+          src={ClinicCardLogo}
           alt="Clinic Location"
-          className="w-12 h-12 mr-2 rounded-full"
-        />
+          className="h-14 mr-2 rounded-full"
+        /> */}
+        <FaClinicMedical className="h-8 w-8 mr-4" />
+
         <div>
           <p className="font-medium">HealthCare Clinic</p>
           <p className="text-sm text-gray-600">123 Sadar Bazaar, Agra</p>
