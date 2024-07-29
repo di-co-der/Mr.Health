@@ -51,7 +51,7 @@ const BookDoctorPage = () => {
 
   return (
     <div className="min-h-screen max-w-sm mx-auto items-center">
-      <header className="pt-[44px]">
+      <header className="pt-[60px]">
         <Header title={doctor.name} onClick={handleAppointmentClick} />
       </header>
 
@@ -60,7 +60,7 @@ const BookDoctorPage = () => {
         {/* doctor info card  */}
         <div className="flex justify-between items-center mb-4 cursor-pointer">
           <div className=" max-w-[60%]">
-            <div className="text-[18px]">{doctor.name}</div>
+            <div className="text-[18px] font-medium">{doctor.name}</div>
             <div className="text-[14px] text-[#525252] mb-5">
               {doctor.specialty}
             </div>
@@ -207,25 +207,25 @@ const BookDoctorPage = () => {
         <div>
           <div className=" font-semibold p-2 mb-4">More about Doctor name</div>
 
-          <div className="flex justify-between items-center p-2 border-b-[2px]">
+          <div className="flex justify-between items-center p-2 border-b-[2px] cursor-pointer transition-all group hover:shadow-md">
             <div className="text-[14px] text-[#525252]">
               Specialization and Services
             </div>
-            <div className="cursor-pointer">
+            <div className="group-hover:-translate-x-2 group-hover:scale-105">
               <img src={sideArrow}></img>
             </div>
           </div>
-          <div className="flex justify-between items-center p-2 border-b-[2px]">
-            <div className="text-[14px] text-[#525252]">
+          <div className="flex justify-between items-center p-2 border-b-[2px] cursor-pointer transition-all group hover:shadow-md">
+            <div className="text-[14px] text-[#525252] ">
               Awards and Recognitions
             </div>
-            <div className="cursor-pointer">
+            <div className="group-hover:-translate-x-2 group-hover:scale-105">
               <img src={sideArrow}></img>
             </div>
           </div>
-          <div className="flex justify-between items-center p-2 border-b-[2px] mb-14">
+          <div className="flex justify-between items-center p-2 border-b-[2px] mb-20 cursor-pointer transition-all group hover:shadow-md">
             <div className="text-[14px] text-[#525252]">Experience</div>
-            <div className="cursor-pointer">
+            <div className="group-hover:-translate-x-2 group-hover:scale-105">
               <img src={sideArrow}></img>
             </div>
           </div>
