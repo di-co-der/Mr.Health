@@ -1,85 +1,19 @@
-import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../../components/common/Header";
-import image from "../../../../src/assets/doctor_image_url.png";
-import Slider from "react-slick";
-import SlotCard from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/SlotCard";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-//for slot-slide
-
-//format the date
-const getFormattedDate = (date) => {
-  const options = { weekday: "short", day: "2-digit", month: "short" };
-  const formattedDate = date.toLocaleDateString("en-US", options);
-  const [weekday, monthDay] = formattedDate.split(", ");
-  const [month, day] = monthDay.split(" ");
-  return `${weekday}, ${day} ${month}`;
-};
-
-//Generate the slot date
-const getDates = () => {
-  const day0 = new Date();
-  const day1 = new Date(day0);
-  day1.setDate(day1.getDate() + 1);
-  const day2 = new Date(day0);
-  day2.setDate(day2.getDate() + 2);
-  const day3 = new Date(day0);
-  day3.setDate(day3.getDate() + 3);
-  const day4 = new Date(day0);
-  day4.setDate(day4.getDate() + 4);
-  const day5 = new Date(day0);
-  day5.setDate(day5.getDate() + 5);
-  const day6 = new Date(day0);
-  day6.setDate(day6.getDate() + 6);
-
-  return [
-    { date: "Today", slots: 18 },
-    { date: "Tomorrow", slots: 0 },
-    { date: getFormattedDate(day2), slots: 6 },
-    { date: getFormattedDate(day3), slots: 0 },
-    { date: getFormattedDate(day4), slots: 18 },
-    { date: getFormattedDate(day5), slots: 19 },
-    { date: getFormattedDate(day6), slots: 12 },
-    // add more slot data if needed
-  ];
-};
-
-const slotData = getDates();
-
-const settings = {
-  infinite: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  dots: false,
-  responsive: [
-    {
-      breakpoint: 768, // breakpoint for mobile devices
-      settings: {
-        slidesToShow: 3,
-        centerMode: true,
-        centerPadding: "0%",
-      },
-    },
-  ],
-};
+import DoctorCard from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/DoctorCard";
+import SlotDate from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/SlotDate";
 
 function BookSlotsPage() {
-  const { specialty, doctorName, doctorId } = useParams();
-  const [currentDate, setCurrentDate] = useState("Today");
-
-  const handleDateClick = (date) => {
-    setCurrentDate(date);
-  };
-
+  
+  //Handle MyAppointment
   const navigate = useNavigate();
-
   const handleAppointmentClick = () => {
     navigate("/my-appointments");
   };
 
-  const handleBookingClick = () => {
+  //Handle confirm booking button
+  const handleBookingClick = (doctorId, doctorName, specialty) => {
     navigate(
       `/book-appointment/${specialty}/${doctorName}/${doctorId}/slot/booking`
     );
@@ -94,38 +28,7 @@ function BookSlotsPage() {
           </header>
 
           {/* doctorcard  */}
-          <div className="flex justify-center items-center p-2 gap-28 border-b-[1px]">
-            <div className="flex justify-center items-center gap-3">
-              <img
-                src={image}
-                alt="doctor image"
-                className="rounded-full h-[60px] w-[60px]"
-              />
-              <div>
-                <div className="text-[18px] font-medium">{doctorName}</div>
-                <div className="text-[14px] text-[#525252]">{specialty}</div>
-              </div>
-            </div>
-            <div>
-              <div className="p-2">
-                <svg
-                  width="18"
-                  height="24"
-                  viewBox="0 0 18 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.00005 11.4189C8.22948 11.4189 7.49046 11.1128 6.94558 10.5679C6.4007 10.023 6.09459 9.28403 6.09459 8.51345C6.09459 7.74287 6.4007 7.00385 6.94558 6.45897C7.49046 5.91409 8.22948 5.60798 9.00005 5.60798C9.77063 5.60798 10.5096 5.91409 11.0545 6.45897C11.5994 7.00385 11.9055 7.74287 11.9055 8.51345C11.9055 8.895 11.8304 9.27282 11.6844 9.62532C11.5383 9.97783 11.3243 10.2981 11.0545 10.5679C10.7847 10.8377 10.4644 11.0517 10.1119 11.1978C9.75942 11.3438 9.3816 11.4189 9.00005 11.4189ZM9.00005 0.378143C6.84243 0.378143 4.77319 1.23525 3.24752 2.76092C1.72186 4.28658 0.864746 6.35583 0.864746 8.51345C0.864746 14.6149 9.00005 23.6219 9.00005 23.6219C9.00005 23.6219 17.1354 14.6149 17.1354 8.51345C17.1354 6.35583 16.2782 4.28658 14.7526 2.76092C13.2269 1.23525 11.1577 0.378143 9.00005 0.378143Z"
-                    fill="#0086FF"
-                  />
-                </svg>
-              </div>
-              <div className="text-[#0086FF] font-semibold text-[12px] text-center">
-                589m
-              </div>
-            </div>
-          </div>
+          <DoctorCard />
 
           {/* choose your slot  */}
           <div className="m-4 text-[#0086FF] font-semibold">
@@ -133,20 +36,7 @@ function BookSlotsPage() {
           </div>
 
           {/* slotcard */}
-          <div className="">
-            <Slider {...settings} className="">
-              {slotData.map((slot, index) => (
-                <SlotCard
-                  key={index}
-                  date={slot.date}
-                  slots={slot.slots}
-                  onClick={() => handleDateClick(slot.date)}
-                />
-              ))}
-            </Slider>
-          </div>
-
-          <div className="text-center m-5 font-bold">{currentDate}</div>
+          <SlotDate />
 
           {/* slot timing  */}
           <div>
@@ -155,26 +45,13 @@ function BookSlotsPage() {
           </div>
 
           {/* button  */}
-            {/* <div className="flex justify-between mb-4"></div>
+          <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
             <button
-              className="w-full bg-blue-500 text-white py-2 rounded"
-              onClick={}
+              className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+              onClick={handleBookingClick}
             >
               Confirm Booking
             </button>
-          </footer> */}
-          {/* <div className="flex justify-start items-center gap-3 font-medium mb-2"> */}
-            {/* <p className="text-[#8f8f8f] text-sm">Total amount</p>
-            <p className="text-lg text-[#3d3d3d]">₹ 500</p> */}
-          {/* </div> */}
-
-            <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
-          <button
-            className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
-            onClick={handleBookingClick}
-          >
-            Confirm Booking
-          </button>
           </footer>
         </div>
       </div>
