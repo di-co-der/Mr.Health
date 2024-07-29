@@ -64,6 +64,5 @@ export const userData = [
       story: 'Dr. Bansal is very knowledgeable and provided excellent care for my ear infection. The prescribed medication worked quickly, and I am very happy with the treatment.'
     }
   ];
-  
-//   export default userData;
+
   

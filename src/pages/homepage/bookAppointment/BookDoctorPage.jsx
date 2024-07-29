@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../../components/common/Header";
 import MapComponent from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/MapComponent";
@@ -10,7 +10,7 @@ import like from "../../../../src/assets/svgs/Like.svg";
 import sideArrow from "../../../../src/assets/svgs/Side-arrow.svg";
 import { userData } from "../../../data/userStories";
 import { doctors } from "../../../data/doctors";
-// import StarRating from "./components/StarRating";
+
 
 const BookDoctorPage = () => {
   //Handle doctor.jsx from data
@@ -20,14 +20,6 @@ const BookDoctorPage = () => {
   if (!doctor) {
     return <div>Doctor not found!</div>;
   }
-
-  //Handle UserStories
-  // const { userId } = useParams();
-  // const user = userData.find((u) => u.id === parseInt(userId));
-
-  // if (!user) {
-  //   return <div>User not found!</div>;
-  // }
 
   //Handle MyAppointment
   const navigate = useNavigate();
@@ -40,16 +32,33 @@ const BookDoctorPage = () => {
     navigate(`/book-appointment/${specialty}/${doctorName}/${doctorId}/slot`);
   };
 
+  //handle user stories
+  const [expandedStories, setExpandedStories] = useState({});
+  const [showAll, setShowAll] = useState(false);
+
+  const handleReadMoreToggle = (id) => {
+    setExpandedStories((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+
+  const handleShowAll = () => {
+    setShowAll((prevShowAll) => !prevShowAll);
+  };
+
+  const visibleStories = showAll ? userData : userData.slice(0, 2);
+
   return (
-    <div className="min-h-screen max-w-sm mx-auto bg-green-100 items-center">
+    <div className="min-h-screen max-w-sm mx-auto items-center">
       <header className="pt-[44px]">
         <Header title={doctor.name} onClick={handleAppointmentClick} />
       </header>
 
       {/* <DoctorDetails doctor={doctor} /> */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white px-3 py-4 rounded-lg shadow-md">
         {/* doctor info card  */}
-        <div className="flex justify-between items-center mb-5 cursor-pointer p-2">
+        <div className="flex justify-between items-center mb-4 cursor-pointer">
           <div className=" max-w-[60%]">
             <div className="text-[18px]">{doctor.name}</div>
             <div className="text-[14px] text-[#525252] mb-5">
@@ -63,7 +72,7 @@ const BookDoctorPage = () => {
         </div>
 
         {/* info cards */}
-        <div className="flex justify-center items-center flex-wrap gap-3 border-b-[2px] pb-3 mb-1">
+        <div className="flex justify-center items-center flex-wrap gap-3 border-b-[2px] pb-5">
           <div className="text-center grow basis-1/5 border-[1px] border-[#00CCCC] pl-2 pr-2">
             <div className=" text-[#0086FF] text-[14px] font-semibold">
               {doctor.patients}
@@ -99,7 +108,7 @@ const BookDoctorPage = () => {
         </div>
 
         {/* locaton */}
-        <div className="border-b-[2px] p-2">
+        <div className="border-b-[2px] mt-3 pb-5">
           <div className="flex justify-center items-start gap-3">
             <img src={mapSvg} className="mt-1"></img>
             <div className=" text-[14px] text-[#525252] font-medium pb-2">
@@ -118,29 +127,29 @@ const BookDoctorPage = () => {
         </div>
 
         {/* patient stories */}
-        <div className="border-b-[2px] p-2 pb-4 mb-4">
+        <div className="border-b-[2px] pb-5 mt-3">
           <div className="font-semibold text-[#0086FF] ">Patient Stories</div>
-          <div className="text-[10px] text-[#525252] leading-none">
+          <div className="text-[10px] text-[#ff6969] leading-none">
             These stories represent patient opinions and experiences. They do
             not reflect the doctor’s medical capabilities.
           </div>
         </div>
 
         {/* recommendation */}
-        <div className="flex justify-center items-center border-b-[2px] p-2 pb-4 mb-4">
-          <div className="flex justify-center items-center border-r-[1px]">
-            <img src={like}></img>
-            <div className="m-3 font-semibold text-[18p">92%</div>
+        <div className="flex justify-center items-center border-b-[2px] pb-5 mt-3 ">
+          <div className="  flex justify-center items-center ">
+            <img src={like} className="px-4"></img>
+            <div className=" font-semibold text-[18px] pr-6">92%</div>
           </div>
 
-          <div className="text-[12px] text-[#525252] m-4 text-wrap ">
+          <div className=" pl-4 text-[14px] text-[#525252] text-wrap border-l-2">
             Out of 2500 patients surveyed, 92 % of them recommend visiting this
             hospital
           </div>
         </div>
 
         {/* stories heading */}
-        <div className="flex items-center gap-2 p-2">
+        <div className="flex items-center gap-2 mt-3">
           <img src={messageIcon}></img>
           <div className="text-[12px] text-[#525252] font-semibold">
             STORIES
@@ -148,37 +157,56 @@ const BookDoctorPage = () => {
         </div>
 
         {/* user story */}
-        <div className="main-div border-b-[2px] mt-3 pb-3">
+        <div>
+      {visibleStories.map((user) => (
+        <div key={user.id} className="main-div border-b-2 mt-3 pb-3">
           <div className="flex justify-between items-center p-2">
             <div className="flex justify-center items-center gap-4">
               <div className="avatar">
-                <img src={userAvatar} alt="" />
+                <img src={userAvatar} alt={`${user.username}'s avatar`} />
               </div>
               <div>
-                <div className=" text-[12px] font-semibold cursor-pointer">
-                  User Name
+                <div className="text-[12px] font-semibold cursor-pointer">
+                  {user.username}
                 </div>
-                <div className=" text-[12px] text-[#525252]">X days ago</div>
+                <div className="text-[12px] text-[#525252]">
+                  {user.posted}
+                </div>
               </div>
             </div>
-            {/* <StarRating /> */}
-            <div className="rating">
-              <img src={starGroup} alt="" />
+            <div className="rating bg-white">
+              <img src={starGroup} alt="star rating" />
             </div>
           </div>
-          <div className={`text-[12px] font-semibold ml-14 p-1 `}>
-            Visited for thyroid disorder treatment
+          <div className={`text-[12px] font-semibold ml-14 p-1`}>
+            {user.title}
           </div>
-
-          <div className="flex justify-center items-center gap-10 p-3 border-b-2">
-            <div className=" text-[12px] text-[#0086FF] cursor-pointer ">
-              Read all stories (number)
-            </div>
-            <div className=" text-[12px] cursor-pointer">Share Your Story</div>
+          <div className={`text-[12px] text-[#525252] ml-14 p-1`}>
+            {expandedStories[user.id] ? user.story : `${user.story.substring(0, 100)}...`}
+            <button
+              className="text-blue-500 underline font-medium"
+              onClick={() => handleReadMoreToggle(user.id)}
+            >
+              {expandedStories[user.id] ? 'Read less' : 'Read more'}
+            </button>
           </div>
+        </div>
+      ))}
+      <div className="flex justify-between items-center border-b-2 mt-3 px-6 pb-3 ">
+        <div
+          className="text-[12px] text-[#0086FF] cursor-pointer font-medium"
+          onClick={handleShowAll}
+        >
+          {showAll ? 'Hide stories' : `Read all stories (${userData.length})`}
+        </div>
+        <div className="text-[12px] cursor-pointer font-medium">Share Your Story</div>
+      </div>
+    </div>
 
-          {/* more about doctor  */}
+        {/* more about doctor  */}
+        <div>
           <div className=" font-semibold p-2 mb-4">More about Doctor name</div>
+
           <div className="flex justify-between items-center p-2 border-b-[2px]">
             <div className="text-[14px] text-[#525252]">
               Specialization and Services
@@ -202,20 +230,8 @@ const BookDoctorPage = () => {
             </div>
           </div>
         </div>
+
         {/* button */}
-
-        {/* <footer className="p-4 pb-2 fixed max-w-sm bottom-0 left-1/2 transform -translate-x-1/2 w-[70%] ">
-          <div className="flex justify-between mb-4"></div>
-          <button
-            className="w-full bg-blue-500 text-white py-2 rounded"
-            onClick={() =>
-              handleBookYourSlotClick(doctor.id, doctor.name, doctor.specialty)
-            }
-          >
-            Proceed To Book Your Slot
-          </button>
-        </footer> */}
-
         <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
           <button
             className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
@@ -224,7 +240,7 @@ const BookDoctorPage = () => {
             }
           >
             Proceed To Book Your Slot
-            </button>
+          </button>
         </footer>
       </div>
     </div>
