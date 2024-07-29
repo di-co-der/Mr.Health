@@ -3,7 +3,7 @@ import React from "react";
 const SlotCard = ({ date, slots, onClick }) => {
   return (
     <div
-      className={`w-28 border-[1px] rounded-md  px-3 py-1 cursor-pointer ${
+      className={`w-28 border-[1px] rounded-md  px py-1 cursor-pointer ${
         slots > 0
           ? "hover:bg-[#E6FAFA] hover:border-[#00CCCC] border-gray-400"
           : "bg-gray-100  border-gray-100"
