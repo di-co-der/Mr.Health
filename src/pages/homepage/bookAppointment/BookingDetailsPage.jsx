@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+//components
 import Header from "../../../components/common/Header";
 
+//data
 import { doctors } from "../../../data/doctors";
 
 //assets

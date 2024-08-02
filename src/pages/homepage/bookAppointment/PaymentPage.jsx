@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+//components
 import Header from "../../../components/common/Header";
 import PaymentOption from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/bookingDetailsPage/paymentPage/PaymentOption.jsx";
 import ClinicInfo from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/bookingDetailsPage/paymentPage/ClinicInfo.jsx";
+
+//data
+import { doctors } from "../../../data/doctors";
 
 //assets
 import GPay from "../../../assets/svgs/GPay.svg";
@@ -16,14 +21,19 @@ const PaymentPage = () => {
   const [cardMethod, setCardMethod] = useState("axisBank");
 
   const { specialty, doctorName, doctorId } = useParams();
+  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
 
-  const doctor = {
-    id: doctorId,
-    name: doctorName,
-    specialty: specialty,
-    image: "https://via.placeholder.com/50",
-    distance: "589 m",
-  };
+  if (!doctor) {
+    return <div>Doctor not found!</div>;
+  }
+
+  // const doctor = {
+  //   id: doctorId,
+  //   name: doctorName,
+  //   specialty: specialty,
+  //   image: "https://via.placeholder.com/50",
+  //   distance: "589 m",
+  // };
 
   const navigate = useNavigate();
 
@@ -153,7 +163,7 @@ const PaymentPage = () => {
       <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-2 pb-3 px-8 bg-[#fafafa]">
       <div className="flex justify-start items-center gap-3 font-medium mb-2">
       <p className="text-[#8f8f8f] text-sm">Total amount</p>
-      <p className="text-lg text-[#3d3d3d]">₹ 500</p>
+      <p className="text-lg text-[#3d3d3d]">{doctor.fees}</p>
       </div>
         <button
           className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"

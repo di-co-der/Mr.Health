@@ -1,8 +1,29 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+//components
 import Header from "../../../components/common/Header";
+import MapComponent from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/MapComponent";
+
+//data
+import { doctors } from "../../../data/doctors";
+
+//assets
+// import mapSvg from "../../../../src/assets/svgs/map.svg";
 import NeedHelp from "../../../assets/svgs/NeedHelp.svg";
+import BookingTimeIcon from "../../../assets/svgs/BookingTimeIcon.svg";
+import BookingUser from "../../../assets/svgs/BookingUser.svg";
+import Tick from "../../../assets/svgs/Tick.svg";
+import Clinic from "../../../assets/svgs/Clinic.svg";
+import Cross from "../../../assets/svgs/Cross.svg";
+
 function ConfirmationPage() {
+  const { specialty, doctorName, doctorId } = useParams();
+  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
+
+  if (!doctor) {
+    return <div>Doctor not found!</div>;
+  }
 
   const navigate = useNavigate();
 
@@ -32,10 +53,10 @@ function ConfirmationPage() {
 
       <main className="">
         <div className=" pt-6 px-4 pb-6 border-b-4">
-          <div className="flex items-center justify-center mb-4">
-            <div className="flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-              <svg
-                className="h-6 w-6 text-green-600"
+          <div className="flex items-center justify-center mb-4 text-[#25d366]">
+            <div className="flex items-center justify-center rounded-full ">
+              {/* <svg
+                className="h-6 w-6 text-[#25d366]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -47,9 +68,10 @@ function ConfirmationPage() {
                   strokeWidth="2"
                   d="M5 13l4 4L19 7"
                 ></path>
-              </svg>
+              </svg> */}
+              <img src={Tick} alt="" />
             </div>
-            <span className="ml-3 text-lg font-semibold text-green-600">
+            <span className="ml-3 text-lg font-semibold">
               Appointment Confirmed
             </span>
           </div>
@@ -59,71 +81,81 @@ function ConfirmationPage() {
           </p>
 
           <div className="border-2 border-gray-300 rounded-lg p-4">
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-3">
-                <div className="text-gray-500">Appointment Time</div>
-                <div className="text-gray-900 font-semibold">
-                  Sat, 9 Sep 11:30 AM
+            <div className="mb-5">
+              <div className="mb-4">
+                <div className="flex gap-2 text-sm mb-1">
+                  <img src={BookingTimeIcon} alt="" className="pt-0.5" />
+                  <p className="text-[#7a7a7a]">Appointment Time</p>
                 </div>
+                <p className="font-medium flex gap-2 items-center pl-6 text-lg">
+                  Sat, 9 Sep 11:30 AM{" "}
+                  <span className="text-lg text-gray-500 font-normal">|</span>
+                  <span className="text-gray-500 flex gap-1 items-center font-normal text-sm">
+                    <img src={BookingTimeIcon} className="w-4" alt="" />
+                    Today
+                  </span>
+                </p>
               </div>
+              <div className="border border-gray-300 mb-4"></div>
+
               <div className="flex justify-between items-center mb-3">
-                <div className="text-gray-500">Doctor's Name</div>
-                <div className="text-gray-900 font-semibold flex items-center">
-                  <img
-                    src="/path/to/doctor-image.jpg" // replace with actual path
-                    alt="Dr. Raja Selvarajan"
-                    className="w-8 h-8 rounded-full mr-2"
-                  />
-                  Dr. Raja Selvarajan
+
+                <div>
+                <div className="flex gap-2 text-sm mb-1">
+                  <img src={BookingUser} alt="" />
+                  <p className="text-[#7a7a7a]">
+                    Doctor's Name</p>
                 </div>
-              </div>
-              <div className="text-gray-500 mb-2">Clinic's Details</div>
-              <div className="text-gray-900 font-semibold">
-                35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main
-                Road
-              </div>
-              <div className="mt-4">
+                  <div className="text-gray-900 pl-6 font-semibold flex items-center text-lg">
+                    {doctor.name}
+                  </div>
+                </div>
                 <img
-                  src="/path/to/map-image.png" // replace with actual path
-                  alt="Clinic Location"
-                  className="w-full h-40 object-cover rounded-lg"
+                  src={doctor.image}
+                  alt="Doctor"
+                  className="w-12 h-12 rounded-full mr-2"
                 />
+              </div>
+
+              <div className="border border-gray-300 mb-4"></div>
+
+              {/* <div className="text-gray-500 mb-1"></div> */}
+              <div className="flex gap-2 text-sm mb-1">
+                  <img src={Clinic} alt="" className="pt-0.5" />
+                  <p className="text-[#7a7a7a]">Clinic's Details</p>
+                </div>
+
+              <div className="text-gray-900 font-medium">{doctor.map}</div>
+              <div className="mt-2">
+                <div className="">
+                  <div className="flex justify-center items-center gap-3 -z-10">
+                    <MapComponent
+                      coordinates={doctor.coordinates}
+                      location={doctor.map}
+                    />{" "}
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="flex space-x-4">
-              <button className="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg hover:bg-gray-300">
-                Cancel
+            <div className="flex space-x-12">
+              <button className="flex-1 text-[#7a7a7a] border-2 border-[#7a7a7a] py-2 rounded-lg">
+                <div className="flex justify-center items-center gap-2">
+                <img src={Cross} alt="" className="" />
+                <p>Cancel</p>
+                </div>
               </button>
-              <button className="flex-1 border-2 border-blue-500 text-blue-500 py-2 rounded-lg hover:bg-blue-500 hover:text-white">
+              <button className="flex-1 border-2 border-[#0086ff] text-[#0086ff] py-2 rounded-lg transition-all hover:bg-[#0086ff] hover:text-white">
                 Reschedule
               </button>
             </div>
           </div>
         </div>
 
-        {/* <div className="border-b-[2px] mt-3 pb-5">
-          <div className="flex justify-center items-start gap-3">
-            <img src={mapSvg} className="mt-1"></img>
-            <div className=" text-[14px] text-[#525252] font-medium pb-2">
-              {" "}
-              {doctor.map}
-            </div>
-          </div>
-          <div className="">
-            <div className="flex justify-center items-center gap-3">
-              <MapComponent
-                coordinates={doctor.coordinates}
-                location={doctor.map}
-              />{" "}
-            </div>
-          </div>
-        </div> */}
-
         <div className="pl-4 py-5  mb-20 flex items-start gap-4">
           <img src={NeedHelp} className="pt-1" alt="" />
           <div className="">
-            <h3 className="text-lg font-semibold">Need Help?</h3>
+            <h3 className="text-lg font-semibold">Need Help ?</h3>
             <p className="text-sm text-gray-500 leading-4 ">
               In case you cannot make for the appointment, please cancel or
               reschedule the appointment, preferably 2 hours prior to the
