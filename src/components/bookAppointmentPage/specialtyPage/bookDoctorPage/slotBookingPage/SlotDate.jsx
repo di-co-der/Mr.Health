@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import SlotCard from "./SlotCard";
+import SlotTiming from "./SlotTiming";
 
 //format the date
 const getFormattedDate = (date) => {
@@ -61,10 +62,12 @@ const settings = {
 };
 
 function SlotDate() {
-  const [currentDate, setCurrentDate] = useState("Today");
+  const [currentDate, setCurrentDate] = useState(slotData[0].date);
+  const [currentSlots, setCurrentSlots] = useState(slotData[0].slots);
 
-  const handleDateClick = (date) => {
+  const handleDateClick = (date, slots) => {
     setCurrentDate(date);
+    setCurrentSlots(slots);
   };
 
   return (
@@ -76,13 +79,14 @@ function SlotDate() {
               key={index}
               date={slot.date}
               slots={slot.slots}
-              onClick={() => handleDateClick(slot.date)}
+              onClick={handleDateClick}
             />
           ))}
         </Slider>
       </div>
 
       <div className="text-center m-5 font-bold">{currentDate}</div>
+      <SlotTiming currentSlots= {currentSlots}/>
     </div>
   );
 }

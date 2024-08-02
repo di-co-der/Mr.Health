@@ -8,7 +8,7 @@ const SlotCard = ({ date, slots, onClick }) => {
           ? "hover:bg-[#E6FAFA] hover:border-[#00CCCC] border-gray-400"
           : "bg-gray-100  border-gray-100"
       }`}
-      onClick={onClick}
+      onClick={() => onClick(date, slots)}
     >
       <div className="font-medium text-black text-[12px] text-center">
         {date}
