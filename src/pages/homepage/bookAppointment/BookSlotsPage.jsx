@@ -10,7 +10,17 @@ import SlotDate from "../../../components/bookAppointmentPage/specialtyPage/book
 import { doctors } from "../../../data/doctors";
 
 function BookSlotsPage() {
-  
+  // Get doctorId, specialty, doctorName from URL params
+  const { doctorId, specialty, doctorName } = useParams();
+
+  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
+
+  if (!doctor) {
+    return <div>Doctor not found!</div>;
+  }
+
+  const navigate = useNavigate();
+
   //Handle MyAppointment
   const handleAppointmentClick = () => {
     navigate("/my-appointments");
@@ -43,6 +53,10 @@ function BookSlotsPage() {
           <SlotDate />
 
           {/* slot timing  */}
+          <div>
+            <div></div>
+            <div></div>
+          </div>
 
           {/* button  */}
           <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
