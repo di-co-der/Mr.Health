@@ -135,7 +135,7 @@ const BookingDetailsPage = () => {
             <p>Total Payable</p>
             <p>₹ 500</p>
           </div>
-          <div className="text-[#25d366] text-center mt-4 bg-[#f0fcf4] py-1.5 inline-flex ml-3 px-2 text-sm font-medium border-2 border-dashed border-[#25d366] rounded-lg">
+          <div className="text-[#25d366] text-center mt-4 bg-[#f0fcf4] py-1 inline-flex ml-3 px-2 text-sm font-normal border border-dashed border-[#25d366] rounded-md">
             You have saved ₹ 49 on this appointment
           </div>
         </div>
@@ -149,9 +149,9 @@ const BookingDetailsPage = () => {
             <img src={Whatsapp} alt="" />
           </label>
         </div>
-        <div className="mb-4 mx-4">
-          <p className="mb-2">Additional Information 1</p>
-          <p>Additional Information 2</p>
+        <div className="mb-4 mx-4 text-[#7a7a7a] text-sm">
+          <p className="mb-2">*Updates will be sent to +91 9876543210</p>
+          <p>*By booking the appointment, you agree to Medico's <span className="underline text-[#00cccc] cursor-pointer">Terms and Conditions</span>. You can also pay for this appointment by selecting offline mode.</p>
         </div>
       </main>
 

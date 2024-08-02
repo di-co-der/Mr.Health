@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+//components
 import Header from "../../../components/common/Header";
 import MapComponent from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/MapComponent";
+
+//data
+import { doctors } from "../../../data/doctors";
+import { userData } from "../../../data/userStories";
+
+//assets
 import mapSvg from "../../../../src/assets/svgs/map.svg";
 import userAvatar from "../../../../src/assets/User_Avatar.jpg";
 import starGroup from "../../../../src/assets/Star Group.jpg";
 import messageIcon from "../../../../src/assets/svgs/messageIcon.svg";
 import like from "../../../../src/assets/svgs/Like.svg";
 import sideArrow from "../../../../src/assets/svgs/Side-arrow.svg";
-import { userData } from "../../../data/userStories";
-import { doctors } from "../../../data/doctors";
-
 
 const BookDoctorPage = () => {
-  //Handle doctor.jsx from data
+  // Get doctorId from URL params
   const { doctorId } = useParams();
   const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
 
@@ -29,7 +34,13 @@ const BookDoctorPage = () => {
 
   //Handle book your slot button
   const handleBookYourSlotClick = (doctorId, doctorName, specialty) => {
-    navigate(`/book-appointment/${specialty}/${doctorName}/${doctorId}/slot`);
+    navigate(
+      `/book-appointment/${specialty
+        .toLowerCase()
+        .replace(/ /g, "-")}/${doctorName
+        .toLowerCase()
+        .replace(/[\s.]+/g, "-")}/${doctorId}/slot`
+    );
   };
 
   //handle user stories
@@ -129,8 +140,8 @@ const BookDoctorPage = () => {
         {/* patient stories */}
         <div className="border-b-[2px] pb-5 mt-3">
           <div className="font-semibold text-[#0086FF] ">Patient Stories</div>
-          <div className="text-[10px] text-[#ff6969] leading-none">
-            These stories represent patient opinions and experiences. They do
+          <div className="text-[10px] text-gray-400 leading-3">
+            *These stories represent patient opinions and experiences. They do
             not reflect the doctor’s medical capabilities.
           </div>
         </div>
@@ -158,50 +169,56 @@ const BookDoctorPage = () => {
 
         {/* user story */}
         <div>
-      {visibleStories.map((user) => (
-        <div key={user.id} className="main-div border-b-2 mt-3 pb-3">
-          <div className="flex justify-between items-center p-2">
-            <div className="flex justify-center items-center gap-4">
-              <div className="avatar">
-                <img src={userAvatar} alt={`${user.username}'s avatar`} />
+          {visibleStories.map((user) => (
+            <div key={user.id} className="main-div border-b-2 mt-3 pb-3">
+              <div className="flex justify-between items-center p-2">
+                <div className="flex justify-center items-center gap-4">
+                  <div className="avatar">
+                    <img src={userAvatar} alt={`${user.username}'s avatar`} />
+                  </div>
+                  <div>
+                    <div className="text-[12px] font-semibold cursor-pointer">
+                      {user.username}
+                    </div>
+                    <div className="text-[12px] text-[#525252]">
+                      {user.posted}
+                    </div>
+                  </div>
+                </div>
+                <div className="rating bg-white">
+                  <img src={starGroup} alt="star rating" />
+                </div>
               </div>
-              <div>
-                <div className="text-[12px] font-semibold cursor-pointer">
-                  {user.username}
-                </div>
-                <div className="text-[12px] text-[#525252]">
-                  {user.posted}
-                </div>
+              <div className={`text-[12px] font-semibold ml-14 p-1`}>
+                {user.title}
+              </div>
+              <div className={`text-[12px] text-[#525252] ml-14 p-1`}>
+                {expandedStories[user.id]
+                  ? user.story
+                  : `${user.story.substring(0, 100)}...`}
+                <button
+                  className="text-blue-500 underline font-medium"
+                  onClick={() => handleReadMoreToggle(user.id)}
+                >
+                  {expandedStories[user.id] ? "Read less" : "Read more"}
+                </button>
               </div>
             </div>
-            <div className="rating bg-white">
-              <img src={starGroup} alt="star rating" />
-            </div>
-          </div>
-          <div className={`text-[12px] font-semibold ml-14 p-1`}>
-            {user.title}
-          </div>
-          <div className={`text-[12px] text-[#525252] ml-14 p-1`}>
-            {expandedStories[user.id] ? user.story : `${user.story.substring(0, 100)}...`}
-            <button
-              className="text-blue-500 underline font-medium"
-              onClick={() => handleReadMoreToggle(user.id)}
+          ))}
+          <div className="flex justify-between items-center border-b-2 mt-3 px-6 pb-3 ">
+            <div
+              className="text-[12px] text-[#0086FF] cursor-pointer font-medium"
+              onClick={handleShowAll}
             >
-              {expandedStories[user.id] ? 'Read less' : 'Read more'}
-            </button>
+              {showAll
+                ? "Hide stories"
+                : `Read all stories (${userData.length})`}
+            </div>
+            <div className="text-[12px] cursor-pointer font-medium">
+              Share Your Story
+            </div>
           </div>
         </div>
-      ))}
-      <div className="flex justify-between items-center border-b-2 mt-3 px-6 pb-3 ">
-        <div
-          className="text-[12px] text-[#0086FF] cursor-pointer font-medium"
-          onClick={handleShowAll}
-        >
-          {showAll ? 'Hide stories' : `Read all stories (${userData.length})`}
-        </div>
-        <div className="text-[12px] cursor-pointer font-medium">Share Your Story</div>
-      </div>
-    </div>
 
         {/* more about doctor  */}
         <div>

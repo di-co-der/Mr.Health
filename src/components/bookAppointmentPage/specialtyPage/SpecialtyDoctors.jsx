@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { doctors } from "../../../data/doctors";
+
+//components
 import Header from "../../common/Header";
 import SearchBar from "../../common/SearchBar";
 import LocationDropdown from "../LocationDropdown";
 import FilterBar from "./FilterBar";
 import DoctorCard from "./DoctorCard";
 import NoDoctorCard from "./NoDoctorCard";
+
+//data
+import { doctors } from "../../../data/doctors";
 
 const SpecialtyDoctorsPage = ({ specialty, title }) => {
   const locations = [

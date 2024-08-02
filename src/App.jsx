@@ -24,7 +24,6 @@ import MentalWellnessPage from "./pages/homepage/bookAppointment/categories/Ment
 
 import BookDoctorPage from "./pages/homepage/bookAppointment/BookDoctorPage";
 import BookingDetailsPage from "./pages/homepage/bookAppointment/BookingDetailsPage";
-import BookingDetailsPage2 from "./pages/homepage/bookAppointment/BookingDetailsPage2";
 import BookSlotsPage from "./pages/homepage/bookAppointment/BookSlotsPage";
 import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
 import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
@@ -86,10 +85,6 @@ const App = () => {
           <Route
             path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking"
             element={<BookingDetailsPage />}
-          />
-          <Route
-            path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking2"
-            element={<BookingDetailsPage2 />}
           />
           <Route
             path="/book-appointment/:specialty/:doctorName/:doctorId/slot/booking/payment"

@@ -1,19 +1,33 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
+//components
 import Header from "../../../components/common/Header";
 import DoctorCard from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/DoctorCard";
 import SlotDate from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/SlotDate";
 
+//data
+import { doctors } from "../../../data/doctors";
+
 function BookSlotsPage() {
-  
-  //Handle MyAppointment
+  // Get doctorId, specialty, doctorName from URL params
+  const { doctorId, specialty, doctorName } = useParams();
+
+  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
+
+  if (!doctor) {
+    return <div>Doctor not found!</div>;
+  }
+
   const navigate = useNavigate();
+
+  //Handle MyAppointment
   const handleAppointmentClick = () => {
     navigate("/my-appointments");
   };
 
   //Handle confirm booking button
-  const handleBookingClick = (doctorId, doctorName, specialty) => {
+  const handleBookingClick = () => {
     navigate(
       `/book-appointment/${specialty}/${doctorName}/${doctorId}/slot/booking`
     );

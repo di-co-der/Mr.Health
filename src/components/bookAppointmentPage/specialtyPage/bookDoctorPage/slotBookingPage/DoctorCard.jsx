@@ -1,7 +1,11 @@
 import React from "react";
-import blueMapIcon from "../../../../../assets/blue_map_icon.jpg";
 import { useParams } from "react-router-dom";
+
+//data
 import { doctors } from "../../../../../data/doctors";
+
+//assets
+import blueMapIcon from "../../../../../assets/blue_map_icon.jpg";
 
 function DoctorCard() {
   //Handle doctor.jsx from data
