@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+
+//components
 import SlotCard from "./SlotCard";
 import SlotTiming from "./SlotTiming";
 

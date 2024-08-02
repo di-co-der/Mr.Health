@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 //data
-import { doctors } from "../../../../../data/doctors";
+import { doctors } from "../../../../../data/doctors.jsx";
 
 //assets
-import blueMapIcon from "../../../../../assets/blue_map_icon.jpg";
+import Location from "../../../../../assets/svgs/Location.svg";
 
 function DoctorCard() {
   //Handle doctor.jsx from data
@@ -17,26 +17,23 @@ function DoctorCard() {
   }
 
   return (
-    <div className="flex justify-center items-center p-2 gap-28 border-b-[1px]">
-      <div className="flex justify-center items-center gap-3">
+    <div className="">
+      <div className="flex items-center mt-3 mb-4 mx-4">
         <img
+          className="rounded-full mr-4 w-12 h-12"
           src={doctor.image}
-          alt="doctor image"
-          className="rounded-full h-[60px] w-[60px]"
+          alt="Doctor"
         />
         <div>
-          <div className="text-[18px] font-medium">{doctor.name}</div>
-          <div className="text-[14px] text-[#525252]">{doctor.specialty}</div>
+          <h3 className="text-lg font-medium">{doctor.name}</h3>
+          <p className="text-gray-500">{doctor.specialty}</p>
+        </div>
+        <div className="ml-auto">
+          <img src={Location} className="mx-auto" alt="" />
+          <div className="text-blue-500 font-medium">{doctor.location}</div>
         </div>
       </div>
-      <div>
-        <div className="p-2">
-          <img src={blueMapIcon}></img>
-        </div>
-        <div className="text-[#0086FF] font-semibold text-[12px] text-center text-nowrap">
-          {doctor.location}
-        </div>
-      </div>
+      <div className="border-b border-gray-300 mb-4 mx-4"></div>
     </div>
   );
 }

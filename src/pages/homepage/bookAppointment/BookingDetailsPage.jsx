@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../../components/common/Header";
 
-// import doctor from "../../../data/doctors";
+import { doctors } from "../../../data/doctors";
 
 //assets
 import Location from "../../../assets/svgs/Location.svg";
@@ -14,14 +14,11 @@ import Whatsapp from "../../../assets/svgs/Whatsapp.svg";
 
 const BookingDetailsPage = () => {
   const { specialty, doctorName, doctorId } = useParams();
+  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
 
-  const doctor = {
-    id: doctorId,
-    name: doctorName,
-    specialty: specialty,
-    image: "https://via.placeholder.com/50",
-    distance: "589 m",
-  };
+  if (!doctor) {
+    return <div>Doctor not found!</div>;
+  }
 
   const navigate = useNavigate();
 
@@ -52,12 +49,12 @@ const BookingDetailsPage = () => {
             alt="Doctor"
           />
           <div>
-            <h3 className="text-lg font-medium">Dr. {doctor.name}</h3>
+            <h3 className="text-lg font-medium">{doctor.name}</h3>
             <p className="text-gray-500">{doctor.specialty}</p>
           </div>
           <div className="ml-auto">
             <img src={Location} className="mx-auto" alt="" />
-            <div className="text-blue-500 font-medium">{doctor.distance}</div>
+            <div className="text-blue-500 font-medium">{doctor.location}</div>
           </div>
         </div>
         <div className="border-b border-gray-300 mb-4 mx-4"></div>
@@ -115,7 +112,7 @@ const BookingDetailsPage = () => {
           <div className=" pl-3 text-[#7a7a7a]">
             <div className="flex justify-between mt-2">
               <p>Consultation Fee</p>
-              <p>₹ 500</p>
+              <p>{doctor.fees}</p>
             </div>
             <div className="flex justify-between mt-2">
               <p className="flex items-center gap-2">
@@ -133,7 +130,7 @@ const BookingDetailsPage = () => {
 
           <div className="flex justify-between mt-2 font-medium pl-3">
             <p>Total Payable</p>
-            <p>₹ 500</p>
+            <p>{doctor.fees}</p>
           </div>
           <div className="text-[#25d366] text-center mt-4 bg-[#f0fcf4] py-1 inline-flex ml-3 px-2 text-sm font-normal border border-dashed border-[#25d366] rounded-md">
             You have saved ₹ 49 on this appointment
@@ -158,7 +155,7 @@ const BookingDetailsPage = () => {
       <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-2 pb-3 px-8 bg-[#fafafa]">
         <div className="flex justify-start items-center gap-3 font-medium mb-2">
           <p className="text-[#8f8f8f] text-sm">Total amount</p>
-          <p className="text-lg text-[#3d3d3d]">₹ 500</p>
+          <p className="text-lg text-[#3d3d3d]">{doctor.fees}</p>
         </div>
         <button
           className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
