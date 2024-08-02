@@ -5,7 +5,7 @@ import DoctorCard from "../../../components/bookAppointmentPage/specialtyPage/bo
 import SlotDate from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/SlotDate";
 
 function BookSlotsPage() {
-  
+
   //Handle MyAppointment
   const navigate = useNavigate();
   const handleAppointmentClick = () => {
@@ -39,10 +39,6 @@ function BookSlotsPage() {
           <SlotDate />
 
           {/* slot timing  */}
-          <div>
-            <div></div>
-            <div></div>
-          </div>
 
           {/* button  */}
           <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
