@@ -150,7 +150,7 @@ function ConfirmationPage() {
           </div>
         </div>
 
-        <div className="pl-4 py-5  mb-24 flex items-start gap-4">
+        <div className="pl-4 py-5  pb-24 flex items-start gap-4">
           <img src={NeedHelp} className="pt-1" alt="" />
           <div className="">
             <h3 className="text-lg font-semibold">Need Help ?</h3>
