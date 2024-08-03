@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MyAppointments from "./pages/MyAppointments";
+import NotFoundPage from "./pages/NotFoundPage";
 
 import BookAppointmentPage from "./pages/homepage/BookAppointmentPage";
 import OnlineConsultation from "./pages/homepage/OnlineConsultation";
@@ -13,6 +14,8 @@ import InsurancePlans from "./pages/homepage/InsurancePlans";
 // import { doctors } from "./data/doctors";
 // import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
 
+
+//BookAppointment
 import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
 import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
 import SkinHairPage from "./pages/homepage/bookAppointment/categories/SkinHairPage";
@@ -28,7 +31,17 @@ import BookSlotsPage from "./pages/homepage/bookAppointment/BookSlotsPage";
 import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
 import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
 
-import NotFoundPage from "./pages/NotFoundPage";
+//BookAppointment
+import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage"
+import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage"
+import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage"
+import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage"
+import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage"
+import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage"
+import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage"
+import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage"
+
+
 
 // Any Alternate and Better Routing Structure ?
 
@@ -96,6 +109,40 @@ const App = () => {
           />
 
           <Route path="/online-consultation" element={<OnlineConsultation />} />
+          <Route
+            path="/online-consultation/stomach-pain"
+            element={<StomachPage />}
+          />
+          <Route
+            path="/online-consultation/acidity"
+            element={<AcidityPage />}
+          />
+          <Route
+            path="/online-consultation/bone-joints"
+            element={<BonePage />}
+          />
+          <Route
+            path="/online-consultation/pimples-acne"
+            element={<PimplesPage />}
+          />
+          <Route
+            path="/online-consultation/stress"
+            element={<StressPage />}
+          />
+          <Route
+            path="/online-consultation/fever"
+            element={<FeverPage />}
+          />
+          <Route
+            path="/online-consultation/bp"
+            element={<BPPage />}
+          />
+          <Route
+            path="/online-consultation/pregnancy"
+            element={<PregnancyPage />}
+          />
+
+
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
           <Route path="/discover-hospitals" element={<DiscoverHospitals />} />

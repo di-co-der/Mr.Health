@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
+//components
 import Header from "../../components/common/Header";
 import LocationDropdown from "../../components/bookAppointmentPage/LocationDropdown";
 import SearchBar from "../../components/common/SearchBar";
