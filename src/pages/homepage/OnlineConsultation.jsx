@@ -136,7 +136,8 @@ const OnlineConsultation = () => {
           categories={categories}
           onCategoryClick={handleCategoryClick}
         />
-        <NearbyDoctors doctors={doctorsNearby} />
+        {/* <NearbyDoctors doctors={doctorsNearby} /> */}
+        <div className="pb-4"></div>
       </div>
     </div>
   );
