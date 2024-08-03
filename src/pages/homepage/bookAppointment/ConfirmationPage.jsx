@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { BiClinic } from "react-icons/bi";
 
 //components
 import Header from "../../../components/common/Header";
@@ -119,13 +120,13 @@ function ConfirmationPage() {
 
               <div className="border border-gray-300 mb-4"></div>
 
-              {/* <div className="text-gray-500 mb-1"></div> */}
               <div className="flex gap-2 text-sm mb-1">
-                  <img src={Clinic} alt="" className="pt-0.5" />
+                  {/* <img src={Clinic} alt="" className="pt-0.5" /> */}
+                  <BiClinic className="text-[#7a7a7a] my-auto w-4 h-4" />
                   <p className="text-[#7a7a7a]">Clinic's Details</p>
                 </div>
 
-              <div className="text-gray-900 font-medium">{doctor.map}</div>
+              <div className="text-gray-900 font-medium pl-6">{doctor.map}</div>
               <div className="mt-2">
                 <div className="">
                   <div className="flex justify-center items-center gap-3 -z-10">
@@ -152,7 +153,7 @@ function ConfirmationPage() {
           </div>
         </div>
 
-        <div className="pl-4 py-5  mb-20 flex items-start gap-4">
+        <div className="pl-4 py-5  mb-24 flex items-start gap-4">
           <img src={NeedHelp} className="pt-1" alt="" />
           <div className="">
             <h3 className="text-lg font-semibold">Need Help ?</h3>
