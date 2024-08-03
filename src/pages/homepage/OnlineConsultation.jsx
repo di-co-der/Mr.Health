@@ -7,7 +7,7 @@ import Header from "../../components/common/Header";
 import SearchBar from "../../components/common/SearchBar";
 // import ConsultedDoctor from "../../components/onlineConsultationPage/ConsultedDoctor";
 import UploadReports from "../../components/onlineConsultationPage/UploadReports";
-import NearbyDoctors from "../../components/onlineConsultationPage/NearbyDoctors";
+// import NearbyDoctors from "../../components/onlineConsultationPage/NearbyDoctors";
 import CategoryList2 from "../../components/onlineConsultationPage/CategoryList2";
 import CategoryList from "../../components/bookAppointmentPage/CategoryList";
 

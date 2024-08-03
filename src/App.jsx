@@ -32,14 +32,14 @@ import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
 import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
 
 //BookAppointment
-import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage"
-import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage"
-import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage"
-import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage"
-import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage"
-import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage"
-import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage"
-import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage"
+// import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage"
+// import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage"
+// import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage"
+// import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage"
+// import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage"
+// import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage"
+// import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage"
+// import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage"
 
 
 
@@ -109,7 +109,7 @@ const App = () => {
           />
 
           <Route path="/online-consultation" element={<OnlineConsultation />} />
-          <Route
+          {/* <Route
             path="/online-consultation/stomach-pain"
             element={<StomachPage />}
           />
@@ -140,7 +140,7 @@ const App = () => {
           <Route
             path="/online-consultation/pregnancy"
             element={<PregnancyPage />}
-          />
+          /> */}
 
 
           <Route path="/get-medicines" element={<GetMedicines />} />

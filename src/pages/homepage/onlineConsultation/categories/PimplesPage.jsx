@@ -1,10 +1,10 @@
-import React from "react";
+// import React from "react";
 
-//components
-import SpecialtyDoctorsPage from "../../../../components/bookAppointmentPage/specialtyPage/SpecialtyDoctors";
+// //components
+// import SpecialtyDoctorsPage from "../../../../components/bookAppointmentPage/specialtyPage/SpecialtyDoctors";
 
-const PimplesPage = () => {
-  return <SpecialtyDoctorsPage specialty="Dermatologist" title="Pimples & Acne" />;
-};
+// const PimplesPage = () => {
+//   return <SpecialtyDoctorsPage specialty="Dermatologist" title="Pimples & Acne" />;
+// };
 
-export default PimplesPage;
+// export default PimplesPage;
