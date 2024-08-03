@@ -54,27 +54,13 @@ function ConfirmationPage() {
         <div className=" pt-6 px-4 pb-6 border-b-4">
           <div className="flex items-center justify-center mb-4 text-[#25d366]">
             <div className="flex items-center justify-center rounded-full ">
-              {/* <svg
-                className="h-6 w-6 text-[#25d366]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 13l4 4L19 7"
-                ></path>
-              </svg> */}
               <img src={Tick} alt="" />
             </div>
             <span className="ml-3 text-lg font-semibold">
               Appointment Confirmed
             </span>
           </div>
-          <p className="text-center text-gray-700 mb-6 px-12 text-sm">
+          <p className="text-center text-gray-700 mb-6 px-8 text-sm">
             Your Appointment ID is <strong>11001</strong>. We have also sent the
             details of your appointment on your registered phone number.
           </p>
@@ -98,13 +84,11 @@ function ConfirmationPage() {
               <div className="border border-gray-300 mb-4"></div>
 
               <div className="flex justify-between items-center mb-3">
-
                 <div>
-                <div className="flex gap-2 text-sm mb-1">
-                  <img src={BookingUser} alt="" />
-                  <p className="text-[#7a7a7a]">
-                    Doctor's Name</p>
-                </div>
+                  <div className="flex gap-2 text-sm mb-1">
+                    <img src={BookingUser} alt="" />
+                    <p className="text-[#7a7a7a]">Doctor's Name</p>
+                  </div>
                   <div className="text-gray-900 pl-6 font-semibold flex items-center text-lg">
                     {doctor.name}
                   </div>
@@ -119,9 +103,9 @@ function ConfirmationPage() {
               <div className="border border-gray-300 mb-4"></div>
 
               <div className="flex gap-2 text-sm mb-1">
-                  <BiClinic className="text-[#7a7a7a] my-auto w-4 h-4" />
-                  <p className="text-[#7a7a7a]">Clinic's Details</p>
-                </div>
+                <BiClinic className="text-[#7a7a7a] my-auto w-4 h-4" />
+                <p className="text-[#7a7a7a]">Clinic's Details</p>
+              </div>
 
               <div className="text-gray-900 font-medium pl-6">{doctor.map}</div>
               <div className="mt-2">
@@ -137,13 +121,19 @@ function ConfirmationPage() {
             </div>
 
             <div className="flex space-x-12">
-              <button className="flex-1 text-[#7a7a7a] border-2 border-[#7a7a7a] py-2 rounded-lg">
+              <button
+                className="flex-1 text-[#7a7a7a] border-2 border-[#7a7a7a] py-2 rounded-lg"
+                //         onClick={handleCancelClick}
+              >
                 <div className="flex justify-center items-center gap-2">
-                <img src={Cross} alt="" className="" />
-                <p>Cancel</p>
+                  <img src={Cross} alt="" className="" />
+                  <p>Cancel</p>
                 </div>
               </button>
-              <button className="flex-1 border-2 border-[#0086ff] text-[#0086ff] py-2 rounded-lg transition-all hover:bg-[#0086ff] hover:text-white">
+              <button
+                className="flex-1 border-2 border-[#0086ff] text-[#0086ff] py-2 rounded-lg transition-all hover:bg-[#0086ff] hover:text-white"
+                //         onClick={handleRescheduleClick}
+              >
                 Reschedule
               </button>
             </div>
