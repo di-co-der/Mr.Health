@@ -1,7 +1,6 @@
 import React from "react";
 
 //assets
-import ClinicCardLogo from "../../../../../../../assets/ClinicCardLogo.png";
 import { FaClinicMedical } from "react-icons/fa";
 
 const ClinicInfo = () => (
@@ -9,13 +8,7 @@ const ClinicInfo = () => (
     <h2 className="text-lg font-semibold mb-2">Clinic Information</h2>
     <div className="flex flex-col space-y-2">
       <div className="flex items-center">
-        {/* <img
-          src={ClinicCardLogo}
-          alt="Clinic Location"
-          className="h-14 mr-2 rounded-full"
-        /> */}
         <FaClinicMedical className="h-8 w-8 mr-4" />
-
         <div>
           <p className="font-medium">HealthCare Clinic</p>
           <p className="text-sm text-gray-600">123 Sadar Bazaar, Agra</p>

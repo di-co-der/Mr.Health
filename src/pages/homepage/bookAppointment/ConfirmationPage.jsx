@@ -10,12 +10,10 @@ import MapComponent from "../../../components/bookAppointmentPage/specialtyPage/
 import { doctors } from "../../../data/doctors";
 
 //assets
-// import mapSvg from "../../../../src/assets/svgs/map.svg";
 import NeedHelp from "../../../assets/svgs/NeedHelp.svg";
 import BookingTimeIcon from "../../../assets/svgs/BookingTimeIcon.svg";
 import BookingUser from "../../../assets/svgs/BookingUser.svg";
 import Tick from "../../../assets/svgs/Tick.svg";
-import Clinic from "../../../assets/svgs/Clinic.svg";
 import Cross from "../../../assets/svgs/Cross.svg";
 
 function ConfirmationPage() {
@@ -121,7 +119,6 @@ function ConfirmationPage() {
               <div className="border border-gray-300 mb-4"></div>
 
               <div className="flex gap-2 text-sm mb-1">
-                  {/* <img src={Clinic} alt="" className="pt-0.5" /> */}
                   <BiClinic className="text-[#7a7a7a] my-auto w-4 h-4" />
                   <p className="text-[#7a7a7a]">Clinic's Details</p>
                 </div>

@@ -1,7 +1,11 @@
 // SlotTiming.jsx
-import React from "react";
+import React, { useState } from "react";
 
 function SlotTiming({ currentSlots }) {
+
+  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+
   const slotTimes = [
     "11:00 AM", "11:10 AM", "11:20 AM", "11:30 AM", "11:40 AM","11:50 AM", 
     "12:00 PM", "12:10 PM", "12:20 PM", "12:30 PM", "12:40 PM", "12:50 PM",
@@ -16,12 +20,20 @@ function SlotTiming({ currentSlots }) {
     "09:00 PM", "09:10 PM", "09:20 PM", "09:30 PM", "09:40 PM", "09:50 PM",
   ];
 
+  const handleSlotClick = (currentSlots, time) => {
+    setSelectedSlot( selectedSlot );
+    setSelectedTime(time);
+  };
+
   return (
-    <div className="grid grid-cols-3 gap-4 p-4 mb-16">
+    <div className="flex flex-wrap gap-4 p-4 m-2 mb-16 ">
       {slotTimes.slice(0, currentSlots).map((time, index) => (
         <button
           key={index}
-          className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+          className={`py-2 px-4 rounded-lg border-[1px]  cursor-pointer ${
+            selectedTime === time ? "bg-[#E6FAFA] border-[#00CCCC]" : "border-gray-400"
+          }`}
+          onClick={() => handleSlotClick(currentSlots, time)}
         >
           {time}
         </button>
