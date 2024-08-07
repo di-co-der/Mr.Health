@@ -249,15 +249,16 @@ const BookDoctorPage = () => {
         </div>
 
         {/* button */}
-        <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
+        <footer className="fixed bottom-0 inset-x-0 flex justify-center gap-5 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 bg-[#fafafa]">
           <button
-            className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+            className="bg-[#0086ff] text-white py-2 px-6 rounded-lg hover:bg-[#0080ee]"
             onClick={() =>
               handleBookYourSlotClick(doctor.id, doctor.name, doctor.specialty)
             }
           >
-            Proceed To Book Your Slot
+            Reserve A Slot
           </button>
+          <button className="bg-[#e76161] text-white py-2 px-6 rounded-lg hover:bg-[#d65757]">Consult Now</button>
         </footer>
       </div>
     </div>
