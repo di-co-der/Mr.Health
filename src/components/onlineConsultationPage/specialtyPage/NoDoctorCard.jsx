@@ -7,7 +7,7 @@ const NoDoctorCard = () => {
     const navigate = useNavigate();
 
     const handleBookAppointment = () => {
-      navigate("/book-appointment");
+      navigate("/online-consultation");
     };
   return (
     <motion.div
