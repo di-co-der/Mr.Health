@@ -25,7 +25,7 @@ const LocationDropdown = ({ locations, defaultLocation }) => {
   }, []);
 
   return (
-    <div className="px-4 pt-4 relative z-11" ref={dropdownRef}>
+    <div className="px-4 pt-4 relative z-50" ref={dropdownRef}>
       <div
         className="text-sm font-semibold"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}

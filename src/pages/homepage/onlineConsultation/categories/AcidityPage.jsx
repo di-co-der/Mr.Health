@@ -1,32 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 //components
-import Header from "../../../../components/common/Header";
+import SpecialtyDoctorsPage from "../../../../components/onlineConsultationPage/specialtyPage/SpecialtyDoctors";
 
-function AcidityPage() {
-  const navigate = useNavigate();
-
-  const handleBack = () => {
-    navigate(-1);
-  };
-
-  const handleAppointmentClick = () => {
-    navigate("/my-appointments");
-  };
-
-  return (
-    <div className="max-w-sm bg-gray-100 min-h-screen mx-auto">
-      <Header title="Acidity Page" onClick={handleAppointmentClick} />
-      <h1 className="pt-10 pl-10"></h1>
-      <div
-        className="rounded-xl bg-yellow-500 p-4 mt-80 mx-10 cursor-pointer text-center"
-        onClick={handleBack}
-      >
-        See another one for now
-      </div>
-    </div>
-  );
-}
+const AcidityPage = () => {
+  return <SpecialtyDoctorsPage specialty="acidity" title="Acidity Page" />;
+};
 
 export default AcidityPage;

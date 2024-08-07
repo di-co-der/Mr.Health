@@ -581,4 +581,43 @@ export const doctors = [
     mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
+  {
+    id: 31,
+    name: "Dr. Ryan Blue",
+    specialty: "Stomach",
+    image:
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+    rating: 91,
+    stories: 1100,
+    experience: "11 Years",
+    fees: "₹920",
+    location: "5.8 Km",
+    nextSlot: "29 Sept",
+    open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapImage },
+    coordinates: [40.7128, -74.006],
+  },
+  {
+    id: 32,
+    name: "Dr. Ryan Blue",
+    specialty: "Bp",
+    image:
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+    rating: 91,
+    stories: 1100,
+    experience: "11 Years",
+    fees: "₹920",
+    location: "5.8 Km",
+    nextSlot: "29 Sept",
+    open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    mapImage: { mapImage },
+    coordinates: [40.7128, -74.006],
+  },
 ];
+
