@@ -63,7 +63,7 @@ const SpecialtyDoctorsPage = ({ specialty, title }) => {
 
   const handleDoctorClick = (doctorId, doctorName) => {
     navigate(
-      `/book-appointment/${specialty
+      `/online-consultation/${specialty
         .toLowerCase()
         .replace(/ /g, "-")}/${doctorName
         .toLowerCase()

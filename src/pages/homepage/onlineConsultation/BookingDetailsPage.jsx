@@ -31,7 +31,7 @@ const BookingDetailsPage = () => {
 
   const handlePaymentClick = () => {
     navigate(
-      `/book-appointment/${doctor.specialty
+      `/online-consultation/${doctor.specialty
         .toLowerCase()
         .replace(/ /g, "-")}/${doctor.name
         .toLowerCase()

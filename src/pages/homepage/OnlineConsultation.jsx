@@ -9,7 +9,7 @@ import SearchBar from "../../components/common/SearchBar";
 import UploadReports from "../../components/onlineConsultationPage/UploadReports";
 // import NearbyDoctors from "../../components/onlineConsultationPage/NearbyDoctors";
 import CategoryList2 from "../../components/onlineConsultationPage/CategoryList2";
-import CategoryList from "../../components/bookAppointmentPage/CategoryList";
+import CategoryList from "../../components/onlineConsultationPage/CategoryList";
 
 // assets
 import stomachPainIcon from "../../assets/svgs/stomachPainIcon.svg";
@@ -29,8 +29,8 @@ import womensHealthIcon from "../../assets/womens_health.png";
 import childSpecialistIcon from "../../assets/child_specialist.png";
 import sexualDisordersIcon from "../../assets/sexual_disorders.png";
 import mentalWellnessIcon from "../../assets/mental_wellness.png";
-import doctorImage from "../../assets/doctor_image_url.png";
-import doctorImage2 from "../../assets/doctor_image2_url.png";
+// import doctorImage from "../../assets/doctor_image_url.png";
+// import doctorImage2 from "../../assets/doctor_image2_url.png";
 
 const OnlineConsultation = () => {
 
@@ -56,24 +56,24 @@ const OnlineConsultation = () => {
     { name: "Mental Wellness", icon: mentalWellnessIcon },
   ];
 
-  const doctorsNearby = [
-    {
-      name: "Doctor Nearby 1",
-      image: doctorImage,
-    },
-    {
-      name: "Doctor Nearby 2",
-      image: doctorImage2,
-    },
-    {
-      name: "Doctor Nearby 1",
-      image: doctorImage,
-    },
-    {
-      name: "Doctor Nearby 2",
-      image: doctorImage2,
-    },
-  ];
+  // const doctorsNearby = [
+  //   {
+  //     name: "Doctor Nearby 1",
+  //     image: doctorImage,
+  //   },
+  //   {
+  //     name: "Doctor Nearby 2",
+  //     image: doctorImage2,
+  //   },
+  //   {
+  //     name: "Doctor Nearby 1",
+  //     image: doctorImage,
+  //   },
+  //   {
+  //     name: "Doctor Nearby 2",
+  //     image: doctorImage2,
+  //   },
+  // ];
 
   const navigate = useNavigate();
 

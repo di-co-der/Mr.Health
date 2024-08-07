@@ -14,7 +14,6 @@ import InsurancePlans from "./pages/homepage/InsurancePlans";
 // import { doctors } from "./data/doctors";
 // import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
 
-
 //BookAppointment
 import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
 import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
@@ -31,16 +30,21 @@ import BookSlotsPage from "./pages/homepage/bookAppointment/BookSlotsPage";
 import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
 import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
 
-//BookAppointment
-import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage"
-import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage"
-import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage"
-import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage"
-import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage"
-import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage"
-import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage"
-import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage"
+//OnlineConsultation
+import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage";
+import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage";
+import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage";
+import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage";
+import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage";
+import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage";
+import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage";
+import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage";
 
+import BookDoctorPage2 from "./pages/homepage/onlineConsultation/BookDoctorPage";
+import BookingDetailsPage2 from "./pages/homepage/onlineConsultation/BookingDetailsPage";
+import BookSlotsPage2 from "./pages/homepage/onlineConsultation/BookSlotsPage";
+import PaymentPage2 from "./pages/homepage/onlineConsultation/PaymentPage";
+import ConfirmationPage2 from "./pages/homepage/onlineConsultation/ConfirmationPage";
 
 
 // Any Alternate and Better Routing Structure ?
@@ -52,6 +56,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/my-appointments" element={<MyAppointments />} />
+
+          {/* Book Appointment */}
 
           <Route path="/book-appointment" element={<BookAppointmentPage />} />
           {/* <Route path="/book-appointment/:specialty" element={<SpecialtyDoctorsPage />} /> */}
@@ -108,6 +114,8 @@ const App = () => {
             element={<ConfirmationPage />}
           />
 
+          {/* Online Consultation */}
+
           <Route path="/online-consultation" element={<OnlineConsultation />} />
           <Route
             path="/online-consultation/stomach-pain"
@@ -125,23 +133,34 @@ const App = () => {
             path="/online-consultation/pimples-acne"
             element={<PimplesPage />}
           />
-          <Route
-            path="/online-consultation/stress"
-            element={<StressPage />}
-          />
-          <Route
-            path="/online-consultation/fever"
-            element={<FeverPage />}
-          />
-          <Route
-            path="/online-consultation/bp"
-            element={<BPPage />}
-          />
+          <Route path="/online-consultation/stress" element={<StressPage />} />
+          <Route path="/online-consultation/fever" element={<FeverPage />} />
+          <Route path="/online-consultation/bp" element={<BPPage />} />
           <Route
             path="/online-consultation/pregnancy"
             element={<PregnancyPage />}
           />
 
+<Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId"
+            element={<BookDoctorPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot"
+            element={<BookSlotsPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking"
+            element={<BookingDetailsPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking/payment"
+            element={<PaymentPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking/payment/confirmation"
+            element={<ConfirmationPage2 />}
+          />
 
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />

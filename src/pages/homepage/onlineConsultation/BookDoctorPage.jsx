@@ -35,7 +35,7 @@ const BookDoctorPage = () => {
   //Handle book your slot button
   const handleBookYourSlotClick = (doctorId, doctorName, specialty) => {
     navigate(
-      `/book-appointment/${specialty
+      `/online-consultation/${specialty
         .toLowerCase()
         .replace(/ /g, "-")}/${doctorName
         .toLowerCase()

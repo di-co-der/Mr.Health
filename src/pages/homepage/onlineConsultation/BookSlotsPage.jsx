@@ -29,7 +29,7 @@ function BookSlotsPage() {
   //Handle confirm booking button
   const handleBookingClick = () => {
     navigate(
-      `/book-appointment/${specialty}/${doctorName}/${doctorId}/slot/booking`
+      `/online-consultation/${specialty}/${doctorName}/${doctorId}/slot/booking`
     );
   };
 

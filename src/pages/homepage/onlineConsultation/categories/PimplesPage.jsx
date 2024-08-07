@@ -1,7 +1,7 @@
 import React from "react";
 
 //components
-import SpecialtyDoctorsPage from "../../../../components/bookAppointmentPage/specialtyPage/SpecialtyDoctors";
+import SpecialtyDoctorsPage from "../../../../components/onlineConsultationPage/specialtyPage/SpecialtyDoctors";
 
 const PimplesPage = () => {
   return <SpecialtyDoctorsPage specialty="Dermatologist" title="Pimples & Acne" />;
