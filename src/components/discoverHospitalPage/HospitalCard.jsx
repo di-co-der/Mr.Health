@@ -31,11 +31,11 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
             <h3 className="text-lg font-semibold leading-5 pb-1 truncate-two-lines">
               {hospital.name}
             </h3>
-            <p className="text-gray-600 text-sm leading-4 truncate-two-lines">
+            <p className="text-gray-600 text-sm leading-4 pb-0.5 truncate-two-lines">
               {hospital.address}
             </p>
             <div className="flex items-center my-2">
-            <StarRating rating={hospital.rating} /> {/* Use the StarRating component */}
+            <StarRating rating={hospital.rating} /> 
             <span className="ml-2 text-gray-500 font-medium text-sm italic">({hospital.rating})</span>            </div>
           </div>
         </div>

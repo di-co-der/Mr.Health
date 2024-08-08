@@ -19,9 +19,9 @@ const DiscoverHospitals = () => {
   const filters = [
     "24/7 Open",
     "Within 5 Km",
+    // "Free",
     "Endocrinology Test",
     "Diagnostic",
-    // Add more filters as needed
   ];
 
   const filteredHospitals = hospitals.filter((hospital) => {
