@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 //components
 import Header from "../../components/common/Header";
@@ -37,11 +38,16 @@ const DiscoverHospitals = () => {
 
   const handleFilterSelect = (filters) => setSelectedFilters(filters);
 
+  const navigate = useNavigate();
+  const handleAppointmentClick = () => {
+    navigate("/my-appointments");
+  };
+
   return (
     <div className="pb-4 max-w-sm mx-auto min-h-screen flex justify-center">
       <div className="max-w-sm w-full">
         <header className="pt-12">
-          <Header title="Discover Hospitals" />
+          <Header title="Discover Hospitals" onClick={handleAppointmentClick} />
         </header>
 
         <LocationDropdown
@@ -59,13 +65,17 @@ const DiscoverHospitals = () => {
 
         <FilterBar
           filters={filters}
-          selectedFilters={selectedFilters} 
-          onFilterSelect={handleFilterSelect} 
+          selectedFilters={selectedFilters}
+          onFilterSelect={handleFilterSelect}
         />
 
         {filteredHospitals.length > 0 ? (
           filteredHospitals.map((hospital) => (
-            <HospitalCard key={hospital.id} hospital={hospital}  highlightedFilters={selectedFilters} />
+            <HospitalCard
+              key={hospital.id}
+              hospital={hospital}
+              highlightedFilters={selectedFilters}
+            />
           ))
         ) : (
           <NoHospitalCard />
