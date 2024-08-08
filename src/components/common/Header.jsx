@@ -14,7 +14,7 @@ const Header = ({ title , onClick }) => {
   };
 
   return (
-    <div className="z-20 fixed inset-x-0 top-0 flex items-center justify-between p-4 bg-white">
+    <div className="z-[100] fixed inset-x-0 top-0 flex items-center justify-between p-4 bg-white">
       <button
         onClick={handleBack}
         className={`text-3xl hover:scale-x-110 transition-all ${

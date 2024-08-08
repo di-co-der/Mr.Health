@@ -46,6 +46,8 @@ import BookSlotsPage2 from "./pages/homepage/onlineConsultation/BookSlotsPage";
 import PaymentPage2 from "./pages/homepage/onlineConsultation/PaymentPage";
 import ConfirmationPage2 from "./pages/homepage/onlineConsultation/ConfirmationPage";
 
+//DiscoverHospitals
+import BookHospitalPage from "./pages/homepage/discoverHospital/BookHospitalPage";
 
 // Any Alternate and Better Routing Structure ?
 
@@ -141,7 +143,7 @@ const App = () => {
             element={<PregnancyPage />}
           />
 
-<Route
+          <Route
             path="/online-consultation/:specialty/:doctorName/:doctorId"
             element={<BookDoctorPage2 />}
           />
@@ -162,9 +164,16 @@ const App = () => {
             element={<ConfirmationPage2 />}
           />
 
+          {/* discover hospitals */}
+
+          <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
+          <Route
+            path="/discover-hospitals/hospitals"
+            element={<BookHospitalPage />}
+          />
+
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
-          <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
           <Route path="/insurance-plans" element={<InsurancePlans />} />
 
           <Route path="*" element={<NotFoundPage />} />
