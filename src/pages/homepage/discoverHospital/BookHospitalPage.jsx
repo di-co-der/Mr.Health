@@ -221,7 +221,7 @@ function BookHospitalPage() {
           </div>
 
           {/* button */}
-          <footer className="fixed bottom-0 inset-x-0 flex justify-between border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-4 bg-[#fafafa]">
+          <footer className="fixed bottom-0 inset-x-0 flex justify-between border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-4 bg-[#fafafa] z-[10000]">
             <button
               className="bg-[#25d366] font-normal flex items-center gap-2 text-white px-4 py-2 rounded-2xl"
               onClick={handleCall}
