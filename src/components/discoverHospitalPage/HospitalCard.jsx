@@ -11,7 +11,12 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
   const navigate = useNavigate();
 
   const handleHospitals = () => {
-    navigate("/discover-hospitals/hospitals");
+    const hospitalName = hospital.name
+      .split(" ")
+      .slice(0, 2)
+      .join("-")
+      .toLowerCase();
+    navigate(`/discover-hospitals/${hospitalName}/${hospital.id}`);
   };
 
   const handleCall = () => {
@@ -35,8 +40,11 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
               {hospital.address}
             </p>
             <div className="flex items-center my-2">
-            <StarRating rating={hospital.rating} /> 
-            <span className="ml-2 text-gray-500 font-medium text-sm italic">({hospital.rating})</span>            </div>
+              <StarRating rating={hospital.rating} />
+              <span className="ml-2 text-gray-500 font-medium text-sm italic">
+                ({hospital.rating})
+              </span>{" "}
+            </div>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
@@ -75,8 +83,8 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
           className="bg-[#25d366] font-normal flex items-center gap-2 text-white px-6 py-2 rounded-2xl"
           onClick={handleCall}
         >
-            <img src={CallIcon} alt="" />
-           {hospital.phoneNumber}
+          <img src={CallIcon} alt="" />
+          {hospital.phoneNumber}
         </button>
         <button
           className="text-white px-6 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2"

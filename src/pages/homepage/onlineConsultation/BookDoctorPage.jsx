@@ -250,6 +250,7 @@ const BookDoctorPage = () => {
 
         {/* button */}
         <footer className="fixed bottom-0 inset-x-0 flex justify-center gap-5 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 bg-[#fafafa]">
+          <button className="bg-[#e76161] text-white py-2 px-6 rounded-lg hover:bg-[#d65757]">Consult Now</button>
           <button
             className="bg-[#0086ff] text-white py-2 px-6 rounded-lg hover:bg-[#0080ee]"
             onClick={() =>
@@ -258,7 +259,6 @@ const BookDoctorPage = () => {
           >
             Reserve A Slot
           </button>
-          <button className="bg-[#e76161] text-white py-2 px-6 rounded-lg hover:bg-[#d65757]">Consult Now</button>
         </footer>
       </div>
     </div>

@@ -48,6 +48,7 @@ import ConfirmationPage2 from "./pages/homepage/onlineConsultation/ConfirmationP
 
 //DiscoverHospitals
 import BookHospitalPage from "./pages/homepage/discoverHospital/BookHospitalPage";
+import BookSlotsPage3 from "./pages/homepage/discoverHospital/BookSlotsPage";
 
 // Any Alternate and Better Routing Structure ?
 
@@ -168,8 +169,12 @@ const App = () => {
 
           <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
           <Route
-            path="/discover-hospitals/hospitals"
+            path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
+          />
+                    <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId/slot"
+            element={<BookSlotsPage3 />}
           />
 
           <Route path="/get-medicines" element={<GetMedicines />} />
