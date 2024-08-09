@@ -10,7 +10,7 @@ import CallIcon from "../../assets/svgs/CallIcon.svg";
 const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
   const navigate = useNavigate();
 
-  const handleHospitals = () => {
+  const handleHospital = () => {
     const hospitalName = hospital.name
       .split(" ")
       .slice(0, 2)
@@ -19,13 +19,25 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
     navigate(`/discover-hospitals/${hospitalName}/${hospital.id}`);
   };
 
+  const handleAppointment = () => {
+    const hospitalName = hospital.name
+      .split(" ")
+      .slice(0, 2)
+      .join("-")
+      .toLowerCase();
+    navigate(`/discover-hospitals/${hospitalName}/${hospital.id}/slot`);
+  };
+
   const handleCall = () => {
     window.location.href = `tel:${hospital.phoneNumber}`;
   };
 
   return (
-    <div className="pt-4 pb-4 px-2 border-b-4 border-gray-300">
-      <div className="pb-4 border-gray-300 border-b">
+    <div className="pt-2 pb-4 px-2 border-b-4 border-gray-300">
+      <div
+        className="pt-2 pb-4 bg-red400 cursor-pointer hover:rounded-lg transition-all hover:shadow-md border-gray-300 border-b"
+        onClick={handleHospital}
+      >
         <div className="flex">
           <img
             src={hospital.image}
@@ -47,7 +59,7 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-4 pl-2">
           {hospital.tags.map((tag, index) => (
             <span
               key={index}
@@ -80,15 +92,15 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
       </div>
       <div className="pt-3 px-1 tiny:px-2 flex justify-between items-center">
         <button
-          className="bg-[#25d366] font-normal flex items-center gap-2 text-white px-3 tiny:px-5 py-2 rounded-2xl"
+          className="bg-[#25d366] hover:bg-[#20c35b] font-normal flex items-center gap-2 text-white px-3 tiny:px-5 py-2 rounded-2xl"
           onClick={handleCall}
         >
           <img src={CallIcon} alt="" />
           {hospital.phoneNumber}
         </button>
         <button
-          className="text-white px-3 tiny:px-5 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2"
-          onClick={handleHospitals}
+          className="text-white px-3 tiny:px-5 py-2 rounded-2xl hover:bg-[#017ae4]  bg-[#0086ff] max-[400]:px-2"
+          onClick={handleAppointment}
         >
           Book Appointment
         </button>
