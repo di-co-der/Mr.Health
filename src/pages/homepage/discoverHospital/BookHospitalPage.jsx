@@ -231,7 +231,7 @@ function BookHospitalPage() {
               {hospital.phoneNumber}
             </button>
             <button
-              className="text-white px-5 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2 hover:bg-[#0080ee]"
+              className="text-white px-6 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2 hover:bg-[#0080ee]"
               onClick={handleSlot}
             >
               Book Your Slot
