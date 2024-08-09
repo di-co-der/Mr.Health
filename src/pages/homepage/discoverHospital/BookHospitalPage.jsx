@@ -84,7 +84,7 @@ function BookHospitalPage() {
                 Timings: {hospital.timings}
               </span>
             </div>
-            <span className="bg-[#ccf5f5] text-[#00cccc] text-xs ml-2 px-4 mr-4 py-1 rounded-full">
+            <span className="bg-[#ccf5f58b] border border-[#ccf5f5] text-[#00cccc] text-xs ml-2 px-4 mr-4 py-1 rounded-full">
               Open Today
             </span>
           </div>
@@ -231,7 +231,7 @@ function BookHospitalPage() {
               {hospital.phoneNumber}
             </button>
             <button
-              className="text-white px-4 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2 hover:bg-[#0080ee]"
+              className="text-white px-5 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2 hover:bg-[#0080ee]"
               onClick={handleSlot}
             >
               Book Your Slot

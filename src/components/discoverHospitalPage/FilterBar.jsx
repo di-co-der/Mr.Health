@@ -21,7 +21,7 @@ const FilterBar = ({ filters, selectedFilters = [], onFilterSelect }) => {
             onClick={() => toggleFilter(filter)}
             className={`px-4 py-2 border rounded-full text-sm whitespace-nowrap ${
               selectedFilters.includes(filter)
-                ? "bg-gray-500 text-white"
+                ? "bg-yellow-100 border-yellow-500 border text-black"
                 : "border-gray-500 text-black"
             }`}
           >
