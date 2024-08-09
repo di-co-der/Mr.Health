@@ -13,11 +13,22 @@ import slotsData from "../../../data/slotsData";
 import Header from "../../../components/common/Header";
 import ConfirmationModal from "../../../components/discoverHospitalPage/bookSlotPage/ConfirmationModal";
 
+// Temporary Alert component
+const TemporaryAlert = ({ message }) => (
+  <div className="fixed bottom-20 inset-x-0 flex items-center justify-center z-[10000]">
+    <div className="bg-red-50 border border-red-600 text-red-700 text-md font-normal py-2 px-4 rounded-lg shadow-lg opacity-90">
+      {message}
+    </div>
+  </div>
+);
+
 const BookSlotsPage = () => {
   const { hospitalName, hospitalId } = useParams();
   const [selectedDate, setSelectedDate] = useState("2024-09-09");
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [showAlert, setShowAlert] = useState(false); // Alert state
+  const [alertTimeout, setAlertTimeout] = useState(null); // Alert timeout state
 
   const hospital = hospitals.find((h) => h.id === parseInt(hospitalId));
   const hospitalSlots = slotsData[hospitalId] || {};
@@ -39,7 +50,13 @@ const BookSlotsPage = () => {
   const navigate = useNavigate();
 
   const handleBooking = () => {
-    setShowModal(true);
+    if (!selectedSlot) {
+      setShowAlert(true); 
+      if (alertTimeout) clearTimeout(alertTimeout);
+      setAlertTimeout(setTimeout(() => setShowAlert(false), 2000));
+    } else {
+      setShowModal(true);
+    }
   };
 
   const handleConfirmBooking = () => {
@@ -247,7 +264,7 @@ const BookSlotsPage = () => {
         <button
           className="w-full text-white py-2 rounded-lg bg-[#0086ff] hover:bg-[#0080ee]"
           onClick={handleBooking}
-          disabled={!selectedSlot}
+          // disabled={!selectedSlot}
         >
           Confirm Booking
         </button>
@@ -260,6 +277,10 @@ const BookSlotsPage = () => {
           onCancel={() => setShowModal(false)}
           slot={selectedSlot}
         />
+      )}
+
+      {showAlert && (
+        <TemporaryAlert message="Please select a slot." />
       )}
 
       <style jsx>{`
