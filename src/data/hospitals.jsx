@@ -10,6 +10,7 @@ const hospitals = [
     tags: ["24/7 Open", "Diagnostic", "Within 5 Km"],
     timings: "10:00 AM - 1:00 PM",
     phoneNumber: "9823123456",
+    distance: "3.5 Km",
     coordinates: [28.6139, 77.2090], // Random coordinates for Delhi
   },
   {
@@ -23,6 +24,7 @@ const hospitals = [
     tags: ["24/7 Open", "Endocrinology Test"],
     timings: "9:00 AM - 6:00 PM",
     phoneNumber: "9876543210",
+    distance: "15.2 Km",
     coordinates: [22.5726, 88.3639], // Random coordinates for Kolkata
   },
   {
@@ -36,6 +38,7 @@ const hospitals = [
     tags: ["Diagnostic", "Within 5 Km"],
     timings: "8:00 AM - 8:00 PM",
     phoneNumber: "9865234789",
+    distance: "10.8 Km",
     coordinates: [12.9716, 77.5946], // Random coordinates for Bengaluru
   },
   {
@@ -49,6 +52,7 @@ const hospitals = [
     tags: ["24/7 Open", "Within 5 Km"],
     timings: "9:00 AM - 9:00 PM",
     phoneNumber: "9768543210",
+    distance: "6.3 Km",
     coordinates: [18.5204, 73.8567], // Random coordinates for Pune
   },
   {
@@ -62,6 +66,7 @@ const hospitals = [
     tags: ["Diagnostic", "Endocrinology Test"],
     timings: "7:00 AM - 10:00 PM",
     phoneNumber: "9123456789",
+    distance: "8.4 Km",
     coordinates: [13.0827, 80.2707], // Random coordinates for Chennai
   },
   {
@@ -75,6 +80,7 @@ const hospitals = [
     tags: ["24/7 Open", "Diagnostic"],
     timings: "8:00 AM - 8:00 PM",
     phoneNumber: "9932145678",
+    distance: "5.7 Km",
     coordinates: [19.0760, 72.8777], // Random coordinates for Mumbai
   },
   {
@@ -88,6 +94,7 @@ const hospitals = [
     tags: ["Endocrinology Test", "Within 5 Km"],
     timings: "9:00 AM - 7:00 PM",
     phoneNumber: "9876512345",
+    distance: "4.2 Km",
     coordinates: [17.3850, 78.4867], // Random coordinates for Hyderabad
   },
   {
@@ -101,6 +108,7 @@ const hospitals = [
     tags: ["24/7 Open", "Diagnostic"],
     timings: "8:00 AM - 6:00 PM",
     phoneNumber: "9823567890",
+    distance: "7.9 Km",
     coordinates: [9.9312, 76.2673], // Random coordinates for Kochi
   },
   {
@@ -114,6 +122,7 @@ const hospitals = [
     tags: ["24/7 Open", "Endocrinology Test"],
     timings: "9:00 AM - 8:00 PM",
     phoneNumber: "9932147890",
+    distance: "12.6 Km",
     coordinates: [31.1048, 77.1736], // Random coordinates for Shimla
   },
   {
@@ -127,6 +136,7 @@ const hospitals = [
     tags: ["Diagnostic", "Within 5 Km"],
     timings: "8:00 AM - 9:00 PM",
     phoneNumber: "9812345678",
+    distance: "9.1 Km",
     coordinates: [26.9124, 75.7873], // Random coordinates for Jaipur
   },
 ];

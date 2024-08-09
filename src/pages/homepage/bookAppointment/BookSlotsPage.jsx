@@ -59,7 +59,7 @@ function BookSlotsPage() {
           </div>
 
           {/* button  */}
-          <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa]">
+          <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa] z-[10000]">
             <button
               className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
               onClick={handleBookingClick}
