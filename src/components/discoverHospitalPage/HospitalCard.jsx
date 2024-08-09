@@ -78,16 +78,16 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
           ))}
         </div>
       </div>
-      <div className="pt-3 px-2 flex justify-between items-center">
+      <div className="pt-3 px-1 tiny:px-2 flex justify-between items-center">
         <button
-          className="bg-[#25d366] font-normal flex items-center gap-2 text-white px-6 py-2 rounded-2xl"
+          className="bg-[#25d366] font-normal flex items-center gap-2 text-white px-3 tiny:px-5 py-2 rounded-2xl"
           onClick={handleCall}
         >
           <img src={CallIcon} alt="" />
           {hospital.phoneNumber}
         </button>
         <button
-          className="text-white px-6 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2"
+          className="text-white px-3 tiny:px-5 py-2 rounded-2xl bg-[#0086ff] max-[400]:px-2"
           onClick={handleHospitals}
         >
           Book Appointment

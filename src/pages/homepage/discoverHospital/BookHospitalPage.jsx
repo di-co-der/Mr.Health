@@ -13,6 +13,7 @@ import messageIcon from "../../../../src/assets/svgs/messageIcon.svg";
 import like from "../../../../src/assets/svgs/Like.svg";
 import sideArrow from "../../../../src/assets/svgs/Side-arrow.svg";
 import CallIcon from "../../../assets/svgs/CallIcon.svg";
+import TimingsIcon from "../../../../src/assets/svgs/TimingsIcon.svg";
 
 //data
 import { userData } from "../../../data/userStories";
@@ -70,7 +71,7 @@ function BookHospitalPage() {
         </div>
         <div className="bg-white mt-48">
           {/* Rating and Timing Section */}
-          <div className="flex items-center mb-2 pl-4">
+          <div className="flex items-center mb-2 pl-4 pt-1">
             <img src={starGroup} alt="Rating" className="w-24" />
             <span className="text-gray-600 text-sm ml-2 italic font-medium">
               ({hospital.rating})
@@ -78,12 +79,12 @@ function BookHospitalPage() {
           </div>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-1 pl-4">
-              <img src={like} alt="" />
+              <img src={TimingsIcon} alt="" className="w-4 h-4 pt-0.5" />
               <span className="text-gray-600 text-sm">
                 Timings: {hospital.timings}
               </span>
             </div>
-            <span className="bg-green-100 text-green-600 text-xs ml-2 px-4 mr-4 py-1 rounded-full">
+            <span className="bg-[#ccf5f5] text-[#00cccc] text-xs ml-2 px-4 mr-4 py-1 rounded-full">
               Open Today
             </span>
           </div>

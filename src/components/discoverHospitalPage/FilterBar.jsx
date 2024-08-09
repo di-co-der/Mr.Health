@@ -13,8 +13,8 @@ const FilterBar = ({ filters, selectedFilters = [], onFilterSelect }) => {
   };
 
   return (
-    <div className="flex items-center  sticky top-32 px-2 py-2 border-y-2 border-gray-300 bg-white">
-      <div className="filter-container flex space-x-2 py-1 pr-3 border-r-2 border-gray-300 overflow-x-auto scrollbar-hide no-scrollbar">
+    <div className="flex items-center sticky top-32 px-2 py-2 border-y-2 border-gray-300 bg-white">
+      <div className="filter-container flex space-x-2 py-1 px-1 border-r-2 border-gray-300 overflow-x-auto">
         {filters.map((filter, index) => (
           <button
             key={index}
@@ -30,8 +30,8 @@ const FilterBar = ({ filters, selectedFilters = [], onFilterSelect }) => {
         ))}
       </div>
 
-      <button className="flex items-center gap-1.5 w-72 pl-2 py-1 ml-3 rounded-md text-[#0086ff] font-medium cursor-default">
-        <img src={FilterIcon} alt="" className="w-6 h-6" />
+      <button className="flex items-center gap-1.5 w-[350px] tiny:w-72 py-1 ml-2 text-[#0086ff] font-medium cursor-default">
+      <img src={FilterIcon} alt="" className="w-6 h-6" />
         Apply Filters
       </button>
 

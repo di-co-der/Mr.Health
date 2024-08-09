@@ -23,7 +23,7 @@ const Header = ({ title , onClick }) => {
       >
         <img src={BackArrowIcon} alt="BackArrowIcon" className="w-6" />
       </button>
-      <h1 className="text-lg font-semibold">{title}</h1>
+      <h1 className="text-lg font-semibold text-ellipsis overflow-hidden whitespace-nowrap mx-6">{title}</h1>
       <button
         onClick={onClick}
         className={`text-3xl hover:scale-105 transition-all ${
