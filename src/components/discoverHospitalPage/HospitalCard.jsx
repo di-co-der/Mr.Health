@@ -65,13 +65,13 @@ const HospitalCard = ({ hospital, highlightedFilters = [] }) => {
               key={index}
               className={`border text-gray-800 px-2 py-1 rounded-md text-xs flex items-center ${
                 highlightedFilters.includes(tag)
-                  ? "bg-yellow-100 border-yellow-500"
+                  ? "bg-[#e5f9f9] border-[#00cccc]"
                   : "border-gray-500"
               }`}
             >
               {highlightedFilters.includes(tag) && (
                 <svg
-                  className="w-4 h-4 mr-1 text-yellow-500"
+                  className="w-4 h-4 mr-1 text-[#00cccc]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

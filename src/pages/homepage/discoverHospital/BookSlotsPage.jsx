@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+//components
+import Header from "../../../components/common/Header";
+import ConfirmationModal from "../../../components/discoverHospitalPage/bookSlotPage/ConfirmationModal";
+
 // assets
 import Location from "../../../assets/svgs/Location.svg";
 import SunIcon from "../../../assets/svgs/SunIcon.svg";
@@ -10,10 +14,7 @@ import EveningIcon from "../../../assets/svgs/EveningIcon.svg";
 // data
 import hospitals from "../../../data/hospitals";
 import slotsData from "../../../data/slotsData";
-import Header from "../../../components/common/Header";
-import ConfirmationModal from "../../../components/discoverHospitalPage/bookSlotPage/ConfirmationModal";
 
-// Temporary Alert component
 const TemporaryAlert = ({ message }) => (
   <div className="fixed bottom-20 inset-x-0 flex items-center justify-center z-[10000]">
     <div className="bg-red-50 border border-red-600 text-red-700 text-md font-normal py-2 px-4 rounded-lg shadow-lg opacity-90">
@@ -27,8 +28,8 @@ const BookSlotsPage = () => {
   const [selectedDate, setSelectedDate] = useState("2024-09-09");
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [showAlert, setShowAlert] = useState(false); // Alert state
-  const [alertTimeout, setAlertTimeout] = useState(null); // Alert timeout state
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertTimeout, setAlertTimeout] = useState(null);
 
   const hospital = hospitals.find((h) => h.id === parseInt(hospitalId));
   const hospitalSlots = slotsData[hospitalId] || {};
@@ -39,11 +40,10 @@ const BookSlotsPage = () => {
   }
 
   const handleSlotSelect = (slot) => {
-    // Check if the clicked slot is already selected
     if (selectedSlot === slot) {
-      setSelectedSlot(null); // Unselect the slot
+      setSelectedSlot(null); 
     } else {
-      setSelectedSlot(slot); // Select the new slot
+      setSelectedSlot(slot); 
     }
   };
 
@@ -75,7 +75,7 @@ const BookSlotsPage = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    setSelectedSlot(null); // Clear selected slot when date changes
+    setSelectedSlot(null);
   };
 
   const getAvailableSlotCount = (date) => {
@@ -190,7 +190,7 @@ const BookSlotsPage = () => {
                       key={index}
                       className={`text-sm px-3 py-1 rounded-xl ${
                         selectedSlot === slot
-                          ? "bg-[#bff2f29d] border border-[#00cccc]"
+                          ? "bg-[#e5f9f9] border border-[#00cccc]"
                           : "bg-white border border-[#a3a3a3]"
                       }`}
                       onClick={() => handleSlotSelect(slot)}
@@ -218,7 +218,7 @@ const BookSlotsPage = () => {
                       key={index}
                       className={`text-sm px-3 py-1 rounded-xl ${
                         selectedSlot === slot
-                          ? "bg-[#bff2f29d] border border-[#00cccc]"
+                          ? "bg-[#e5f9f9] border border-[#00cccc]"
                           : "bg-white border border-[#a3a3a3]"
                       }`}
                       onClick={() => handleSlotSelect(slot)}
@@ -246,7 +246,7 @@ const BookSlotsPage = () => {
                       key={index}
                       className={`text-sm px-3 py-1 rounded-xl ${
                         selectedSlot === slot
-                          ? "bg-[#bff2f29d] border border-[#00cccc]"
+                          ? "bg-[#e5f9f9] border border-[#00cccc]"
                           : "bg-white border border-[#a3a3a3]"
                       }`}
                       onClick={() => handleSlotSelect(slot)}
