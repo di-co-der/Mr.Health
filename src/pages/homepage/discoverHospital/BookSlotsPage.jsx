@@ -61,7 +61,12 @@ const BookSlotsPage = () => {
 
   const handleConfirmBooking = () => {
     setShowModal(false);
-    navigate(`/discover-hospitals/${hospitalName}/${hospital.id}/slot/booking`);
+    navigate(`/discover-hospitals/${hospitalName}/${hospital.id}/slot/booking`, {
+      state: {
+        selectedDate,
+        selectedSlot
+      }
+    });
   };
 
   const handleAppointmentClick = () => {
