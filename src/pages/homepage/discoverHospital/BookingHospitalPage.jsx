@@ -203,7 +203,7 @@ const BookingHospitalPage = () => {
           <p className="text-lg text-[#3d3d3d]">{hospital.fees}</p>
         </div>
         <button
-          className="bg-[#0086ff] text-white text-center py-3 rounded-lg w-full"
+          className="bg-[#0086ff] text-white text-center py-2 rounded-lg w-full"
           onClick={handlePaymentClick}
         >
           Proceed to Pay
