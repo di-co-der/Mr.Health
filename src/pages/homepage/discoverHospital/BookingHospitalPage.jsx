@@ -17,9 +17,10 @@ import Whatsapp from "../../../assets/svgs/Whatsapp.svg";
 import ClinicIcon from "../../../assets/svgs/ClinicIcon.svg";
 
 const BookingHospitalPage = () => {
+  const { state } = useLocation(); 
+  const { selectedDate, selectedSlot } = state || {}; 
+  
   const { hospitalName, hospitalId } = useParams();
-  const { state } = useLocation(); // Get the state from navigation
-  const { selectedDate, selectedSlot } = state || {}; // Extract date and slot from state
   const hospital = hospitals.find((doc) => doc.id === parseInt(hospitalId));
 
   if (!hospital) {
@@ -41,7 +42,7 @@ const BookingHospitalPage = () => {
   // Function to format date as "Day, DD Mon"
   const formatDate = (dateString) => {
     if (!dateString) return "";
-    const options = { weekday: 'short', day: '2-digit', month: 'short' };
+    const options = { weekday: "short", day: "2-digit", month: "short" };
     return new Date(dateString).toLocaleDateString("en-US", options);
   };
 

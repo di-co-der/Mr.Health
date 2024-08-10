@@ -104,8 +104,9 @@ const BookSlotsPage = () => {
   };
 
   const formatDate = (date) => {
+    if (!date) return "";
     const options = { weekday: "short", day: "numeric", month: "short" };
-    return new Date(date).toLocaleDateString("en-GB", options);
+    return new Date(date).toLocaleDateString("en-US", options);
   };
 
   return (
