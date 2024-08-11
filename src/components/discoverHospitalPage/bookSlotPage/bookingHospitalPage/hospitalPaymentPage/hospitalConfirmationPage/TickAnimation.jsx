@@ -4,7 +4,7 @@ import tickAnimation from './TickAnimation.json';
 
 const TickAnimation = () => {
   return (
-    <div className="tick-animation">
+    <div className="tick-animation w-7 pb-0.5">
       <Lottie animationData={tickAnimation} loop={true} />
     </div>
   );
