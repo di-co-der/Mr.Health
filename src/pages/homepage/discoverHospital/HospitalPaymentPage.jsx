@@ -7,7 +7,7 @@ import PaymentOption from "../../../components/bookAppointmentPage/specialtyPage
 import ClinicInfo from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/slotBookingPage/bookingDetailsPage/paymentPage/ClinicInfo.jsx";
 
 //data
-import { doctors } from "../../../data/doctors";
+import hospitals from "../../../data/hospitals";
 
 //assets
 import GPay from "../../../assets/svgs/GPay.svg";
@@ -15,25 +15,17 @@ import PhonePay from "../../../assets/svgs/PhonePay.svg";
 import MasterCard from "../../../assets/svgs/MasterCard.svg";
 import Visa from "../../../assets/svgs/Visa.svg";
 
-const PaymentPage = () => {
+const HospitalPaymentPage = () => {
   const [paymentMethod, setPaymentMethod] = useState("online");
   const [upiMethod, setUpiMethod] = useState("googlePay");
   const [cardMethod, setCardMethod] = useState("axisBank");
 
-  const { specialty, doctorName, doctorId } = useParams();
-  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
+  const { hospitalName, hospitalId } = useParams();
+  const hospital = hospitals.find((doc) => doc.id === parseInt(hospitalId));
 
-  if (!doctor) {
-    return <div>Doctor not found!</div>;
+  if (!hospital) {
+    return <div>Hospital not found!</div>;
   }
-
-  // const doctor = {
-  //   id: doctorId,
-  //   name: doctorName,
-  //   specialty: specialty,
-  //   image: "https://via.placeholder.com/50",
-  //   distance: "589 m",
-  // };
 
   const navigate = useNavigate();
 
@@ -42,15 +34,7 @@ const PaymentPage = () => {
   };
 
   const handleConfirmClick = () => {
-    navigate(
-      `/online-consultation/${doctor.specialty
-        .toLowerCase()
-        .replace(/ /g, "-")}/${doctor.name
-        .toLowerCase()
-        .replace(/[\s.]+/g, "-")}/${
-        doctor.id
-      }/slot/booking/payment/confirmation`
-    );
+    navigate(`/discover-hospitals/${hospitalName}/${hospital.id}/slot/booking/payment/confirmation`);
   };
 
   return (
@@ -163,7 +147,7 @@ const PaymentPage = () => {
       <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-2 pb-3 px-8 bg-[#fafafa]">
       <div className="flex justify-start items-center gap-3 font-medium mb-2">
       <p className="text-[#8f8f8f] text-sm">Total amount</p>
-      <p className="text-lg text-[#3d3d3d]">{doctor.fees}</p>
+      <p className="text-lg text-[#3d3d3d]">{hospital.fees}</p>
       </div>
         <button
           className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
@@ -176,4 +160,4 @@ const PaymentPage = () => {
   );
 };
 
-export default PaymentPage;
+export default HospitalPaymentPage;

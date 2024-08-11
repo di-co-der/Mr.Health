@@ -14,7 +14,6 @@ import InsurancePlans from "./pages/homepage/InsurancePlans";
 // import { doctors } from "./data/doctors";
 // import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
 
-
 //BookAppointment
 import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
 import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
@@ -31,17 +30,28 @@ import BookSlotsPage from "./pages/homepage/bookAppointment/BookSlotsPage";
 import PaymentPage from "./pages/homepage/bookAppointment/PaymentPage";
 import ConfirmationPage from "./pages/homepage/bookAppointment/ConfirmationPage";
 
-//BookAppointment
-// import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage"
-// import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage"
-// import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage"
-// import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage"
-// import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage"
-// import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage"
-// import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage"
-// import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage"
+//OnlineConsultation
+import StomachPage from "./pages/homepage/onlineConsultation/categories/StomachPage";
+import AcidityPage from "./pages/homepage/onlineConsultation/categories/AcidityPage";
+import BonePage from "./pages/homepage/onlineConsultation/categories/BonePage";
+import PimplesPage from "./pages/homepage/onlineConsultation/categories/PimplesPage";
+import StressPage from "./pages/homepage/onlineConsultation/categories/StressPage";
+import FeverPage from "./pages/homepage/onlineConsultation/categories/FeverPage";
+import BPPage from "./pages/homepage/onlineConsultation/categories/BPPage";
+import PregnancyPage from "./pages/homepage/onlineConsultation/categories/PregnancyPage";
 
+import BookDoctorPage2 from "./pages/homepage/onlineConsultation/BookDoctorPage";
+import BookingDetailsPage2 from "./pages/homepage/onlineConsultation/BookingDetailsPage";
+import BookSlotsPage2 from "./pages/homepage/onlineConsultation/BookSlotsPage";
+import PaymentPage2 from "./pages/homepage/onlineConsultation/PaymentPage";
+import ConfirmationPage2 from "./pages/homepage/onlineConsultation/ConfirmationPage";
 
+//DiscoverHospitals
+import BookHospitalPage from "./pages/homepage/discoverHospital/BookHospitalPage";
+import BookSlotsPage3 from "./pages/homepage/discoverHospital/BookSlotsPage";
+import BookingHospitalPage from "./pages/homepage/discoverHospital/BookingHospitalPage";
+import HospitalPaymentPage from "./pages/homepage/discoverHospital/HospitalPaymentPage";
+import HospitalConfirmationPage from "./pages/homepage/discoverHospital/HospitalConfirmationPage";
 
 // Any Alternate and Better Routing Structure ?
 
@@ -52,6 +62,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/my-appointments" element={<MyAppointments />} />
+
+          {/* Book Appointment */}
 
           <Route path="/book-appointment" element={<BookAppointmentPage />} />
           {/* <Route path="/book-appointment/:specialty" element={<SpecialtyDoctorsPage />} /> */}
@@ -108,8 +120,10 @@ const App = () => {
             element={<ConfirmationPage />}
           />
 
+          {/* Online Consultation */}
+
           <Route path="/online-consultation" element={<OnlineConsultation />} />
-          {/* <Route
+          <Route
             path="/online-consultation/stomach-pain"
             element={<StomachPage />}
           />
@@ -125,27 +139,61 @@ const App = () => {
             path="/online-consultation/pimples-acne"
             element={<PimplesPage />}
           />
-          <Route
-            path="/online-consultation/stress"
-            element={<StressPage />}
-          />
-          <Route
-            path="/online-consultation/fever"
-            element={<FeverPage />}
-          />
-          <Route
-            path="/online-consultation/bp"
-            element={<BPPage />}
-          />
+          <Route path="/online-consultation/stress" element={<StressPage />} />
+          <Route path="/online-consultation/fever" element={<FeverPage />} />
+          <Route path="/online-consultation/bp" element={<BPPage />} />
           <Route
             path="/online-consultation/pregnancy"
             element={<PregnancyPage />}
-          /> */}
+          />
 
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId"
+            element={<BookDoctorPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot"
+            element={<BookSlotsPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking"
+            element={<BookingDetailsPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking/payment"
+            element={<PaymentPage2 />}
+          />
+          <Route
+            path="/online-consultation/:specialty/:doctorName/:doctorId/slot/booking/payment/confirmation"
+            element={<ConfirmationPage2 />}
+          />
+
+          {/* discover hospitals */}
+
+          <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
+          <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId"
+            element={<BookHospitalPage />}
+          />
+          <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId/slot"
+            element={<BookSlotsPage3 />}
+          />
+          <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking"
+            element={<BookingHospitalPage />}
+          />
+                    <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking/payment"
+            element={<HospitalPaymentPage />}
+          />
+                    <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking/payment/confirmation"
+            element={<HospitalConfirmationPage />}
+          />
 
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/book-lab-tests" element={<BookLabTests />} />
-          <Route path="/discover-hospitals" element={<DiscoverHospitals />} />
           <Route path="/insurance-plans" element={<InsurancePlans />} />
 
           <Route path="*" element={<NotFoundPage />} />

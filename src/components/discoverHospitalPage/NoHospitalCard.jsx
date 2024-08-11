@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { GiHealthIncrease } from "react-icons/gi";
 
-const NoDoctorCard = () => {
+const NoHospitalCard = () => {
     const navigate = useNavigate();
 
     const handleBookAppointment = () => {
-      navigate("/online-consultation");
+      navigate("/book-appointment");
     };
   return (
     <motion.div
@@ -26,10 +26,10 @@ const NoDoctorCard = () => {
       </motion.div>
       <div className="text-center">
         <div className="text-gray-600 text-2xl font-semibold mb-3">
-          No Doctors Available
+        No Hospitals Available
         </div>
         <p className="text-gray-500 mb-5">
-          It seems there are no doctors available for the selected specialty at the moment.
+        Try adjusting your search or filter criteria.
         </p>
         <button
           onClick={handleBookAppointment}
@@ -42,4 +42,4 @@ const NoDoctorCard = () => {
   );
 };
 
-export default NoDoctorCard;
+export default NoHospitalCard;

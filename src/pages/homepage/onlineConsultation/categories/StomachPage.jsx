@@ -1,14 +1,10 @@
-import React from 'react'
+import React from "react";
 
-function StomachPage() {
-  return (
-    <div className='max-w-sm bg-gray-100 min-h-screen mx-auto'>
-      <h1>Stomach Page</h1>
-      <div className="rounded-xl bg-yellow-500 p-4 mt-56 mx-10">
-        See another one for now
-      </div>
-    </div>
-  )
-}
+//components
+import SpecialtyDoctorsPage from "../../../../components/onlineConsultationPage/specialtyPage/SpecialtyDoctors";
+
+const StomachPage = () => {
+  return <SpecialtyDoctorsPage specialty="Stomach" title="Stomach Page" />;
+};
 
 export default StomachPage;

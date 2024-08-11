@@ -14,7 +14,7 @@ const Header = ({ title , onClick }) => {
   };
 
   return (
-    <div className="z-20 fixed inset-x-0 top-0 flex items-center justify-between p-4 bg-white">
+    <div className="z-[10000] fixed inset-x-0 top-0 flex items-center justify-between p-4 bg-white">
       <button
         onClick={handleBack}
         className={`text-3xl hover:scale-x-110 transition-all ${
@@ -23,7 +23,7 @@ const Header = ({ title , onClick }) => {
       >
         <img src={BackArrowIcon} alt="BackArrowIcon" className="w-6" />
       </button>
-      <h1 className="text-lg font-semibold">{title}</h1>
+      <h1 className="text-lg font-semibold text-ellipsis overflow-hidden whitespace-nowrap mx-6">{title}</h1>
       <button
         onClick={onClick}
         className={`text-3xl hover:scale-105 transition-all ${

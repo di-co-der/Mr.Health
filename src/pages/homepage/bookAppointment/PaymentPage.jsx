@@ -27,14 +27,6 @@ const PaymentPage = () => {
     return <div>Doctor not found!</div>;
   }
 
-  // const doctor = {
-  //   id: doctorId,
-  //   name: doctorName,
-  //   specialty: specialty,
-  //   image: "https://via.placeholder.com/50",
-  //   distance: "589 m",
-  // };
-
   const navigate = useNavigate();
 
   const handleAppointmentClick = () => {

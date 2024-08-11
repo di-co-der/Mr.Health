@@ -1,26 +1,30 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 
-//components
+// components
 import Header from "../../../components/common/Header";
 
-//data
-import { doctors } from "../../../data/doctors";
+// data
+import hospitals from "../../../data/hospitals";
 
-//assets
+// assets
 import Location from "../../../assets/svgs/Location.svg";
 import ApplyCoupon from "../../../assets/svgs/ApplyCoupon.svg";
 import BookingUser from "../../../assets/svgs/BookingUser.svg";
 import BookingTimeIcon from "../../../assets/svgs/BookingTimeIcon.svg";
 import Info from "../../../assets/svgs/Info.svg";
 import Whatsapp from "../../../assets/svgs/Whatsapp.svg";
+import ClinicIcon from "../../../assets/svgs/ClinicIcon.svg";
 
-const BookingDetailsPage = () => {
-  const { specialty, doctorName, doctorId } = useParams();
-  const doctor = doctors.find((doc) => doc.id === parseInt(doctorId));
+const BookingHospitalPage = () => {
+  const { state } = useLocation(); 
+  const { selectedDate, selectedSlot } = state || {}; 
+  
+  const { hospitalName, hospitalId } = useParams();
+  const hospital = hospitals.find((doc) => doc.id === parseInt(hospitalId));
 
-  if (!doctor) {
-    return <div>Doctor not found!</div>;
+  if (!hospital) {
+    return <div>Hospital not found!</div>;
   }
 
   const navigate = useNavigate();
@@ -31,37 +35,55 @@ const BookingDetailsPage = () => {
 
   const handlePaymentClick = () => {
     navigate(
-      `/online-consultation/${doctor.specialty
-        .toLowerCase()
-        .replace(/ /g, "-")}/${doctor.name
-        .toLowerCase()
-        .replace(/[\s.]+/g, "-")}/${doctor.id}/slot/booking/payment`
+      `/discover-hospitals/${hospitalName}/${hospital.id}/slot/booking/payment`
     );
+  };
+
+  // Function to format date as "Day, DD Mon"
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const options = { weekday: "short", day: "2-digit", month: "short" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
+  };
+
+  // Function to get label for today or tomorrow
+  const getDateLabel = (dateString) => {
+    const date = new Date(dateString);
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    if (date.toDateString() === today.toDateString()) {
+      return "Today";
+    } else if (date.toDateString() === tomorrow.toDateString()) {
+      return "Tomorrow";
+    } else {
+      return formatDate(dateString);
+    }
   };
 
   return (
     <div className="h-screen max-w-sm mx-auto">
-      <header className="pt-[60px]">
+      <header className="pt-[56px]">
         <Header title="Booking Details" onClick={handleAppointmentClick} />
       </header>
       <main className="flex-1 pb-28 overflow-y-auto py-4">
         <div className="flex items-center mb-4 mx-4">
           <img
-            className="rounded-full mr-4 w-12 h-12"
-            src={doctor.image}
-            alt="Doctor"
+            className="rounded-full mr-4 w-16 h-16"
+            src={hospital.image}
+            alt="hospital"
           />
           <div>
-            <h3 className="text-lg font-medium">{doctor.name}</h3>
-            <p className="text-gray-500">{doctor.specialty}</p>
+            <h3 className="text-lg font-medium">{hospital.name}</h3>
           </div>
           <div className="ml-auto">
             <img src={Location} className="mx-auto" alt="" />
-            <div className="text-blue-500 font-medium">{doctor.location}</div>
+            <div className="text-blue-500 font-medium">{hospital.distance}</div>
           </div>
         </div>
         <div className="border-b border-gray-300 mb-4 mx-4"></div>
-        <div className=" mx-4">
+        <div className="mx-4">
           <div className="mb-4">
             <div className="flex gap-2 text-sm mb-2">
               <img src={BookingUser} alt="" />
@@ -70,7 +92,7 @@ const BookingDetailsPage = () => {
               </p>
             </div>
             <div className="flex items-center justify-between pr-4">
-              <p className="font-medium flex gap-2 items-center pl-2 text-lg">
+              <p className="flex gap-2 items-center pl-2 text-lg">
                 Udit Mahajan, M, 22 yrs
               </p>
               <button className="text-[#00cccc] ml-2 font-medium">
@@ -85,14 +107,24 @@ const BookingDetailsPage = () => {
               <img src={BookingTimeIcon} alt="" />
               <p className="text-[#7a7a7a]">Appointment Time</p>
             </div>
-            <p className="font-medium flex gap-2 items-center pl-2 text-lg">
-              Sat, 9 Sep 11:30 AM{" "}
-              <span className="text-lg text-gray-500 font-normal">|</span>
-              <span className="text-gray-500 flex gap-1 items-center font-normal text-sm">
-                <img src={BookingTimeIcon} className="w-4" alt="" />
-                Today
-              </span>
+            <p className="flex gap-2 items-center pl-2 text-lg">
+              {selectedDate && selectedSlot ? (
+                <>
+                  {getDateLabel(selectedDate)} {selectedSlot}
+                </>
+              ) : (
+                "Select a date and slot"
+              )}
             </p>
+          </div>
+          <div className="border border-gray-300 mb-4"></div>
+
+          <div className="mb-4">
+            <div className="flex gap-2 text-sm mb-2 ">
+              <img src={ClinicIcon} alt="" />
+              <p className="text-[#7a7a7a]">Clinic's Details</p>
+            </div>
+            <p className="font-normal pl-2 text-md">{hospital.address}</p>
           </div>
         </div>
         <div className="border-4 mb-4"></div>
@@ -112,17 +144,17 @@ const BookingDetailsPage = () => {
         </div>
         <div className="mb-4 mx-4">
           <h4 className="font-medium">Bill Details</h4>
-          <div className=" pl-3 text-[#7a7a7a]">
+          <div className="pl-3 text-[#7a7a7a]">
             <div className="flex justify-between mt-2">
               <p>Consultation Fee</p>
-              <p>{doctor.fees}</p>
+              <p>{hospital.fees}</p>
             </div>
             <div className="flex justify-between mt-2">
               <p className="flex items-center gap-2">
                 Service Fee & Tax
                 <img src={Info} alt="" />
               </p>
-              <div className="flex items-center gap-2"> 
+              <div className="flex items-center gap-2">
                 <p className="line-through">₹ 49</p>
                 <p className="text-green-500">FREE</p>
               </div>
@@ -133,7 +165,7 @@ const BookingDetailsPage = () => {
 
           <div className="flex justify-between mt-2 font-medium pl-3">
             <p>Total Payable</p>
-            <p>{doctor.fees}</p>
+            <p>{hospital.fees}</p>
           </div>
           <div className="text-[#25d366] text-center mt-4 bg-[#f0fcf4] py-1 inline-flex ml-3 px-2 text-sm font-normal border border-dashed border-[#25d366] rounded-md">
             You have saved ₹ 49 on this appointment
@@ -144,31 +176,42 @@ const BookingDetailsPage = () => {
 
         <div className="mb-4 mx-4 flex items-center text-black">
           <input type="checkbox" id="whatsapp" className="mr-2" />
-          <label htmlFor="whatsapp" className="text-black flex gap-2 items-start">
+          <label
+            htmlFor="whatsapp"
+            className="text-black flex gap-2 items-start"
+          >
             Get notification on Whatsapp
             <img src={Whatsapp} alt="" />
           </label>
         </div>
-        <div className="mb-4 mx-4 text-[#7a7a7a] text-sm">
-          <p className="mb-2">*Updates will be sent to +91 9876543210</p>
-          <p>*By booking the appointment, you agree to Medico's <span className="underline text-[#00cccc] cursor-pointer">Terms and Conditions</span>. You can also pay for this appointment by selecting offline mode.</p>
+        <div className="mb-14 mx-4 text-[#7a7a7a] text-sm">
+          <p className="mb-2">
+            *Updates will be sent to +91 {hospital.phoneNumber}
+          </p>
+          <p>
+            *By booking the appointment, you agree to Medico's{" "}
+            <span className="underline text-[#00cccc] cursor-pointer">
+              Terms and Conditions
+            </span>
+            . You can also pay for this appointment by selecting offline mode.
+          </p>
         </div>
       </main>
 
       <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-2 pb-3 px-8 bg-[#fafafa]">
         <div className="flex justify-start items-center gap-3 font-medium mb-2">
           <p className="text-[#8f8f8f] text-sm">Total amount</p>
-          <p className="text-lg text-[#3d3d3d]">{doctor.fees}</p>
+          <p className="text-lg text-[#3d3d3d]">{hospital.fees}</p>
         </div>
         <button
-          className="w-full bg-[#0086ff] text-white py-2 rounded-lg hover:bg-[#0080ee]"
+          className="bg-[#0086ff] text-white text-center py-2 rounded-lg w-full"
           onClick={handlePaymentClick}
         >
-          Proceed To Pay
+          Proceed to Pay
         </button>
       </footer>
     </div>
   );
 };
 
-export default BookingDetailsPage;
+export default BookingHospitalPage;

@@ -1,5 +1,3 @@
-import mapImage from "../assets/mapImage.jpg";
-
 export const doctors = [
   {
     id: 1,
@@ -17,7 +15,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -36,7 +33,6 @@ export const doctors = [
     patients: "1500",
     education: "MBBS, MD in Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -44,7 +40,7 @@ export const doctors = [
     name: "Dr. Renu Sachdeva",
     specialty: "General Physician",
     image:
-      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", 
     rating: 92,
     stories: 1421,
     experience: "12 Years",
@@ -55,7 +51,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -64,7 +59,7 @@ export const doctors = [
     name: "Dr. Divyansh",
     specialty: "Dentist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 92,
     stories: 1421,
     experience: "10 Years",
@@ -75,7 +70,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -83,7 +77,7 @@ export const doctors = [
     name: "Dr. John Smith",
     specialty: "Dentist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 88,
     stories: 549,
     experience: "12 Years",
@@ -94,7 +88,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -103,7 +96,7 @@ export const doctors = [
     name: "Dr. Grace Yellow",
     specialty: "Pediatrician",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 93,
     stories: 1800,
     experience: "10 Years",
@@ -114,7 +107,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -122,7 +114,7 @@ export const doctors = [
     name: "Dr. Hank Green",
     specialty: "Pediatrician",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 89,
     stories: 1000,
     experience: "12 Years",
@@ -133,7 +125,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -142,7 +133,7 @@ export const doctors = [
     name: "Dr. Ian Blue",
     specialty: "Sexologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 92,
     stories: 1400,
     experience: "10 Years",
@@ -153,7 +144,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -161,7 +151,7 @@ export const doctors = [
     name: "Dr. Judy Orange",
     specialty: "Sexologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 90,
     stories: 1100,
     experience: "12 Years",
@@ -172,7 +162,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -181,7 +170,7 @@ export const doctors = [
     name: "Dr. Eve Purple",
     specialty: "Gynecologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 96,
     stories: 2000,
     experience: "15 Years",
@@ -192,7 +181,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -200,7 +188,7 @@ export const doctors = [
     name: "Dr. Frank Black",
     specialty: "Gynecologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 91,
     stories: 1200,
     experience: "18 Years",
@@ -211,7 +199,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -220,7 +207,7 @@ export const doctors = [
     name: "Dr. Alice Brown",
     specialty: "Dermatologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 95,
     stories: 1200,
     experience: "8 Years",
@@ -231,7 +218,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -239,7 +225,7 @@ export const doctors = [
     name: "Dr. Bob White",
     specialty: "Dermatologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 90,
     stories: 980,
     experience: "10 Years",
@@ -250,7 +236,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -259,7 +244,7 @@ export const doctors = [
     name: "Dr. Charles Green",
     specialty: "Orthopedic",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 94,
     stories: 1500,
     experience: "12 Years",
@@ -270,7 +255,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -278,7 +262,7 @@ export const doctors = [
     name: "Dr. Diana Red",
     specialty: "Orthopedic",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 89,
     stories: 800,
     experience: "14 Years",
@@ -289,7 +273,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -298,7 +281,7 @@ export const doctors = [
     name: "Dr. Karen Brown",
     specialty: "Dentist",
     image:
-      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", 
     rating: 90,
     stories: 1321,
     experience: "14 Years",
@@ -309,7 +292,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -318,7 +300,7 @@ export const doctors = [
     name: "Dr. Samantha Green",
     // specialty: "Child Specialist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 94,
     stories: 1221,
     experience: "16 Years",
@@ -329,7 +311,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -338,7 +319,7 @@ export const doctors = [
     name: "Dr. Robert Brown",
     // specialty: "Child Specialist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 93,
     stories: 1021,
     experience: "10 Years",
@@ -349,7 +330,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -358,7 +338,7 @@ export const doctors = [
     name: "Dr. Henry Smith",
     specialty: "General Physician",
     image:
-      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.ekvDs4eR62ihqv9m8Tr1OQHaE8?pid=ImgDet&w=195&h=130&c=7&dpr=1.4", 
     rating: 91,
     stories: 1600,
     experience: "15 Years",
@@ -369,7 +349,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -377,7 +356,7 @@ export const doctors = [
     name: "Dr. Fiona White",
     specialty: "General Physician",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 90,
     stories: 1400,
     experience: "13 Years",
@@ -388,7 +367,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -396,7 +374,7 @@ export const doctors = [
     name: "Dr. George Brown",
     specialty: "Dentist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 89,
     stories: 1300,
     experience: "12 Years",
@@ -407,7 +385,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -415,7 +392,7 @@ export const doctors = [
     name: "Dr. Hannah Black",
     specialty: "Dentist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 87,
     stories: 1250,
     experience: "11 Years",
@@ -426,7 +403,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -434,7 +410,7 @@ export const doctors = [
     name: "Dr. Iris Green",
     specialty: "Pediatrician",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 95,
     stories: 1700,
     experience: "14 Years",
@@ -445,7 +421,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -453,7 +428,7 @@ export const doctors = [
     name: "Dr. Jack White",
     specialty: "Pediatrician",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 90,
     stories: 1600,
     experience: "16 Years",
@@ -464,7 +439,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -472,7 +446,7 @@ export const doctors = [
     name: "Dr. Kim Blue",
     specialty: "Sexologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 94,
     stories: 1500,
     experience: "13 Years",
@@ -483,7 +457,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -491,7 +464,7 @@ export const doctors = [
     name: "Dr. Liam Brown",
     specialty: "Sexologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 91,
     stories: 1300,
     experience: "14 Years",
@@ -501,7 +474,6 @@ export const doctors = [
     open247: false,
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
 
@@ -510,7 +482,7 @@ export const doctors = [
     name: "Dr. Olivia Green",
     specialty: "Gynecologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 97,
     stories: 2100,
     experience: "17 Years",
@@ -521,7 +493,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -529,7 +500,7 @@ export const doctors = [
     name: "Dr. Paul Black",
     specialty: "Gynecologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 92,
     stories: 1800,
     experience: "20 Years",
@@ -540,7 +511,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -548,7 +518,7 @@ export const doctors = [
     name: "Dr. Queen White",
     specialty: "Dermatologist",
     image:
-      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP.Ok1mB-FLP00ZPZqdwhQCCAHaGc?w=236&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7", 
     rating: 96,
     stories: 1400,
     experience: "9 Years",
@@ -559,7 +529,6 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
     coordinates: [40.7128, -74.006],
   },
   {
@@ -567,7 +536,7 @@ export const doctors = [
     name: "Dr. Ryan Blue",
     specialty: "Dermatologist",
     image:
-      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", // replace with actual image URL
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
     rating: 91,
     stories: 1100,
     experience: "11 Years",
@@ -578,7 +547,43 @@ export const doctors = [
     patients: "900",
     education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
     map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
-    mapImage: { mapImage },
+    coordinates: [40.7128, -74.006],
+  },
+  {
+    id: 31,
+    name: "Dr. Ryan Blue",
+    specialty: "Stomach",
+    image:
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
+    rating: 91,
+    stories: 1100,
+    experience: "11 Years",
+    fees: "₹920",
+    location: "5.8 Km",
+    nextSlot: "29 Sept",
+    open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
+    coordinates: [40.7128, -74.006],
+  },
+  {
+    id: 32,
+    name: "Dr. Ryan Blue",
+    specialty: "Bp",
+    image:
+      "https://th.bing.com/th/id/OIP._B3m9FMx8Kf3AFPu6qMBDgHaHa?pid=ImgDet&w=195&h=195&c=7&dpr=1.4", 
+    rating: 91,
+    stories: 1100,
+    experience: "11 Years",
+    fees: "₹920",
+    location: "5.8 Km",
+    nextSlot: "29 Sept",
+    open247: false,
+    patients: "900",
+    education: "MBBS, Diploma in Tuberculosis and Chest Diseases (DTCD)",
+    map: "35/1, 1st Floor, Kaveri Healthcare, Indra Nagar - Varthur Main Road",
     coordinates: [40.7128, -74.006],
   },
 ];
+
