@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { BiClinic } from "react-icons/bi";
 
@@ -7,6 +7,8 @@ import Header from "../../../components/common/Header";
 import MapComponent from "../../../components/bookAppointmentPage/specialtyPage/bookDoctorPage/MapComponent";
 import ConfirmationModal from "../../../components/discoverHospitalPage/bookSlotPage/bookingHospitalPage/hospitalPaymentPage/hospitalConfirmationPage/ConfirmationModal.jsx";
 import CancellationAnimation from "../../../components/discoverHospitalPage/bookSlotPage/bookingHospitalPage/hospitalPaymentPage/hospitalConfirmationPage/CancellationAnimation.jsx";
+import TickAnimation from "../../../components/discoverHospitalPage/bookSlotPage/bookingHospitalPage/hospitalPaymentPage/hospitalConfirmationPage/TickAnimation.jsx";
+import OneTimeAnimation from "../../../components/discoverHospitalPage/bookSlotPage/bookingHospitalPage/hospitalPaymentPage/hospitalConfirmationPage/OneTimeAnimation.jsx";
 
 //data
 import hospitals from "../../../data/hospitals";
@@ -34,6 +36,17 @@ function HospitalConfirmationPage() {
   const [showCancellationAnimation, setShowCancellationAnimation] =
     useState(false);
   const [modalType, setModalType] = useState("");
+  const [showOneTimeAnimation, setShowOneTimeAnimation] = useState(true);
+
+  useEffect(() => {
+    if (showOneTimeAnimation) {
+      const timer = setTimeout(() => {
+        setShowOneTimeAnimation(false);
+      }, 3000); // Adjust timeout to match animation duration
+
+      return () => clearTimeout(timer);
+    }
+  }, [showOneTimeAnimation]);
 
   const handleAppointmentClick = () => {
     navigate("/my-appointments");
@@ -76,10 +89,11 @@ function HospitalConfirmationPage() {
       <main className="">
         <div className="pt-6 px-4 pb-6 border-b-4">
           <div className="flex items-center justify-center mb-4 text-[#25d366]">
-            <div className="flex items-center justify-center rounded-full">
-              <img src={Tick} alt="" className="pt-0.5" />
+            <div className="flex items-center justify-center rounded-full w-8 h-8">
+              {/* <img src={Tick} alt="" className="pt-0.5" /> */}
+              <TickAnimation />
             </div>
-            <span className="ml-2 text-lg font-semibold">
+            <span className="ml-1 text-lg font-semibold">
               Appointment Confirmed
             </span>
           </div>
@@ -180,6 +194,16 @@ function HospitalConfirmationPage() {
 
         {showCancellationAnimation && <CancellationAnimation />}
 
+        {showOneTimeAnimation && (
+          // <div className="bg-white fixed inset-0 flex items-center justify-center z-50">
+          <div className="max-w-sm mx-auto absolute top-16 z-[1000]">
+          <OneTimeAnimation
+              isVisible={showOneTimeAnimation}
+              onComplete={() => setShowOneTimeAnimation(false)}
+            />
+          </div>
+        )}
+
         <div className="pl-4 py-5 pb-40 flex items-start gap-4">
           <img src={NeedHelp} className="pt-1" alt="" />
           <div className="">
@@ -200,6 +224,7 @@ function HospitalConfirmationPage() {
         >
           Back to HomeScreen
         </button>
+        
       </footer>
     </div>
   );
