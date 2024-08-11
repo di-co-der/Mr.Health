@@ -183,7 +183,7 @@ function HospitalConfirmationPage() {
         <div className="pl-4 py-5 pb-40 flex items-start gap-4">
           <img src={NeedHelp} className="pt-1" alt="" />
           <div className="">
-            <h3 className="text-lg font-semibold">Need Help?</h3>
+            <h3 className="text-lg font-semibold">Need Help <span className="font-bold text-lg">?</span></h3>
             <p className="text-sm text-gray-500 leading-4">
               In case you cannot make it for the appointment, please cancel or
               reschedule the appointment, preferably 2 hours prior to the
