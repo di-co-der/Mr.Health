@@ -53,6 +53,17 @@ import BookingHospitalPage from "./pages/homepage/discoverHospital/BookingHospit
 import HospitalPaymentPage from "./pages/homepage/discoverHospital/HospitalPaymentPage";
 import HospitalConfirmationPage from "./pages/homepage/discoverHospital/HospitalConfirmationPage";
 
+//GetMedicines
+// import AyurvedicPage from "./pages/homepage/getMedicines/medicinesCategories/AyurvedicPage";
+import CoughPage from "./pages/homepage/getMedicines/medicinesCategories/CoughPage";
+// import DeaddictionPage from "./pages/homepage/getMedicines/medicinesCategories/DeaddictionPage";
+// import DiabeticPage from "./pages/homepage/getMedicines/medicinesCategories/DiabeticPage";
+// import FeverPage from "./pages/homepage/getMedicines/medicinesCategories/FeverPage";
+import GasPage from "./pages/homepage/getMedicines/medicinesCategories/GasPage";
+// import MetabolicPage from "./pages/homepage/getMedicines/medicinesCategories/MetabolicPage";
+// import SkinPage from "./pages/homepage/getMedicines/medicinesCategories/SkinPage";
+// import VitaminPage from "./pages/homepage/getMedicines/medicinesCategories/VitaminPage";
+
 // Any Alternate and Better Routing Structure ?
 
 const App = () => {
@@ -196,9 +207,21 @@ const App = () => {
            */}
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route
+            path="/get-medicines/Cough-Cold"
+            element={<CoughPage />}
+          />
+          <Route
+            path="/get-medicines/Gas-Digestion"
+            element={<GasPage />}
+          />
+          {/* <Route
+            path="/get-medicines/Cough-Cold"
+            element={<CoughPage />}
+          />
+          <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
-          />
+          /> */}
 
 
 

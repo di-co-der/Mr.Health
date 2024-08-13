@@ -10,17 +10,25 @@ import Category from "../../components/getMedicinesPage/Category"
 
 //assets
 //Medicines
-import ayurvedicMedicines from '../../assets/getMedicine/medicine/ayurvedicMedicines.png'
-import CoughCold from '../../assets/getMedicine/medicine/Cough&Cold.png'
-import deaddictionMedicines from '../../assets/getMedicine/medicine/deaddictionMedicines.png'
-import diabeticCare from '../../assets/getMedicine/medicine/diabeticCare.png'
-import feverHeadache from '../../assets/getMedicine/medicine/fever&Headache.png'
-import gasDigestion from '../../assets/getMedicine/medicine/gas&Digestion.png'
-import metabolicSystem from '../../assets/getMedicine/medicine/metabolicSystem.png'
-import skinHairCare from '../../assets/getMedicine/medicine/skinHairCare.png'
-import vitaminsSupplements from '../../assets/getMedicine/medicine/vitaminsSupplements.png'
+import ayurvedicMedicines from '../../assets/svgs/getMedicines/AyurvedicMedicines.svg'
+import deaddictionMedicines from '../../assets/svgs/getMedicines/DeaddictionMedicines.svg'
+import diabeticCare from '../../assets/svgs/getMedicines/DiabeticCare.svg'
+import feverHeadache from '../../assets/svgs/getMedicines/Fever&Headache.svg'
+import gasDigestion from '../../assets/svgs/getMedicines/Gas&Digestion.svg'
+import metabolicSystem from '../../assets/svgs/getMedicines/MetabolicSystem.svg'
+import skinHairCare from '../../assets/svgs/getMedicines/Skin&HairCare.svg'
+import vitaminsSupplements from '../../assets/svgs/getMedicines/Vitamins&Supplements.svg'
+import CoughCold from '../../assets/svgs/getMedicines/Cough&Cold.svg'
 //Health Products
-
+// import CovidEssentials from '../../assets/svgs/getMedicines/CovidEssentials.svg'
+// import SkinHairCare from '../../assets/svgs/getMedicines/SkinHairCare.svg'
+// import VitaminsMinerals from '../../assets/svgs/getMedicines/VitaminsMinerals.svg'
+// import SexualWellness from '../../assets/svgs/getMedicines/SexualWellness.svg'
+// import HealthFoodDrinks from '../../assets/svgs/getMedicines/HealthFoodDrinks.svg'
+// import BabyCare from '../../assets/svgs/getMedicines/BabyCare.svg'
+// import HealthcareDevices from '../../assets/svgs/getMedicines/HealthcareDevices.svg'
+// import DiabeticCare1 from '../../assets/svgs/getMedicines/DiabeticCare1.svg'
+// import ProteinSupplements from '../../assets/svgs/getMedicines/ProteinSupplements.svg'
 
 function GetMedicines() {
 
