@@ -29,7 +29,7 @@ function NoProductCard() {
     </motion.div>
     <div className="text-center">
       <div className="text-gray-600 text-2xl font-semibold mb-3">
-        No Doctors Available
+        No Products Available
       </div>
       <p className="text-gray-500 mb-5">
         It seems there are no Products available for the selected category at the moment.

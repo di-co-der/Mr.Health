@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../common/Header";
 import SearchBar from "../../common/SearchBar";
 import FilterBar from "./FilterBar";
-import ProductCard from "./ProductCard"; // You'll need to create this component
-import NoProductCard from "./NoProductCard"; // You'll need to create this component
+import ProductCard from "./ProductCard";
+import NoProductCard from "./NoProductCard";
 
 //data
-import medicines  from "../../../data/medicines"; // Adjust the import path if necessary
+import medicines from "../../../data/medicines";
 
 function SpecialityProduct({ category, title }) {
     const [filteredMedicines, setFilteredMedicines] = useState([]);
@@ -90,7 +90,7 @@ function SpecialityProduct({ category, title }) {
             <ProductCard
               key={index}
               medicine={medicine}
-              onClick={() => handleProductClick(medicine.id)}
+              onClick={() => handleProductClick(medicine.id, medicine.name)}
             />
           ))
         )}
