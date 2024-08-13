@@ -192,7 +192,20 @@ const App = () => {
             element={<HospitalConfirmationPage />}
           />
 
+          {/* Get Medicines
+           */}
           <Route path="/get-medicines" element={<GetMedicines />} />
+          <Route
+            path="/discover-hospitals/:hospitalName/:hospitalId"
+            element={<BookHospitalPage />}
+          />
+
+
+
+
+
+
+
           <Route path="/book-lab-tests" element={<BookLabTests />} />
           <Route path="/insurance-plans" element={<InsurancePlans />} />
 

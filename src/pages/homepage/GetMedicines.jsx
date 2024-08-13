@@ -50,7 +50,7 @@ function GetMedicines() {
       "Metabolic System": "/get-medicines/child-specialist",
       "Deaddiction Medicines": "/get-medicines/Deaddiction-Medicines",
       "Ayurvedic Medicines": "/get-medicines/Ayurvedic-Medicines",
-      "Vitamins & Supplements": "/get-medicines/Vitamins-Supplements",
+      "Vitamins & Supplements": "/get-medicines/Vitamins & Supplements",
     };
     const route = routeMap[categoryName];
     if (route) {
