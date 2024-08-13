@@ -6,7 +6,7 @@ const medicines = [
     id: 1,
     category: 'Cough & Cold',
     name: 'Benadryl Cough Syrup',
-    image: 'https://www.benadryl.com/sites/benadryl_us/files/styles/product_image/public/products/adult-cough-4oz-800x800.png',
+    image: 'https://www.netmeds.com/images/product-v1/600x600/13778/benadryl_cough_formula_syrup_150ml_32458_0_1.jpg',
     MRP: '₹150',
     discount: '10%',
     rating: 4,
