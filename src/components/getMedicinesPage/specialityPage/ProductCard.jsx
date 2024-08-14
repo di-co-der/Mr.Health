@@ -1,61 +1,64 @@
 import React from "react";
-import { MdThumbUp } from "react-icons/md";
-import { MdMessage } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+//components
+import StarRating from "../../../components/discoverHospitalPage/StarRating";
 
-function ProductCard() {
+function ProductCard({ key, medicine }) {
+// Remove the currency symbol from MRP and convert it to a number
+const mrp = parseFloat(medicine[0].MRP.replace('₹', ''));
+
+// Remove the percentage symbol from discount and convert it to a number
+const discount = parseFloat(medicine[0].discount.replace('%', ''));
+
+// Calculate the price after discount
+const price = parseInt(mrp - (mrp * discount) / 100);
   return (
     <div
-    className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer hover:bg-slate-50 hover:outline outline-2 outline-gray-200"
-    onClick={onClick}
-  >
-    <div className="flex items-center">
+      className=" pt-4 w-48
+      rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF]"
+    >
       <img
-        src={doctor.image}
-        alt={doctor.name}
-        className="w-16 h-16 rounded-full"
+        src={medicine[0].image}
+        alt={medicine[0].name}
+        className="border-b-[2px] border-[#0086FF]"
       />
-      <div className="ml-4">
-        <h3 className="text-lg font-semibold">{doctor.name}</h3>
-        <p className="text-sm font-medium text-gray-500">
-          {doctor.specialty}
-        </p>
-        <div className="flex items-center mt-2">
-          <span className="text-green-500">
-            <MdThumbUp />
-          </span>
-          <span className="ml-1 italic font-medium text-gray-600">
-            {doctor.rating}%
-          </span>
-          <span className="ml-3 mt-1 text-green-500">
-            <MdMessage />
-          </span>
-          <span className="font-medium italic ml-1 text-gray-600">
-            {doctor.stories} Patient Stories
-          </span>
-        </div>
-      </div>
-    </div>
+      <div className="px-2">
 
-    <div className="flex pt-2 mt-2 justify-around border-t-2 border-zinc-300">
-      <div className="text-center">
-        <p className="text-[#0f257ce5] font-medium">{doctor.experience}</p>
-        <p className="text-sm text-gray-500 font-medium">Experience</p>
+      <p className="text-[#0086FF] text-center font-medium">
+        {medicine[0].name}
+      </p>
+      <div className="flex justify-center items-center">
+        <StarRating rating={medicine[0].rating} />
+        <span className="ml-2 text-[#0086FF] font-medium text-sm italic">
+          ({medicine[0].totalRating})
+        </span>{" "}
       </div>
-      <div className="text-center">
-        <p className="text-[#0f257ce5] font-medium">{doctor.fees}</p>
-        <p className="text-sm text-gray-500 font-medium">Fees</p>
+
+      <p className="text-sm">
+  <span className="bg-gradient-to-r from-[#FF00CC] to-[#333399] bg-clip-text text-transparent">
+    MRP
+  </span>
+  <span
+    className="line-through bg-gradient-to-r from-[#FF00CC] to-[#333399] bg-clip-text text-transparent ml-1"
+    style={{ WebkitTextFillColor: 'transparent', WebkitTextStroke: '0.005px black' }}
+  >
+    {medicine[0].MRP}
+  </span>
+</p>
+
+<p className="flex items-center gap-4 pb-1">
+  <span className="bg-gradient-to-r from-[#FF00CC] to-[#333399] bg-clip-text text-transparent">
+  ₹{price}
+  </span>
+  <div className="text-sm bg-red-500 text-white p-[1px] rounded-md px-1">{medicine[0].discount} OFF</div>
+</p>
+
+
+
       </div>
-      <div className="text-center">
-        <p className="text-[#0f257ce5] font-medium">{doctor.location}</p>
-        <p className="text-sm text-gray-500 font-medium">Location</p>
-      </div>
-      <div className="text-center">
-        <p className="text-[#0f257ce5] font-medium">{doctor.nextSlot}</p>
-        <p className="text-sm text-gray-500 font-medium">Next Slot</p>
-      </div>
+      
     </div>
-  </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;
