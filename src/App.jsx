@@ -207,26 +207,17 @@ const App = () => {
           <Route path="/get-medicines/Cough-Cold" element={<CoughPage />} />
           <Route path="/get-medicines/Gas-Digestion" element={<GasPage />} />
 
-          <Route
-            path="/get-medicines/Cough-Cold"
-            element={<CoughPage />}
-          />
-          <Route
-            path="/get-medicines/Gas-Digestion"
-            element={<GasPage />}
-          />
+          <Route path="/get-medicines/Cough-Cold" element={<CoughPage />} />
+          <Route path="/get-medicines/Gas-Digestion" element={<GasPage />} />
           <Route
             path="/get-medicines/Fever-Headache"
             element={<FeverHeadachePage />}
           />
-           <Route
+          <Route
             path="/get-medicines/Diabetic-Care"
             element={<DiabeticPage />}
-          /> 
-          <Route
-            path="/get-medicines/Skin-HairCare"
-            element={<SkinPage />}
           />
+          <Route path="/get-medicines/Skin-HairCare" element={<SkinPage />} />
           <Route
             path="/get-medicines/Deaddiction-Medicines"
             element={<DeaddictionPage />}
@@ -238,28 +229,25 @@ const App = () => {
           <Route
             path="/get-medicines/Vitamins & Supplements"
             element={<VitaminPage />}
-            
           />
-          
+
           <Route
             path="/get-medicines/Metabolic-System"
             element={<MetabolicPage />}
           />
-
-
 
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
           /> */}
 
-
-   {/* Book Lab Tests */}
-   <Route path="/book-lab-tests" element={<BookLabTests />} />
-            <Route path="/book-lab-tests/:concernName"
-            element={<SpecialityLabTests />} />
-<Route path="/add-to-cart" element={<SpecialityLabTests />} />
-
+          {/* Book Lab Tests */}
+          <Route path="/book-lab-tests" element={<BookLabTests />} />
+          <Route
+            path="/book-lab-tests/:concernName"
+            element={<SpecialityLabTests />}
+          />
+          <Route path="/add-to-cart" element={<SpecialityLabTests />} />
 
           {/* Insurance Plans */}
           <Route path="/insurance-plans" element={<InsurancePlans />} />

@@ -10,7 +10,7 @@ const medicines = [
       "https://www.netmeds.com/images/product-v1/600x600/13778/benadryl_cough_formula_syrup_150ml_32458_0_1.jpg",
     MRP: "₹150",
     discount: "10%",
-    rating: 4,
+    rating: 3.5,
     totalRating: 320,
     tags: ["10% off", "Delivery within 2 Days", "Clinic"],
     ProductDescription:
