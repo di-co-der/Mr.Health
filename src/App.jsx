@@ -247,7 +247,7 @@ const App = () => {
             path="/book-lab-tests/:concernName"
             element={<SpecialityLabTests />}
           />
-          <Route path="/add-to-cart" element={<SpecialityLabTests />} />
+          <Route path="/add-to-cart" element={<AddToCart />} />
 
           {/* Insurance Plans */}
           <Route path="/insurance-plans" element={<InsurancePlans />} />

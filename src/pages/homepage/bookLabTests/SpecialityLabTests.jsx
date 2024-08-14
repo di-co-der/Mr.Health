@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // components
@@ -20,45 +20,75 @@ import Cart from "../../../assets/svgs/Cart.svg";
 
 const SpecialityLabTests = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { concern } = location.state || {};
+  const concern = location.state?.concern;
 
+  const [cartItems, setCartItems] = useState([]); // State to hold cart items
   const [showAllTests, setShowAllTests] = useState(false); // State to control visibility
   const [numPatients, setNumPatients] = useState(1); // State to control the number of patients
+  const [isAddedToCart, setIsAddedToCart] = useState(false); // Tracks if the item has been added to the cart
+  const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!concern) {
+      navigate("/book-lab-tests", { replace: true });
+    }
+  }, [concern, navigate]);
+
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 3000); // Hide the alert after 3 seconds
+
+      return () => clearTimeout(timer); // Clean up the timer on component unmount
+    }
+  }, [showAlert]);
 
   if (!concern) {
-    navigate("/book-lab-tests"); // Redirect if no concern data is passed
     return null;
   }
 
   const handleSearch = (term) => setSearchTerm(term);
 
   const handleAddToCart = () => {
-    navigate("/add-to-cart");
+    const itemToAdd = {
+      ...concern,
+      quantity: numPatients,
+      totalPrice: concern.price * numPatients,
+    };
+    setCartItems([...cartItems, itemToAdd]); // Add the selected item to the cart
+    setIsAddedToCart(true); // Change button text and color after adding to cart
+    setTimeout(() => setShowAlert(true), 1000); // Show the alert after a 1-second delay
+  };
+
+  const handleViewCart = () => {
+    // Navigate to the add-to-cart page with the cart items
+    navigate("/add-to-cart", {
+      state: { cartItems },
+    });
   };
 
   const toggleShowAllTests = () => {
-    setShowAllTests(!showAllTests); // Toggle visibility
+    setShowAllTests(!showAllTests);
   };
 
-  // Increase number of patients
   const increasePatients = () => {
-    setNumPatients(prev => prev + 1);
+    setNumPatients((prev) => prev + 1);
   };
 
-  // Decrease number of patients with a minimum of 1
   const decreasePatients = () => {
-    setNumPatients(prev => (prev > 1 ? prev - 1 : 1));
+    setNumPatients((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
-  // Calculate adjusted prices
   const adjustedPrice = concern.price * numPatients;
   const adjustedMRP = concern.mrp * numPatients;
 
   return (
     <div className="mt-3 max-w-sm mx-auto min-h-screen">
       <header className="pt-10">
-        <Header title={concern.name} onClick={handleAddToCart} />
+        <Header title={concern.name} onClick={handleViewCart} />
       </header>
 
       <LocationDropdown
@@ -72,31 +102,55 @@ const SpecialityLabTests = () => {
         ]}
         defaultLocation="Mumbai"
       />
-      <SearchBar onSearch={handleSearch} />
 
-      <section className="pt-4 border-t border-gray-300 border-b-4">
+      <div className="sticky top-[54px] bg-white z-10 border-b-2 border-b-gray-300">
+        <SearchBar
+          onSearch={handleSearch}
+          className="border-b border-gray-300"
+        />
+      </div>
+
+      <section className="pt-4 border-b-4">
         <div className="flex flex-col gap-2 border-b border-gray-400 mx-6">
           <h1 className="font-semibold text-lg text-[#0086ff]">
             {concern.name}
           </h1>
           <div className="flex justify-between">
-            <p className="text-[#525252]">Includes {concern.tests?.length || 0} tests</p>
+            <p className="text-[#525252]">
+              Includes {concern.tests?.length || 0} tests
+            </p>
             <p
-              className="text-[#00cccc] font-semibold text-sm cursor-pointer"
+              className="text-[#00cccc] transition-all font-semibold text-sm cursor-pointer"
               onClick={toggleShowAllTests}
             >
-              {showAllTests ? 'Show Fewer Tests ▲' : 'Show All Tests ▼'}
+              {showAllTests ? "Show Fewer Tests" : "Show All Tests"}
+              <span
+                className={`transition-transform duration-500 inline-block ml-2 ${
+                  showAllTests ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                ▼
+              </span>
             </p>
           </div>
         </div>
 
-        <section className={`mb-4 pt-2 px-6 ${showAllTests ? '' : 'hidden'}`}>
-          <div className="grid grid-cols-2 gap-4">
-            {/* Displaying the concern tests */}
+        {/* Smooth transition for test list */}
+        <section
+          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+            showAllTests ? "max-h-screen" : "max-h-0"
+          } px-6`}
+        >
+          <div className="grid grid-cols-2 gap-4 py-2">
             {concern.tests && Array.isArray(concern.tests) ? (
               concern.tests.map((test, index) => (
-                <div key={index} className="border rounded-lg p-2">
-                  <p className="text-xs font-semibold">{test.name}</p>
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded-lg p-2 flex flex-col justify-between"
+                >
+                  <p className="text-xs font-semibold tracking-tighter text-gray-700">
+                    {test.name}
+                  </p>
                   <p className="text-xs text-gray-500">₹{test.price}</p>
                 </div>
               ))
@@ -107,23 +161,37 @@ const SpecialityLabTests = () => {
         </section>
 
         <div className="flex justify-between items-end mx-6 py-4">
-          <div className="flex gap-4 items-end">
-            <div>
-              <p className="text-xl font-bold text-purple-700">₹{adjustedPrice}</p>
-              <p className="line-through font-bold text-purple-700">₹{adjustedMRP}</p>
+          <div className="flex gap-1 items-end">
+            <div className="min-w-[72px]">
+              <p className="text-xl font-bold bg-gradient-to-br from-[#f403c9] to-[#37329a] bg-clip-text text-transparent">
+                ₹{adjustedPrice}
+              </p>
+              <p className="font-bold flex">
+                <span className="relative">
+                  <span className="bg-gradient-to-br from-[#f403c9] to-[#37329a] bg-clip-text text-transparent">
+                    ₹{adjustedMRP}
+                  </span>
+                  <span className="absolute inset-0 pt-0.5 flex items-center justify-center">
+                    <span className="block h-[1.5px] w-full bg-gradient-to-br from-[#f403c9] to-[#37329a]"></span>
+                  </span>
+                </span>
+              </p>
             </div>
-            <div className="text-red-500 text-sm font-bold">
+
+            <div className="text-red-500 text-sm font-bold pb-0.5">
               {concern.discount}% OFF
             </div>
           </div>
-          <div className="flex items-center border-2 rounded-md border-gray-400">
+          <div className="flex items-center border-2 rounded-md border-gray-400 mb-0.5">
             <button
               className="text-[#00cccc] text-lg font-semibold px-2"
               onClick={decreasePatients}
             >
-              - 
+              -
             </button>
-            <span className="mx-2 w-20 text-center text-[#00cccc]">{numPatients} Patient{numPatients > 1 ? 's' : ''}</span>
+            <span className="mx-2 w-20 text-center text-[#00cccc]">
+              {numPatients} Patient{numPatients > 1 ? "s" : ""}
+            </span>
             <button
               className="text-[#00cccc] px-2 py-1"
               onClick={increasePatients}
@@ -188,7 +256,7 @@ const SpecialityLabTests = () => {
         </h2>
         <div className="flex gap-4 text-[#525252]">
           <img src={WhyBook1} alt="Home sample collection" />
-          <div className="">
+          <div>
             <p className="font-medium">Home sample collection for FREE</p>
             <p className="leading-5 text-sm">
               A certified professional will collect your sample from your
@@ -198,7 +266,7 @@ const SpecialityLabTests = () => {
         </div>
         <div className="flex gap-4 my-4 text-[#525252]">
           <img src={WhyBook2} alt="Digital report" />
-          <div className="">
+          <div>
             <p className="font-medium">Get digital report within 24 Hours</p>
             <p className="leading-5 text-sm">
               Our labs ensure turn-around-time of 24 hrs from specimen pickup
@@ -207,7 +275,7 @@ const SpecialityLabTests = () => {
         </div>
         <div className="flex gap-4 text-[#525252]">
           <img src={WhyBook3} alt="Affordable prices" />
-          <div className="">
+          <div>
             <p className="font-medium">Offers and affordable prices</p>
             <p className="leading-5 text-sm">
               Get great discounts and offers on tests and packages
@@ -215,13 +283,33 @@ const SpecialityLabTests = () => {
           </div>
         </div>
       </section>
-      <div className="bg-[#d9d9d9] py-0.5 mt-4 mb-24"></div>
+      <div className="bg-[#d9d9d9] py-0.5 mt-4 mb-28"></div>
 
-      <footer className="fixed bottom-0 inset-x-10 mb-4 rounded-lg text-white px-4 flex justify-between py-4 bg-[#00cccc] cursor-pointer" onClick={handleAddToCart}>
-          <div>2 Tests | ₹3198</div>
-          <div className="flex items-center gap-2"> <img src={Cart} alt="" />View Cart</div>
-        </footer>
-        
+      {/* Alert Section */}
+      {showAlert && (
+        <div className="fixed bottom-20 inset-x-16 mb-4 py-1 px-2 bg-green-400 text-white text-center rounded-md shadow-lg">
+          Tests added to your cart!
+        </div>
+      )}
+
+      <footer
+        className={`fixed bottom-0 inset-x-5 mb-4 rounded-lg flex items-center text-white py-4 font-semibold text-lg cursor-pointer transition-colors duration-200 ${
+          isAddedToCart
+            ? "bg-[#00cccc] justify-center text-center px-auto"
+            : "justify-between px-4 bg-gradient-to-br from-[#f403c9] to-[#37329a] font-semibold text-lg"
+        }`}
+        onClick={isAddedToCart ? handleViewCart : handleAddToCart}
+      >
+        {!isAddedToCart && (
+          <div className="text-sm">
+            {concern.tests?.length || 0} Tests | ₹{adjustedPrice}
+          </div>
+        )}
+        <div className="flex items-center gap-2">
+          <img src={Cart} alt="" />
+          {isAddedToCart ? "View Cart" : "Add to Cart"}
+        </div>
+      </footer>
     </div>
   );
 };

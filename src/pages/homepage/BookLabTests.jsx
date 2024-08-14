@@ -32,13 +32,17 @@ const BookLabTests = () => {
     );
 
     // Pass the selectedConcern data via state
-    navigate(
-      `/book-lab-tests/${concernName
-        .toLowerCase()
-        .replace(/\s+/g, "-")
-        .replace(/[^\w\-]+/g, "")}`,
-      { state: { concern: selectedConcern } }
-    );
+    if (selectedConcern) {
+      navigate(
+        `/book-lab-tests/${concernName
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .replace(/[^\w\-]+/g, "")}`,
+        { state: { concern: selectedConcern } }
+      );
+    } else {
+      console.log("Concern not found");
+    }
   };
 
   const displayedConcerns = showAllConcerns
@@ -130,11 +134,18 @@ const BookLabTests = () => {
                   <p className="bg-[#df3020] text-white text-sm px-3 py-0.5 pr-4">
                     {pkg.discount}% OFF
                   </p>
-                  <div className="pl-3 mt-1.5 font-medium">
-                    <p className="line-through text-purple-800">
-                      ₹{pkg.originalPrice}
+                  <div className="min-w-[72px]">
+                    <p className="font-bold flex">
+                      <span className="relative">
+                        <span className="bg-gradient-to-br from-[#f403c9] to-[#37329a] bg-clip-text text-transparent">
+                          ₹{pkg.originalPrice}
+                        </span>
+                        <span className="absolute inset-0 pt-0.5 flex items-center justify-center">
+                          <span className="block h-[2px] w-full bg-gradient-to-br from-[#f403c9] to-[#37329a]"></span>
+                        </span>
+                      </span>
                     </p>
-                    <p className="text-purple-800 text-lg">
+                    <p className="text-xl font-bold bg-gradient-to-br from-[#f403c9] to-[#37329a] bg-clip-text text-transparent">
                       ₹{pkg.discountedPrice}
                     </p>
                   </div>

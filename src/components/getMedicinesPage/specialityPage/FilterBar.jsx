@@ -13,7 +13,7 @@ const FilterBar = ({ filters, selectedFilters = [], onFilterSelect }) => {
   };
 
   return (
-    <div className="flex items-center sticky top-32 px-2 py-2 border-y-2 border-gray-300 bg-white">
+    <div className="flex items-center sticky top-32 px-2 py-2 border-y-2 border-gray-300 bg-white z-10">
       <div className="filter-container flex space-x-2 py-1 px-1 border-r-2 border-gray-300 overflow-x-auto">
         {filters.map((filter, index) => (
           <button
