@@ -34,9 +34,9 @@ const DiscoverHospitals = () => {
     return matchesSearchTerm && matchesFilters;
   });
 
-  const handleSearch = (term) => setSearchTerm(term);
-
   const handleFilterSelect = (filters) => setSelectedFilters(filters);
+
+  const handleSearch = (term) => setSearchTerm(term);
 
   const navigate = useNavigate();
   const handleAppointmentClick = () => {
