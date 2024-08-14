@@ -5,7 +5,7 @@ import SpecialityProduct from '../../../../components/getMedicinesPage/specialit
 
 function CoughPage() {
   return (
-    <SpecialityProduct specialty="Cough & Cold" title="Cough & Cold"/>
+    <SpecialityProduct category="Cough & Cold" title="Cough & Cold"/>
   )
 }
 

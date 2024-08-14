@@ -55,7 +55,7 @@ function GetMedicines() {
       "Fever & Headache": "/get-medicines/Fever-Headache",
       "Diabetic Care": "/get-medicines/Diabetic-Care",
       "Skin & Hair Care": "/get-medicines/Skin-HairCare",
-      "Metabolic System": "/get-medicines/child-specialist",
+      "Metabolic System": "/get-medicines/Metabolic-System",
       "Deaddiction Medicines": "/get-medicines/Deaddiction-Medicines",
       "Ayurvedic Medicines": "/get-medicines/Ayurvedic-Medicines",
       "Vitamins & Supplements": "/get-medicines/Vitamins & Supplements",

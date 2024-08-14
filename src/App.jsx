@@ -54,15 +54,15 @@ import HospitalPaymentPage from "./pages/homepage/discoverHospital/HospitalPayme
 import HospitalConfirmationPage from "./pages/homepage/discoverHospital/HospitalConfirmationPage";
 
 //GetMedicines
-// import AyurvedicPage from "./pages/homepage/getMedicines/medicinesCategories/AyurvedicPage";
+import AyurvedicPage from "./pages/homepage/getMedicines/medicinesCategories/AyurvedicPage";
 import CoughPage from "./pages/homepage/getMedicines/medicinesCategories/CoughPage";
-// import DeaddictionPage from "./pages/homepage/getMedicines/medicinesCategories/DeaddictionPage";
-// import DiabeticPage from "./pages/homepage/getMedicines/medicinesCategories/DiabeticPage";
-// import FeverPage from "./pages/homepage/getMedicines/medicinesCategories/FeverPage";
+import DeaddictionPage from "./pages/homepage/getMedicines/medicinesCategories/DeaddictionPage";
+import DiabeticPage from "./pages/homepage/getMedicines/medicinesCategories/DiabeticPage";
+import FeverHeadachePage from "./pages/homepage/getMedicines/medicinesCategories/FeverPage";
 import GasPage from "./pages/homepage/getMedicines/medicinesCategories/GasPage";
-// import MetabolicPage from "./pages/homepage/getMedicines/medicinesCategories/MetabolicPage";
-// import SkinPage from "./pages/homepage/getMedicines/medicinesCategories/SkinPage";
-// import VitaminPage from "./pages/homepage/getMedicines/medicinesCategories/VitaminPage";
+import MetabolicPage from "./pages/homepage/getMedicines/medicinesCategories/MetabolicPage";
+import SkinPage from "./pages/homepage/getMedicines/medicinesCategories/SkinPage";
+import VitaminPage from "./pages/homepage/getMedicines/medicinesCategories/VitaminPage";
 
 // Any Alternate and Better Routing Structure ?
 
@@ -214,11 +214,38 @@ const App = () => {
             path="/get-medicines/Gas-Digestion"
             element={<GasPage />}
           />
-          {/* <Route
-            path="/get-medicines/Cough-Cold"
-            element={<CoughPage />}
+          <Route
+            path="/get-medicines/Fever-Headache"
+            element={<FeverHeadachePage />}
+          />
+           <Route
+            path="/get-medicines/Diabetic-Care"
+            element={<DiabeticPage />}
+          /> 
+          <Route
+            path="/get-medicines/Skin-HairCare"
+            element={<SkinPage />}
           />
           <Route
+            path="/get-medicines/Deaddiction-Medicines"
+            element={<DeaddictionPage />}
+          />
+          <Route
+            path="/get-medicines/Ayurvedic-Medicines"
+            element={<AyurvedicPage />}
+          />
+          <Route
+            path="/get-medicines/Vitamins & Supplements"
+            element={<VitaminPage />}
+          />
+          <Route
+            path="/get-medicines/Metabolic-System"
+            element={<MetabolicPage />}
+          />
+
+
+
+          {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
           /> */}
