@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 //assets
 import Getmedicines_Prescription from '../../assets/Getmedicine_Prescription.jpg';
 import Attachment from '../../assets/GetMedicine_Attachment.png';
 
+function Upload({ selectedCategory, setSelectedCategory }) {
 
-function Upload() {
-
-    const [selected, setSelected] = useState('Medicines');
-
-    const handleClick = (upload) => {
-      setSelected(upload);
-    };
+  const handleClick = (category) => {
+    setSelectedCategory(category);
+  };
 
   return (
     <div className="p-6 border-y-2">
@@ -19,7 +16,7 @@ function Upload() {
         <button
           onClick={() => handleClick('Medicines')}
           className={`py-1 px-9 rounded-full ${
-            selected === 'Medicines' ? 'bg-[#0086FF] text-white' : 'bg-[#D9D9D9] text-[#0086FF]'
+            selectedCategory === 'Medicines' ? 'bg-[#0086FF] text-white' : 'bg-[#D9D9D9] text-[#0086FF]'
           }`}
         >
           Medicines
@@ -27,25 +24,26 @@ function Upload() {
         <button
           onClick={() => handleClick('Health Products')}
           className={`py-1 px-9 rounded-full ${
-            selected === 'Health Products' ? 'bg-[#0086FF] text-white' : 'bg-[#D9D9D9] text-[#0086FF]'
+            selectedCategory === 'Health Products' ? 'bg-[#0086FF] text-white' : 'bg-[#D9D9D9] text-[#0086FF]'
           }`}
         >
           Health Products
         </button>
       </div>
 
-        <div className='flex justify-center items-center gap-2 mt-6'>
-            <img src={Getmedicines_Prescription} alt = 'presc. img'></img>
-            <div>
-                <div className='font-bold'>Quickly order via prescription</div>
-                <div className='text-sm'>Upload your photo of your prescription and we will deliver the medicines</div>
-            </div>
+      <div className='flex justify-center items-center gap-2 mt-6'>
+        <img src={Getmedicines_Prescription} alt='presc. img' />
+        <div>
+          <div className='font-bold'>Quickly order via prescription</div>
+          <div className='text-sm'>Upload your photo of your prescription and we will deliver the medicines</div>
         </div>
-        <button className=' bg-[#0086FF] text-white font-medium px-4 py-2 rounded-xl mt-5 ml-14 flex justify-center items-center gap-2'>
-        <img src={Attachment}></img>
-        Upload Prescription</button>
+      </div>
+      <button className='bg-[#0086FF] text-white font-medium px-4 py-2 rounded-xl mt-5 ml-14 flex justify-center items-center gap-2'>
+        <img src={Attachment} alt='attachment icon' />
+        Upload Prescription
+      </button>
     </div>
-  )
+  );
 }
 
-export default Upload
+export default Upload;

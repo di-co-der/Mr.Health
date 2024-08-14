@@ -1,8 +1,11 @@
 import React from 'react'
 
+//components
+import SpecialityHealthProduct from '../../../../components/getMedicinesPage/specialityPage/SpecialityHealthProductPage';
+
 function SexualPage() {
   return (
-    <div>SexualPage</div>
+    <SpecialityHealthProduct category="Sexual Wellness" title="Sexual Wellness"/>
   )
 }
 

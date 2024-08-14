@@ -20,18 +20,18 @@ import skinHairCare from '../../assets/svgs/getMedicines/Skin&HairCare.svg'
 import vitaminsSupplements from '../../assets/svgs/getMedicines/Vitamins&Supplements.svg'
 import CoughCold from '../../assets/svgs/getMedicines/Cough&Cold.svg'
 //Health Products
-// import CovidEssentials from '../../assets/svgs/getMedicines/CovidEssentials.svg'
-// import SkinHairCare from '../../assets/svgs/getMedicines/SkinHairCare.svg'
-// import VitaminsMinerals from '../../assets/svgs/getMedicines/VitaminsMinerals.svg'
-// import SexualWellness from '../../assets/svgs/getMedicines/SexualWellness.svg'
-// import HealthFoodDrinks from '../../assets/svgs/getMedicines/HealthFoodDrinks.svg'
-// import BabyCare from '../../assets/svgs/getMedicines/BabyCare.svg'
-// import HealthcareDevices from '../../assets/svgs/getMedicines/HealthcareDevices.svg'
-// import DiabeticCare1 from '../../assets/svgs/getMedicines/DiabeticCare1.svg'
-// import ProteinSupplements from '../../assets/svgs/getMedicines/ProteinSupplements.svg'
+import CovidEssentials from '../../assets/svgs/getMedicines/CovidEssentials.svg'
+import SkinHairCare from '../../assets/svgs/getMedicines/SkinHairCare.svg'
+import VitaminsMinerals from '../../assets/svgs/getMedicines/VitaminsMinerals.svg'
+import SexualWellness from '../../assets/svgs/getMedicines/SexualWellness.svg'
+import HealthFoodDrinks from '../../assets/svgs/getMedicines/HealthFoodDrinks.svg'
+import BabyCare from '../../assets/svgs/getMedicines/BabyCare.svg'
+import HealthcareDevices from '../../assets/svgs/getMedicines/HealthcareDevices.svg'
+import DiabeticCare1 from '../../assets/svgs/getMedicines/DiabeticCare1.svg'
+import ProteinSupplements from '../../assets/svgs/getMedicines/ProteinSupplements.svg'
 
 function GetMedicines() {
-
+  const [selectedCategory, setSelectedCategory] = useState('Medicines');
   const handleSearch = (term) => setSearchTerm(term);
 
   const categories = [
@@ -44,6 +44,18 @@ function GetMedicines() {
     { name: "Deaddiction Medicines", icon: deaddictionMedicines },
     { name: "Ayurvedic Medicines", icon: ayurvedicMedicines },
     { name: "Vitamins & Supplements", icon: vitaminsSupplements },
+  ];
+
+  const healthProductsCategories = [
+    { name: "Covid Essentials", icon: CovidEssentials },
+    { name: "Skin & Hair Care Health", icon: SkinHairCare },
+    { name: "Vitamins & Minerals", icon: VitaminsMinerals },
+    { name: "Sexual Wellness", icon: SexualWellness },
+    { name: "Health Food & Drinks", icon: HealthFoodDrinks },
+    { name: "Baby Care", icon: BabyCare },
+    { name: "Healthcare Devices", icon: HealthcareDevices },
+    { name: "Diabetic Care Health", icon: DiabeticCare1 },
+    { name: "Protein Supplements", icon: ProteinSupplements },
   ];
 
   const navigate = useNavigate();
@@ -59,6 +71,15 @@ function GetMedicines() {
       "Deaddiction Medicines": "/get-medicines/Deaddiction-Medicines",
       "Ayurvedic Medicines": "/get-medicines/Ayurvedic-Medicines",
       "Vitamins & Supplements": "/get-medicines/Vitamins & Supplements",
+      "Covid Essentials": "/get-health/Covid-Essentials",
+      "Skin & Hair Care Health": "/get-health/Skin-HairCare",
+      "Vitamins & Minerals": "/get-health/Vitamins-Minerals",
+      "Sexual Wellness": "/get-health/Sexual-Wellness",
+      "Health Food & Drinks": "/get-health/Health-Food-Drinks",
+      "Baby Care": "/get-health/Baby-Care",
+      "Healthcare Devices": "/get-health/Healthcare-Devices",
+      "Diabetic Care Health": "/get-health/Diabetic-Care",
+      "Protein Supplements": "/get-health/Protein-Supplements",
     };
     const route = routeMap[categoryName];
     if (route) {
@@ -85,9 +106,9 @@ function GetMedicines() {
           defaultLocation="Mumbai"
         />
         <SearchBar onSearch={handleSearch} />
-        <Upload />
+        <Upload selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
         <Category
-          categories={categories}
+          categories={selectedCategory === 'Medicines' ? categories : healthProductsCategories}
           onCategoryClick={handleCategoryClick}
         />
         <div className="pb-4"></div>
