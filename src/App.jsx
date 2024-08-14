@@ -51,6 +51,7 @@ import HospitalPaymentPage from "./pages/homepage/discoverHospital/HospitalPayme
 import HospitalConfirmationPage from "./pages/homepage/discoverHospital/HospitalConfirmationPage";
 
 //GetMedicines
+//medicine
 import AyurvedicPage from "./pages/homepage/getMedicines/medicinesCategories/AyurvedicPage";
 import CoughPage from "./pages/homepage/getMedicines/medicinesCategories/CoughPage";
 import DeaddictionPage from "./pages/homepage/getMedicines/medicinesCategories/DeaddictionPage";
@@ -60,6 +61,16 @@ import GasPage from "./pages/homepage/getMedicines/medicinesCategories/GasPage";
 import MetabolicPage from "./pages/homepage/getMedicines/medicinesCategories/MetabolicPage";
 import SkinPage from "./pages/homepage/getMedicines/medicinesCategories/SkinPage";
 import VitaminPage from "./pages/homepage/getMedicines/medicinesCategories/VitaminPage";
+//healthProducts
+import BabyCare from "./pages/homepage/getMedicines/healthProductsCategories/BabyCare.jsx";
+import HealthCareDevicePage from "./pages/homepage/getMedicines/healthProductsCategories/HealthCareDevicesPage.jsx";
+import CovidPage from "./pages/homepage/getMedicines/healthProductsCategories/CovidPage.jsx";
+import DiabeticCarePage from "./pages/homepage/getMedicines/healthProductsCategories/DiabeticCarePage.jsx";
+import HealthPage from "./pages/homepage/getMedicines/healthProductsCategories/HealthPage.jsx";
+import ProteinSupplementPage from "./pages/homepage/getMedicines/healthProductsCategories/ProteinSupplementPage.jsx";
+import SexualPage from "./pages/homepage/getMedicines/healthProductsCategories/SexualPage.jsx";
+import SkinCarePage from "./pages/homepage/getMedicines/healthProductsCategories/SkinPage.jsx";
+import VitaminHealthPage from "./pages/homepage/getMedicines/healthProductsCategories/VitaminPage.jsx";
 
 //Book Lab Tests
 import SpecialityLabTests from "./pages/homepage/bookLabTests/SpecialityLabTests";
@@ -206,9 +217,6 @@ const App = () => {
           <Route path="/get-medicines" element={<GetMedicines />} />
           <Route path="/get-medicines/Cough-Cold" element={<CoughPage />} />
           <Route path="/get-medicines/Gas-Digestion" element={<GasPage />} />
-
-          <Route path="/get-medicines/Cough-Cold" element={<CoughPage />} />
-          <Route path="/get-medicines/Gas-Digestion" element={<GasPage />} />
           <Route
             path="/get-medicines/Fever-Headache"
             element={<FeverHeadachePage />}
@@ -230,11 +238,44 @@ const App = () => {
             path="/get-medicines/Vitamins & Supplements"
             element={<VitaminPage />}
           />
-
-          <Route
+                    <Route
             path="/get-medicines/Metabolic-System"
             element={<MetabolicPage />}
           />
+
+    
+
+          <Route path="/get-health/Covid-Essentials" element={<CovidPage />} />
+          <Route path="/get-health/Skin-HairCare" element={<SkinCarePage />} />
+          <Route
+            path="/get-health/Vitamins-Minerals"
+            element={<VitaminHealthPage />}
+          />
+          <Route
+            path="/get-health/Sexual-Wellness"
+            element={<SexualPage />}
+          />
+          <Route
+            path="/get-health/Health-Food-Drinks"
+            element={<HealthPage />}
+          />
+          <Route
+            path="/get-health/Baby-Care"
+            element={<BabyCare />}
+          />
+          <Route
+            path="/get-health/Healthcare-Devices"
+            element={<HealthCareDevicePage />}
+          />
+          <Route
+            path="/get-health/Diabetic-Care"
+            element={<DiabeticCarePage />}
+          />
+          <Route
+            path="/get-health/Protein-Supplements"
+            element={<ProteinSupplementPage />}
+          />
+
 
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"

@@ -1,8 +1,11 @@
 import React from 'react'
 
+//components
+import SpecialityHealthProduct from '../../../../components/getMedicinesPage/specialityPage/SpecialityHealthProductPage';
+
 function HealthCareDevicesPage() {
   return (
-    <div>HealthCareDevicesPage</div>
+    <SpecialityHealthProduct category="Health care Devices" title="Healthcare Devices"/>
   )
 }
 

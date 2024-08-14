@@ -14,7 +14,7 @@ function SpecialityProduct({ category, title }) {
   const [selectedFilters, setSelectedFilters] = useState([]);
 
   const filters = [
-    "Discount above 20%",
+    "Discount above 10%",
     "Delivery within 2 Days",
     "PLUS",
     "Clinic",
@@ -28,9 +28,9 @@ function SpecialityProduct({ category, title }) {
     if (selectedFilters.length > 0) {
       filtered = filtered.filter((medicine) => {
         return selectedFilters.every((filter) => {
-          if (filter === "Discount above 20%") {
+          if (filter === "Discount above 10%") {
             const discount = parseFloat(medicine.discount.replace("%", ""));
-            return discount > 20;
+            return discount > 10;
           }
           return medicine.tags.includes(filter);
         });
@@ -77,7 +77,7 @@ function SpecialityProduct({ category, title }) {
           onFilterSelect={handleFilterSelect}
         />
 
-        <div className="flex flex-wrap gap-4 mt-4">
+        <div className="flex justify-between flex-wrap m-4">
           {filteredMedicines.length > 0 ? (
             filteredMedicines.map((medicine) => (
               <ProductCard
