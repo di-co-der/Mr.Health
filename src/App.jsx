@@ -11,9 +11,6 @@ import BookLabTests from "./pages/homepage/BookLabTests";
 import DiscoverHospitals from "./pages/homepage/DiscoverHospitals";
 import InsurancePlans from "./pages/homepage/InsurancePlans";
 
-// import { doctors } from "./data/doctors";
-// import SpecialtyDoctorsPage from "./SpecialtyDoctorsPage";
-
 //BookAppointment
 import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
 import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
@@ -64,7 +61,9 @@ import GasPage from "./pages/homepage/getMedicines/medicinesCategories/GasPage";
 // import SkinPage from "./pages/homepage/getMedicines/medicinesCategories/SkinPage";
 // import VitaminPage from "./pages/homepage/getMedicines/medicinesCategories/VitaminPage";
 
-// Any Alternate and Better Routing Structure ?
+//Book Lab Tests
+import SpecialityLabTests from "./pages/homepage/bookLabTests/SpecialityLabTests";
+import AddToCart from "./pages/homepage/bookLabTests/AddToCart.jsx";
 
 const App = () => {
   return (
@@ -194,42 +193,29 @@ const App = () => {
             path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking"
             element={<BookingHospitalPage />}
           />
-                    <Route
+          <Route
             path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking/payment"
             element={<HospitalPaymentPage />}
           />
-                    <Route
+          <Route
             path="/discover-hospitals/:hospitalName/:hospitalId/slot/booking/payment/confirmation"
             element={<HospitalConfirmationPage />}
           />
 
-          {/* Get Medicines
-           */}
+          {/* Get Medicines */}
           <Route path="/get-medicines" element={<GetMedicines />} />
-          <Route
-            path="/get-medicines/Cough-Cold"
-            element={<CoughPage />}
-          />
-          <Route
-            path="/get-medicines/Gas-Digestion"
-            element={<GasPage />}
-          />
-          {/* <Route
-            path="/get-medicines/Cough-Cold"
-            element={<CoughPage />}
-          />
-          <Route
-            path="/discover-hospitals/:hospitalName/:hospitalId"
-            element={<BookHospitalPage />}
-          /> */}
+          <Route path="/get-medicines/Cough-Cold" element={<CoughPage />} />
+          <Route path="/get-medicines/Gas-Digestion" element={<GasPage />} />
 
-
-
-
-
-
-
+          {/* Book Lab Tests */}
           <Route path="/book-lab-tests" element={<BookLabTests />} />
+          <Route
+            path="/book-lab-tests/:concernName"
+            element={<SpecialityLabTests />}
+          />
+          <Route path="/add-to-cart" element={<SpecialityLabTests />} />
+
+          {/* Insurance Plans */}
           <Route path="/insurance-plans" element={<InsurancePlans />} />
 
           <Route path="*" element={<NotFoundPage />} />
