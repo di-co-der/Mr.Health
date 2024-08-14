@@ -13,19 +13,22 @@ function ProductCard({medicine,highlightedFilters = [] }) {
 
 
     <div
-      className="relative pt-4 w-40 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF]"
+      className="relative pt-4 w-40 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4"
     >
       <input
         type="checkbox"
-        className="absolute top-2 right-2 w-5 h-5 text-[#0086FF] border-2 border-[#0086FF] focus:ring-[#0086FF]"
+        className="absolute top-2 right-2 w-5 h-5 text-[#0086FF] border-2 border-[#0086FF] focus:ring-[#0086FF] hover:border-gray-600 cursor-pointer"
       />
       <img
         src={medicine.image}
         alt={medicine.name}
         className="border-b-[2px] border-[#0086FF] h-48 w-full p-4"
       />
-      <div className="px-2">
-        <p className="text-[#0086FF] text-center font-medium">
+        <div className="px-2">
+        <p
+          className="text-[#0086FF] text-center font-medium text-wrap leading-none truncate p-[2.5px]"
+          style={{ display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+        >
           {medicine.name}
         </p>
         <div className="flex justify-center items-center">
