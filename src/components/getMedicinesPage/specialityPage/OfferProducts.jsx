@@ -1,13 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function OfferProducts({ product }) {
   const mrp = parseFloat(product.MRP.replace("₹", ""));
   const discount = parseFloat(product.discount.replace("%", ""));
   const price = parseInt(mrp - (mrp * discount) / 100);
 
+  const navigate = useNavigate();
+  const handleCardClick = () => {
+    navigate(`/product/${product.id}`, { state: { product } });
+  };
+
   return (
     <div>
-      <div className="relative pt-4 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4 ml-4">
+      <div className="relative pt-4 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4 ml-4" onClick={handleCardClick}>
         <img
           src={product.image}
           alt={product.name}

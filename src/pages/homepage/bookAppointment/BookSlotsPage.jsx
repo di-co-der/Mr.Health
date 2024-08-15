@@ -52,12 +52,6 @@ function BookSlotsPage() {
           {/* slotcard */}
           <SlotDate />
 
-          {/* slot timing  */}
-          <div>
-            <div></div>
-            <div></div>
-          </div>
-
           {/* button  */}
           <footer className="fixed bottom-0 inset-x-0 border-t-[3px] border-[#d9d9d9] pt-3 pb-3 px-8 bg-[#fafafa] z-[10000]">
             <button
