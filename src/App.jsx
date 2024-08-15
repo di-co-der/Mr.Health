@@ -71,6 +71,9 @@ import ProteinSupplementPage from "./pages/homepage/getMedicines/healthProductsC
 import SexualPage from "./pages/homepage/getMedicines/healthProductsCategories/SexualPage.jsx";
 import SkinCarePage from "./pages/homepage/getMedicines/healthProductsCategories/SkinPage.jsx";
 import VitaminHealthPage from "./pages/homepage/getMedicines/healthProductsCategories/VitaminPage.jsx";
+//product pages
+import ProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/ProductDescription.jsx";
+import HealthProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/HealthProductDescription.jsx";
 
 //Book Lab Tests
 import MyCart from "./pages/homepage/bookLabTests/MyCart.jsx";
@@ -269,6 +272,10 @@ const App = () => {
             path="/get-health/Protein-Supplements"
             element={<ProteinSupplementPage />}
           />
+        {/* Route for medicine products */}
+        <Route path="/product/:productId" element={<ProductDescription />} />
+        {/* Route for health products */}
+        <Route path="/health-product/:productId" element={<HealthProductDescription />} />
 
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"

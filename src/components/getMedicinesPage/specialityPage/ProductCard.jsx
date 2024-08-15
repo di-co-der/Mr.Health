@@ -3,38 +3,57 @@ import { useNavigate } from "react-router-dom";
 //components
 import StarRating from "../../../components/discoverHospitalPage/StarRating";
 
-function ProductCard({medicine,highlightedFilters = [] }) {
+function ProductCard({ product, highlightedFilters = [] }) {
+
+  const navigate = useNavigate();
+
   // Calculate the price after discount
-  const mrp = parseFloat(medicine.MRP.replace("₹", ""));
-  const discount = parseFloat(medicine.discount.replace("%", ""));
+  const mrp = parseFloat(product.MRP.replace("₹", ""));
+  const discount = parseFloat(product.discount.replace("%", ""));
   const price = parseInt(mrp - (mrp * discount) / 100);
 
+  const handleCardClick = () => {
+    // Log the product type for debugging
+    console.log('Product Type:', product.type);
+  
+    // Check the product type to determine the route
+    const routePrefix = product.type === 'health' ? '/health-product' : '/product';
+    console.log('Navigating to:', `${routePrefix}/${product.id}`);
+    
+    navigate(`${routePrefix}/${product.id}`, { state: { product } });
+  };
+
   return (
-
-
-    <div
-      className="relative pt-4 w-40 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4"
-    >
+    <div className="relative pt-4 w-40 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4"  >
       <input
         type="checkbox"
         className="absolute top-2 right-2 w-5 h-5 text-[#0086FF] border-2 border-[#0086FF] focus:ring-[#0086FF] hover:border-gray-600 cursor-pointer"
       />
+      <div onClick={handleCardClick}>
+
+
+    
       <img
-        src={medicine.image}
-        alt={medicine.name}
+        src={product.image}
+        alt={product.name}
         className="border-b-[2px] border-[#0086FF] h-48 w-full p-4"
       />
-        <div className="px-2">
+      <div className="px-2">
         <p
           className="text-[#0086FF] text-center font-medium text-wrap leading-none truncate p-[2.5px]"
-          style={{ display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}
+          style={{
+            display: "-webkit-box",
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+          }}
         >
-          {medicine.name}
+          {product.name}
         </p>
         <div className="flex justify-center items-center">
-          <StarRating rating={medicine.rating} />
+          <StarRating rating={product.rating} />
           <span className="ml-2 text-[#0086FF] font-medium text-sm italic">
-            ({medicine.totalRating})
+            ({product.totalRating})
           </span>
         </div>
 
@@ -49,7 +68,7 @@ function ProductCard({medicine,highlightedFilters = [] }) {
               WebkitTextStroke: "0.005px black",
             }}
           >
-            {medicine.MRP}
+            {product.MRP}
           </span>
         </p>
 
@@ -58,12 +77,12 @@ function ProductCard({medicine,highlightedFilters = [] }) {
             ₹{price}
           </span>
           <div className="text-sm bg-red-500 text-white p-[1px] rounded-md px-1">
-            {medicine.discount} OFF
+            {product.discount} OFF
           </div>
         </p>
 
         {/* <div className="flex flex-wrap gap-2 mb-1 pl-1">
-          {medicine.tags.map((tag, index) => (
+          {product.tags.map((tag, index) => (
             <span
               key={index}
               className={`border text-gray-800 px-2 py-1 rounded-md text-xs flex items-center ${
@@ -92,8 +111,9 @@ function ProductCard({medicine,highlightedFilters = [] }) {
             </span>
           ))}
         </div> */}
+        </div>
       </div>
-      </div>
+    </div>
   );
 }
 
