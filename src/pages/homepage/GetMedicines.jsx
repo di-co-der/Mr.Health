@@ -1,37 +1,46 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 //components
 import Header from "../../components/getMedicinesPage/Header";
 import LocationDropdown from "../../components/getMedicinesPage/LocationDropdown";
 import SearchBar from "../../components/getMedicinesPage/SearchBar";
-import Upload from "../../components/getMedicinesPage/Upload"
-import Category from "../../components/getMedicinesPage/Category"
+import Upload from "../../components/getMedicinesPage/Upload";
+import Category from "../../components/getMedicinesPage/Category";
 
 //assets
 //Medicines
-import ayurvedicMedicines from '../../assets/svgs/getMedicines/AyurvedicMedicines.svg'
-import deaddictionMedicines from '../../assets/svgs/getMedicines/DeaddictionMedicines.svg'
-import diabeticCare from '../../assets/svgs/getMedicines/DiabeticCare.svg'
-import feverHeadache from '../../assets/svgs/getMedicines/Fever&Headache.svg'
-import gasDigestion from '../../assets/svgs/getMedicines/Gas&Digestion.svg'
-import metabolicSystem from '../../assets/svgs/getMedicines/MetabolicSystem.svg'
-import skinHairCare from '../../assets/svgs/getMedicines/Skin&HairCare.svg'
-import vitaminsSupplements from '../../assets/svgs/getMedicines/Vitamins&Supplements.svg'
-import CoughCold from '../../assets/svgs/getMedicines/Cough&Cold.svg'
+import ayurvedicMedicines from "../../assets/svgs/getMedicines/AyurvedicMedicines.svg";
+import deaddictionMedicines from "../../assets/svgs/getMedicines/DeaddictionMedicines.svg";
+import diabeticCare from "../../assets/svgs/getMedicines/DiabeticCare.svg";
+import feverHeadache from "../../assets/svgs/getMedicines/Fever&Headache.svg";
+import gasDigestion from "../../assets/svgs/getMedicines/Gas&Digestion.svg";
+import metabolicSystem from "../../assets/svgs/getMedicines/MetabolicSystem.svg";
+import skinHairCare from "../../assets/svgs/getMedicines/Skin&HairCare.svg";
+import vitaminsSupplements from "../../assets/svgs/getMedicines/Vitamins&Supplements.svg";
+import CoughCold from "../../assets/svgs/getMedicines/Cough&Cold.svg";
 //Health Products
-import CovidEssentials from '../../assets/svgs/getMedicines/CovidEssentials.svg'
-import SkinHairCare from '../../assets/svgs/getMedicines/SkinHairCare.svg'
-import VitaminsMinerals from '../../assets/svgs/getMedicines/VitaminsMinerals.svg'
-import SexualWellness from '../../assets/svgs/getMedicines/SexualWellness.svg'
-import HealthFoodDrinks from '../../assets/svgs/getMedicines/HealthFoodDrinks.svg'
-import BabyCare from '../../assets/svgs/getMedicines/BabyCare.svg'
-import HealthcareDevices from '../../assets/svgs/getMedicines/HealthcareDevices.svg'
-import DiabeticCare1 from '../../assets/svgs/getMedicines/DiabeticCare1.svg'
-import ProteinSupplements from '../../assets/svgs/getMedicines/ProteinSupplements.svg'
+import CovidEssentials from "../../assets/svgs/getMedicines/CovidEssentials.svg";
+import SkinHairCare from "../../assets/svgs/getMedicines/SkinHairCare.svg";
+import VitaminsMinerals from "../../assets/svgs/getMedicines/VitaminsMinerals.svg";
+import SexualWellness from "../../assets/svgs/getMedicines/SexualWellness.svg";
+import HealthFoodDrinks from "../../assets/svgs/getMedicines/HealthFoodDrinks.svg";
+import BabyCare from "../../assets/svgs/getMedicines/BabyCare.svg";
+import HealthcareDevices from "../../assets/svgs/getMedicines/HealthcareDevices.svg";
+import DiabeticCare1 from "../../assets/svgs/getMedicines/DiabeticCare1.svg";
+import ProteinSupplements from "../../assets/svgs/getMedicines/ProteinSupplements.svg";
+import OfferProducts from "../../components/getMedicinesPage/specialityPage/OfferProducts";
+
+//data
+import offerProducts from "../../data/offerProducts";
+import Footer from "../../components/getMedicinesPage/Footer";
 
 function GetMedicines() {
-  const [selectedCategory, setSelectedCategory] = useState('Medicines');
+  const [selectedCategory, setSelectedCategory] = useState("Medicines");
   const handleSearch = (term) => setSearchTerm(term);
 
   const categories = [
@@ -87,6 +96,19 @@ function GetMedicines() {
     }
   };
 
+  const sliderSettings = {
+    infinite: true,
+    slidesToShow: 2,  // Show two slides at a time
+    slidesToScroll: 1,  // Scroll one slide at a time
+    autoplay: true,
+    autoplaySpeed: 2000,  // Set a reasonable speed for autoplay
+    centerMode: true,
+    centerPadding: '10%',  // Add padding for better centering
+    pauseOnHover: true,  // Optional: pause autoplay on hover
+    adaptiveHeight: true,  // Adjust the height of slides based on content
+};
+
+  
   return (
     <div className="pb-4 max-w-sm mx-auto min-h-screen flex justify-center">
       <div className="max-w-sm w-full">
@@ -106,14 +128,29 @@ function GetMedicines() {
           defaultLocation="Mumbai"
         />
         <SearchBar onSearch={handleSearch} />
-        <Upload selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+        <Upload
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
         <Category
-          categories={selectedCategory === 'Medicines' ? categories : healthProductsCategories}
+          categories={
+            selectedCategory === "Medicines"
+              ? categories
+              : healthProductsCategories
+          }
           onCategoryClick={handleCategoryClick}
         />
+        <h3 className="font-semibold text-[#0086FF] m-3">Deals like never before</h3>
+        <Slider {...sliderSettings}>
+          {offerProducts.map((product) => (
+            <OfferProducts key={product.id} product={product} />
+          ))}
+        </Slider>
+        <Footer />
         <div className="pb-4"></div>
       </div>
-    </div>  )
+    </div>
+  );
 }
 
-export default GetMedicines
+export default GetMedicines;
