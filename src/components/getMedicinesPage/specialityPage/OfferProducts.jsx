@@ -8,7 +8,14 @@ function OfferProducts({ product }) {
 
   const navigate = useNavigate();
   const handleCardClick = () => {
-    navigate(`/product/${product.id}`, { state: { product } });
+    // Log the product type for debugging
+    console.log('Product Type:', product.type);
+  
+    // Check the product type to determine the route
+    const routePrefix = product.type === 'health' ? '/health-product' : '/product';
+    console.log('Navigating to:', `${routePrefix}/${product.id}`);
+    
+    navigate(`${routePrefix}/${product.id}`, { state: { product } });
   };
 
   return (

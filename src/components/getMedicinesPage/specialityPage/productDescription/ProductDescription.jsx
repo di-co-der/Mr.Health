@@ -2,13 +2,14 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 //components
-import Header from "../Header";
-import LocationDropdown from "../LocationDropdown";
-import NoProductCard from "./NoProductCard";
-import StarRating from "../../../components/discoverHospitalPage/StarRating";
+import Header from "../../Header";
+import LocationDropdown from "../../LocationDropdown";
+import NoProductCard from "../NoProductCard";
+import StarRating from "../../../discoverHospitalPage/StarRating";
 
 //data
-import medicines from "../../../data/medicines";
+import medicines from "../../../../data/medicines";
+import FooterList from "./FooterList";
 
 function ProductDescription() {
   const { productId } = useParams();
@@ -18,9 +19,6 @@ function ProductDescription() {
     (product) => product.id === parseInt(productId)
   );
 
-  // const handleBackClick = () => {
-  //   navigate(-1);
-  // };
   // Debugging: Log the productId and type
   console.log("Product ID from URL:", productId, typeof productId);
   // Debugging: Log the product object to see if it was found
@@ -30,7 +28,7 @@ function ProductDescription() {
   }
 
   return (
-    <div className="pb-4 max-w-sm mx-auto min-h-screen flex justify-center">
+    <div className=" max-w-sm mx-auto min-h-screen flex justify-center ">
       <div className="max-w-sm w-full">
         <header className="pt-12">
           <Header title={product.name} />
@@ -90,6 +88,7 @@ function ProductDescription() {
           <h3 className="py-4 font-semibold text-[#0086FF]">Benefits:</h3>
           <p className="border-b-4 pb-4">{product.Benefits}</p>
         </div>
+        <FooterList />
       </div>
     </div>
   );

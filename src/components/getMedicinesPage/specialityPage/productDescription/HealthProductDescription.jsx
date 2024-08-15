@@ -2,13 +2,13 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 //components
-import Header from "../Header";
-import LocationDropdown from "../LocationDropdown";
-import NoProductCard from "./NoProductCard";
-import StarRating from "../../../components/discoverHospitalPage/StarRating";
+import Header from "../../Header";
+import LocationDropdown from "../../LocationDropdown";
+import NoProductCard from "../NoProductCard";
+import StarRating from "../../../discoverHospitalPage/StarRating";
 
 //data
-import healthProduct from "../../../data/healthProduct";
+import healthProduct from "../../../../data/healthProduct";
 
 
 

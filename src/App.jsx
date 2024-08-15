@@ -72,8 +72,8 @@ import SexualPage from "./pages/homepage/getMedicines/healthProductsCategories/S
 import SkinCarePage from "./pages/homepage/getMedicines/healthProductsCategories/SkinPage.jsx";
 import VitaminHealthPage from "./pages/homepage/getMedicines/healthProductsCategories/VitaminPage.jsx";
 //product pages
-import ProductDescription from "./components/getMedicinesPage/specialityPage/ProductDescription.jsx";
-import HealthProductDescription from "./components/getMedicinesPage/specialityPage/HealthProductDescription.jsx";
+import ProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/ProductDescription.jsx";
+import HealthProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/HealthProductDescription.jsx";
 
 //Book Lab Tests
 import SpecialityLabTests from "./pages/homepage/bookLabTests/SpecialityLabTests";
