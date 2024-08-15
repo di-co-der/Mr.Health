@@ -23,24 +23,24 @@ function SpecialityHealthProductPage({ category, title }) {
   
     const filterhealthProduct = () => {
       let filtered = healthProduct.filter(
-        (healthProduct) => healthProduct.category === category
+        (product) => product.category === category
       );
   
       if (selectedFilters.length > 0) {
-        filtered = filtered.filter((healthProduct) => {
+        filtered = filtered.filter((product) => {
           return selectedFilters.every((filter) => {
             if (filter === "Discount above 10%") {
-              const discount = parseFloat(healthProduct.discount.replace("%", ""));
+              const discount = parseFloat(product.discount.replace("%", ""));
               return discount > 10;
             }
-            return healthProduct.tags.includes(filter);
+            return product.tags.includes(filter);
           });
         });
       }
   
       if (searchTerm) {
-        filtered = filtered.filter((healthProduct) =>
-            healthProduct.name.toLowerCase().includes(searchTerm.toLowerCase())
+        filtered = filtered.filter((product) =>
+            product.name.toLowerCase().includes(searchTerm.toLowerCase())
         );
       }
   
@@ -82,10 +82,10 @@ function SpecialityHealthProductPage({ category, title }) {
 
       <div className="flex justify-between flex-wrap m-4">
         {filteredhealthProduct.length > 0 ? (
-          filteredhealthProduct.map((healthProduct) => (
+          filteredhealthProduct.map((product) => (
             <ProductCard
-              key={healthProduct.id}
-              medicine={healthProduct}
+              key={product.id}
+              product={product}
               highlightedFilters={selectedFilters}
             />
           ))

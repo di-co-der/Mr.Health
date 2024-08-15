@@ -13,7 +13,9 @@ function ProductCard({ product, highlightedFilters = [] }) {
   const price = parseInt(mrp - (mrp * discount) / 100);
 
   const handleCardClick = () => {
-    navigate(`/product/${product.id}`, { state: { product } });
+    // Check the product type to determine the route
+    const routePrefix = product.type === 'health' ? '/health-product' : '/product';
+    navigate(`${routePrefix}/${product.id}`, { state: { product } });
   };
 
   return (
