@@ -79,7 +79,9 @@ import HealthProductDescription from "./components/getMedicinesPage/specialityPa
 import MyCart from "./pages/homepage/bookLabTests/MyCart.jsx";
 import SpecialityLabTests from "./pages/homepage/bookLabTests/SpecialityLabTests";
 import LabSlotBooking from "./pages/homepage/bookLabTests/LabSlotBooking";
-import BookingConfirmation from "./pages/homepage/bookLabTests/ConfirmationPage";
+import BookingConfirmation from "./pages/homepage/bookLabTests/BookingConfirmation";
+import LabPaymentPage from "./pages/homepage/bookLabTests/LabPaymentPage";
+import LabConfirmationPage from "./pages/homepage/bookLabTests/LabConfirmationPage";
 
 const App = () => {
   return (
@@ -272,10 +274,13 @@ const App = () => {
             path="/get-health/Protein-Supplements"
             element={<ProteinSupplementPage />}
           />
-        {/* Route for medicine products */}
-        <Route path="/product/:productId" element={<ProductDescription />} />
-        {/* Route for health products */}
-        <Route path="/health-product/:productId" element={<HealthProductDescription />} />
+          {/* Route for medicine products */}
+          <Route path="/product/:productId" element={<ProductDescription />} />
+          {/* Route for health products */}
+          <Route
+            path="/health-product/:productId"
+            element={<HealthProductDescription />}
+          />
 
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
@@ -289,13 +294,18 @@ const App = () => {
             path="/book-lab-tests/:concernName"
             element={<SpecialityLabTests />}
           />
-          <Route
-            path="/book-lab-tests/slot"
-            element={<LabSlotBooking />}
-          />
+          <Route path="/book-lab-tests/slot" element={<LabSlotBooking />} />
           <Route
             path="/book-lab-tests/slot/booking-confirmation"
             element={<BookingConfirmation />}
+          />
+          <Route
+            path="/book-lab-tests/slot/booking-confirmation/payment"
+            element={<LabPaymentPage />}
+          />
+          <Route
+            path="/book-lab-tests/slot/booking-confirmation/payment/confirmation"
+            element={<LabConfirmationPage />}
           />
 
           {/* Insurance Plans */}

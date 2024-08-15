@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //components
 import Header from "../../../components/common/Header";
 import ConfirmationModal from "../../../components/discoverHospitalPage/bookSlotPage/ConfirmationModal";
 
 // assets
-import Location from "../../../assets/svgs/Location.svg";
 import SunIcon from "../../../assets/svgs/SunIcon.svg";
 import AfternoonIcon from "../../../assets/svgs/AfternoonIcon.svg";
 import EveningIcon from "../../../assets/svgs/EveningIcon.svg";
