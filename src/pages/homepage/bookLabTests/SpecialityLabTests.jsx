@@ -37,6 +37,17 @@ const SpecialityLabTests = () => {
   }, [concern, navigate]);
 
   useEffect(() => {
+    // Load cart items from local storage on mount
+    const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+    setCartItems(savedCart);
+}, []);
+
+useEffect(() => {
+    // Save cart items to local storage whenever it changes
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}, [cartItems]);
+
+  useEffect(() => {
     if (showAlert) {
       const timer = setTimeout(() => {
         setShowAlert(false);
@@ -54,19 +65,23 @@ const SpecialityLabTests = () => {
 
   const handleAddToCart = () => {
     const itemToAdd = {
-      ...concern,
-      quantity: numPatients,
-      totalPrice: concern.price * numPatients,
+        ...concern,
+        quantity: numPatients,
+        labTestsPrice: concern.price * numPatients,
     };
-    setCartItems([...cartItems, itemToAdd]); // Add the selected item to the cart
-    setIsAddedToCart(true); // Change button text and color after adding to cart
-    setTimeout(() => setShowAlert(true), 1000); // Show the alert after a 1-second delay
-  };
+    setCartItems((prevItems) => {
+        const updatedItems = prevItems.filter(item => item.id !== itemToAdd.id);
+        updatedItems.push(itemToAdd);
+        return updatedItems;
+    });
+    setIsAddedToCart(true);
+    setTimeout(() => setShowAlert(true), 1000);
+};
 
   const handleViewCart = () => {
-    // Navigate to the add-to-cart page with the cart items
-    navigate("/add-to-cart", {
-      state: { cartItems },
+    // Navigate to the MyCart page with the cart items
+    navigate("/my-cart", {
+      state: { cartItems, location: "Mumbai" }, // Adjust location as needed
     });
   };
 

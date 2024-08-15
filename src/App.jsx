@@ -73,8 +73,10 @@ import SkinCarePage from "./pages/homepage/getMedicines/healthProductsCategories
 import VitaminHealthPage from "./pages/homepage/getMedicines/healthProductsCategories/VitaminPage.jsx";
 
 //Book Lab Tests
+import MyCart from "./pages/homepage/bookLabTests/MyCart.jsx";
 import SpecialityLabTests from "./pages/homepage/bookLabTests/SpecialityLabTests";
-import AddToCart from "./pages/homepage/bookLabTests/AddToCart.jsx";
+import LabSlotBooking from "./pages/homepage/bookLabTests/LabSlotBooking";
+import BookingConfirmation from "./pages/homepage/bookLabTests/ConfirmationPage";
 
 const App = () => {
   return (
@@ -238,12 +240,10 @@ const App = () => {
             path="/get-medicines/Vitamins & Supplements"
             element={<VitaminPage />}
           />
-                    <Route
+          <Route
             path="/get-medicines/Metabolic-System"
             element={<MetabolicPage />}
           />
-
-    
 
           <Route path="/get-health/Covid-Essentials" element={<CovidPage />} />
           <Route path="/get-health/Skin-HairCare" element={<SkinCarePage />} />
@@ -251,18 +251,12 @@ const App = () => {
             path="/get-health/Vitamins-Minerals"
             element={<VitaminHealthPage />}
           />
-          <Route
-            path="/get-health/Sexual-Wellness"
-            element={<SexualPage />}
-          />
+          <Route path="/get-health/Sexual-Wellness" element={<SexualPage />} />
           <Route
             path="/get-health/Health-Food-Drinks"
             element={<HealthPage />}
           />
-          <Route
-            path="/get-health/Baby-Care"
-            element={<BabyCare />}
-          />
+          <Route path="/get-health/Baby-Care" element={<BabyCare />} />
           <Route
             path="/get-health/Healthcare-Devices"
             element={<HealthCareDevicePage />}
@@ -276,7 +270,6 @@ const App = () => {
             element={<ProteinSupplementPage />}
           />
 
-
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
@@ -284,11 +277,19 @@ const App = () => {
 
           {/* Book Lab Tests */}
           <Route path="/book-lab-tests" element={<BookLabTests />} />
+          <Route path="/my-cart" element={<MyCart />} />
           <Route
             path="/book-lab-tests/:concernName"
             element={<SpecialityLabTests />}
           />
-          <Route path="/add-to-cart" element={<AddToCart />} />
+          <Route
+            path="/book-lab-tests/slot"
+            element={<LabSlotBooking />}
+          />
+          <Route
+            path="/book-lab-tests/slot/booking-confirmation"
+            element={<BookingConfirmation />}
+          />
 
           {/* Insurance Plans */}
           <Route path="/insurance-plans" element={<InsurancePlans />} />
