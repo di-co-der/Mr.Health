@@ -6,6 +6,7 @@ import Header from "../../Header";
 import LocationDropdown from "../../LocationDropdown";
 import NoProductCard from "../NoProductCard";
 import StarRating from "../../../discoverHospitalPage/StarRating";
+import FooterList from "./FooterList";
 
 //data
 import healthProduct from "../../../../data/healthProduct";
@@ -92,6 +93,7 @@ function HealthProductDescription() {
         <h3 className="py-4 font-semibold text-[#0086FF]">Benefits:</h3>
         <p className="border-b-4 pb-4">{product.Benefits}</p>
       </div>
+      <FooterList />
     </div>
   </div>
   )

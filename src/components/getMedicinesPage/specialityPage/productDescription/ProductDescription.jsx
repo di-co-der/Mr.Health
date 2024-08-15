@@ -6,10 +6,11 @@ import Header from "../../Header";
 import LocationDropdown from "../../LocationDropdown";
 import NoProductCard from "../NoProductCard";
 import StarRating from "../../../discoverHospitalPage/StarRating";
+import FooterList from "./FooterList";
 
 //data
 import medicines from "../../../../data/medicines";
-import FooterList from "./FooterList";
+
 
 function ProductDescription() {
   const { productId } = useParams();
