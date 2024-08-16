@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 //components
 import StarRating from "../../../components/discoverHospitalPage/StarRating";
 
-function ProductCard({ product, highlightedFilters = [] }) {
+function ProductCard({ product, highlightedFilters = [],onProductSelect }) {
 
   const navigate = useNavigate();
 
@@ -23,11 +23,16 @@ function ProductCard({ product, highlightedFilters = [] }) {
     navigate(`${routePrefix}/${product.id}`, { state: { product } });
   };
 
+  const handleCheckboxChange = (event) => {
+    onProductSelect(product, event.target.checked);
+  };
+
   return (
     <div className="relative pt-4 w-40 rounded-md cursor-pointer hover:shadow-xl border-[2px] border-[#0086FF] mb-4"  >
       <input
         type="checkbox"
         className="absolute top-2 right-2 w-5 h-5 text-[#0086FF] border-2 border-[#0086FF] focus:ring-[#0086FF] hover:border-gray-600 cursor-pointer"
+        onChange={handleCheckboxChange}
       />
       <div onClick={handleCardClick}>
 
