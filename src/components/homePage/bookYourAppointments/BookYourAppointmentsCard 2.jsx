@@ -8,18 +8,20 @@ function BookYourAppointmentsCard({
   available,
 }) {
   return (
-    <div className="relative w-[150px] bg-[#ccf5f5] rounded-t-lg rounded-b-xl">
+    <div className="w-[150px] h-[215px]">
       <img
         src={image}
         alt={altText}
-        className="rounded-lg "
+        className="h-[130px] w-[150px] rounded-[5px] "
       />
-      
-      <div className="text-[14px] flex justify-center items-center font-semibold absolute inset-0 mt-14 text-[#0086FF]">
-        <div className="bg-[#ffffff] px-3 py-1 rounded-lg cursor-pointer">{title}</div>
-      </div>
-      <div className="py-0.5">
-        <div className="flex items-center justify-center gap-1">
+      <div>
+        <div className="text-[14px] font-semibold text-[#0086FF] m-[2px]">
+          {title}
+        </div>
+        <div className="text-[12px] font-medium tracking-tighter text-[#525252] m-[2px]">
+          {description}
+        </div>
+        <div className="flex items-center gap-1.5 py-[3px] m-[2px]">
           <svg
             width="13"
             height="13"
@@ -32,7 +34,9 @@ function BookYourAppointmentsCard({
               fill="#25D366"
             />
           </svg>
-          <div className="text-[12px]">{available} doctors available</div>
+          <div className="text-[12px] font-semibold ">
+            {available} doctors available
+          </div>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@ const SymptomsTrackerList = ({ categories, onCategoryClick }) => {
       </div>
 
       <div className="w-full mt-4 mb-2 flex justify-center items-center">
-        <p className='bg-[#d9d9d9] py-3 px-24 rounded-md text-lg cursor-pointer hover:outline outline-1 transition-all'>View All Symptoms</p>
+        <p className='bg-[#ccf5f5] py-3 px-24 rounded-md text-lg cursor-pointer hover:outline outline-1 transition-all'>View All Symptoms</p>
       </div>
     </div>
   );

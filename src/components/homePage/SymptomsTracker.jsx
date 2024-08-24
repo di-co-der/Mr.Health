@@ -46,7 +46,7 @@ const SymptomsTracker = () => {
 
   return (
     <div>
-      <div className="py-4 border-b-4 border-zinc-300">
+      <div className="pb-4 pt-2 border-b-4 border-zinc-300">
         <div className="py-4 pl-4 rounded flex items-start gap-5">
           <div className="w-14 h-14">
             <img

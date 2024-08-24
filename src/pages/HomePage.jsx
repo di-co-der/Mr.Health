@@ -1,6 +1,7 @@
 import React from "react";
 import FixedHeader from "../components/homePage/FixedHeader";
 import AppointmentCard from "../components/homePage/AppointmentCard";
+import AbhaCard from "../components/homePage/AbhaCard";
 import ServiceGrid from "../components/homePage/ServiceGrid";
 import ImageSlider from "../components/homePage/ImageSlider";
 import HealthCheckupSlider from "../components/homePage/HealthCheckupSlider";
@@ -15,7 +16,8 @@ const HomePage = () => {
         <FixedHeader />
         <div className="pt-[9.6rem]">
           {" "}
-          <AppointmentCard />
+          {/* <AppointmentCard /> */}
+          <AbhaCard />
           <ServiceGrid />
           <ImageSlider />
           <SymptomsTracker />

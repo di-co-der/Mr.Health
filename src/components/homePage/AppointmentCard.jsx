@@ -13,9 +13,9 @@ const AppointmentCard = () => {
   };
 
   return (
-    <div className="flex ">
+    <div className="flex mb-4">
       <div
-        className="grow mx-4 p-4 rounded-lg shadow-lg text-white appointment-card"
+        className="grow mx-4 px-4 pb-4 pt-2 rounded-lg shadow-lg text-white appointment-card"
         onMouseMove={handleMouseMove}
         style={{
           background: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, rgba(44, 91, 186), rgba(14, 51, 134))`,

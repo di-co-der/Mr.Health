@@ -5,7 +5,7 @@ function Footer({image, altText, title}) {
           <div>
             <div>
                 <img src={image} alt={altText} />
-                <div className='text-center font-[lato] font-medium text-[14px] leading-[16.82px] tracking-tight p-2 '>{title}</div>
+                <div className='text-center text-sm pt-1'>{title}</div>
             </div>
           </div>
 

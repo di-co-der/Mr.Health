@@ -1,19 +1,23 @@
 import React from 'react'
-import BookYourAppointmentsHeadingSVG from "../../assets/svgs/BookYourAppointmentsHeadingSVG.svg";
+
+//components
 import BookYourAppointmentsList from './bookYourAppointments/BookYourAppointmentsList'
+
+//assets
+import BookYourAppointmentsHeadingSVG from "../../assets/svgs/BookYourAppointmentsHeadingSVG.svg";
 
 function BookYourAppointments() {
   return (
     <div>
 
         {/* Heading */}
-        <div className="pt-10"></div>
-      <div className=" flex justify-center items-start pt-6 gap-3 px-2 pb-3 border-t-4 border-gray-200">
+        <div className=""></div>
+      <div className=" flex justify-center items-start pt-6 gap-3 px-2 pb-3">
         <img
           src={BookYourAppointmentsHeadingSVG}
           alt="cal" className=""/>
         <div className="">
-          <div className=" font-bold text-2xl leading-none pb-3 pt-[3px]">
+          <div className="font-bold text-2xl leading-none pb-3 pt-[3px]">
             Book your Appointments
           </div>
 
@@ -29,8 +33,8 @@ function BookYourAppointments() {
 
     {/* button */}
     <div className="flex justify-center border-b-4 py-[20px]">
-      <div className="px-24 rounded-md bg-[#D9D9D9] cursor-pointer hover:outline outline-1 transition-all py-3">
-        <p className="font-[Lato] text-md">View All Specialists</p>
+      <div className="px-24 rounded-md bg-[#ccf5f5] cursor-pointer hover:outline outline-1 transition-all py-3">
+        <p className="text-md">View All Specialists</p>
       </div>
     </div>
     </div>

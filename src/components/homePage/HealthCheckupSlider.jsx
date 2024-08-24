@@ -42,7 +42,7 @@ const images = [
 const HealthCheckupSlider = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2.5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
