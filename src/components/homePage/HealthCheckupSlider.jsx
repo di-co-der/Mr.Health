@@ -98,7 +98,7 @@ const HealthCheckupSlider = () => {
           background-color: #00cccc;
         }
       `}</style>
-      <div className="flex items-start gap-5 pl-4 pr-2 tracking-tight pt-6">
+      <div className="flex items-start gap-5 pl-4 pr-4 tracking-tight pt-6">
         <div className="w-20 h-20">
           <img
             src={HealthCheckupHeadingSVG}

@@ -12,12 +12,12 @@ function BookYourAppointments() {
 
         {/* Heading */}
         <div className=""></div>
-      <div className=" flex justify-center items-start pt-6 gap-3 px-2 pb-3">
+      <div className=" flex justify-center items-start pt-6 gap-3 px-4 pb-5">
         <img
           src={BookYourAppointmentsHeadingSVG}
           alt="cal" className=""/>
         <div className="">
-          <div className="font-bold text-2xl leading-none pb-3 pt-[3px]">
+          <div className="font-bold text-2xl leading-none pb-1.5 pt-[3px]">
             Book your Appointments
           </div>
 
