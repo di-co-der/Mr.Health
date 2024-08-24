@@ -8,17 +8,17 @@ function BookYourAppointmentsCard({
   available,
 }) {
   return (
-    <div className="relative w-[150px] bg-[#ccf5f5] rounded-t-lg rounded-b-xl">
+    <div className="relative bg-[#ccf5f5] rounded-t-lg rounded-b-xl">
       <img
         src={image}
         alt={altText}
-        className="rounded-lg "
+        className="rounded-lg w-40"
       />
       
       <div className="text-[14px] flex justify-center items-center font-semibold absolute inset-0 mt-14 text-[#0086FF]">
         <div className="bg-[#ffffff] px-3 py-1 rounded-lg cursor-pointer">{title}</div>
       </div>
-      <div className="py-0.5">
+      <div className="py-1">
         <div className="flex items-center justify-center gap-1">
           <svg
             width="13"

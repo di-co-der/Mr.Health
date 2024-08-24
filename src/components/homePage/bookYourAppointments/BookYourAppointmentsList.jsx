@@ -58,7 +58,7 @@ const bookYourAppointmentsCards = [
 
 function BookYourAppointmentsList() {
   return (
-    <div className="flex justify-center flex-wrap w-full gap-[20px] my-2">
+    <div className="flex justify-center flex-wrap w-full gap-[16px]">
       {bookYourAppointmentsCards.map((doctorcard, index) => (
         <BookYourAppointmentsCard
           key={index}
