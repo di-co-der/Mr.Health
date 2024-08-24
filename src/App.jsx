@@ -74,6 +74,8 @@ import VitaminHealthPage from "./pages/homepage/getMedicines/healthProductsCateg
 //product pages
 import ProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/ProductDescription.jsx";
 import HealthProductDescription from "./components/getMedicinesPage/specialityPage/productDescription/HealthProductDescription.jsx";
+//order page
+// import MyCart from "./pages/homepage/getMedicines/MyCart.jsx";
 
 //Book Lab Tests
 import MyCart from "./pages/homepage/bookLabTests/MyCart.jsx";
@@ -281,7 +283,7 @@ const App = () => {
             path="/health-product/:productId"
             element={<HealthProductDescription />}
           />
-
+ <Route path="/mycart" element={<MyCart />} /> 
           {/* <Route
             path="/discover-hospitals/:hospitalName/:hospitalId"
             element={<BookHospitalPage />}
