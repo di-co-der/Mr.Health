@@ -22,7 +22,7 @@ const HomepageHeader = ({ companyName = "Medico" }) => {
 
   return (
     <>
-      <header className="bg-white shadow-md pt-3 px-6 flex items-center justify-between sticky top-0 z-10">
+      <header className="bg-white shadow-md pt-3 px-4 flex items-center justify-between sticky top-0 z-10">
         <div className="mt-1 flex items-center">
           <img
             src={Profile}

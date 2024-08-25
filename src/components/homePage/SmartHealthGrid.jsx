@@ -68,7 +68,7 @@ function SmartHealthGrid() {
   };
   return (
     <div className="border-b-4 py-4">
-      <h3 className="pl-2 font-bold text-[#0086FF] m-3">
+      <h3 className="pl-2 text-xl font-bold m-3">
         For Your Smart Health
       </h3>
       <div className="grid grid-cols-3 gap-2 px-4 mb-4">

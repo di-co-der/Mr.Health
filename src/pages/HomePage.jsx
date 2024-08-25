@@ -18,14 +18,14 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="max-w-sm w-full bg-white rounded-lg overflow-hidden relative">
         <FixedHeader />
-        <div className="pt-[9.6rem]">
+        <div className="pt-[10.4rem]">
           {" "}
           {/* <AppointmentCard /> */}
           <AbhaCard />
           <ServiceGrid />
           <ImageSlider />
           <SmartHealthGrid />
-          {/* <SmartHealthGridSlider /> */}
+          <SmartHealthGridSlider />
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />

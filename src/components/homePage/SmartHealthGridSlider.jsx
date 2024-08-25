@@ -78,7 +78,7 @@ function SmartHealthGridSlider() {
 
   const settings = {
     infinite: true,
-    slidesToShow: 1, // Show 1 card (with 3 images) at a time
+    slidesToShow: 1, // Show 1 card with 3 images at a time
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -134,30 +134,37 @@ function SmartHealthGridSlider() {
           background-color: #00cccc;
         }
       `}</style>
-      
-      <div className="border-b-4 pb-12">
-        <h3 className="pl-2 font-bold text-[#0086FF] m-3">
-          For Your Smart Health
-        </h3>
+
+      <div className="border-b-4 pt-4 pb-12">
         <Slider {...settings}>
           {SmartHealthSlides.map((slide, index) => (
-            <div key={index} className="flex flex-col justify-around items-center bg-blue-500 mt-2 p-2 rounded-xl">
-              {slide.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex flex-col items-center shadow-xl mt-4 bg-green-400 rounded-xl cursor-pointer transition-all duration-100 hover:outline outline-1 outline-[#00CCCC] mx-2"
-                  onClick={() => handleServiceClick(item.route)}
-                >
-                  <img
-                    src={item.icon}
-                    alt={item.name}
-                    className="w-20 h-20 object-cover rounded-t-xl"
-                  />
-                  <span className="text-center text-sm font-bold py-1 bg-red-200 leading-tight">
-                    {item.name}
-                  </span>
+            <div
+              key={index}
+              className="flex justify-center items-center"
+            >
+              <div className="mx-3 py-3 my-2 rounded-lg shadow-md border-2">
+                <h3 className="font-semibold text-[#0086FF] text-base mb-2 text-center">
+                  For Your Smart Health
+                </h3>
+                <div className="flex">
+                  {slide.map((item) => (
+                    <div
+                      key={item.name}
+                      className="flex flex-col items-center border-2 border-[#00CCCC] rounded-lg rounded-t-xl cursor-pointer transition-all duration-100 hover:border-[#00CCCC] hover:shadow-md mx-2"
+                      onClick={() => handleServiceClick(item.route)}
+                    >
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        className="w-32 h-20 object-cover rounded-t-xl"
+                      />
+                      <span className="text-center text-sm font-semibold tracking-tight leading-4 py-2">
+                        {item.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           ))}
         </Slider>

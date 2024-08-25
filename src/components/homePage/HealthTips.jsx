@@ -67,7 +67,7 @@ function HealthTips() {
   };
 
   return (
-    <div className="w-full pb-12">
+    <div className="w-full pb-12 border-b-4 mb-4">
       <style>{`
         .custom-dots {
           display: flex !important;
@@ -90,7 +90,7 @@ function HealthTips() {
           background-color: #00cccc;
         }
       `}</style>
-      <div className="flex items-start gap-5 pl-4 pr-4 tracking-tight pt-6">
+      <div className="flex pl-4 pr-14 mt-6">
         <div className="w-20 h-20">
           <img
             src={BookYourAppointmentsHeadingSVG}
@@ -99,18 +99,16 @@ function HealthTips() {
           />
         </div>
 
-        <div className="">
-          <h2 className="text-2xl mb-2 font-bold text-[#292929] leading-none text-center">
+        <h2 className="text-2xl font-bold text-[#292929] text-center">
           Health Tips For Your Smart Health
-          </h2>
-        </div>
+        </h2>
       </div>
 
       <div className="">
         <Slider {...settings} className="">
           {images.map((image, index) => (
             <div key={index} className="outline-none">
-              <div className=" w-full flex flex-col items-center">
+              <div className="w-full flex flex-col items-center">
                 <img
                   src={image.src}
                   alt={`Image ${index}`}
