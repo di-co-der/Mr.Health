@@ -2,8 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import HealthCheckupImage1 from "../../assets/HealthCheckupImage1.png";
-import HealthCheckupImage2 from "../../assets/HealthCheckupImage2.png";
+// import HealthCheckupImage1 from "../../assets/HealthCheckupImage1.png";
+// import HealthCheckupImage2 from "../../assets/HealthCheckupImage2.png";
 import HealthCheckupHeadingSVG from "../../assets/svgs/HealthCheckupHeadingSVG.svg";
 import SexualHealthTest from "../../assets/SexualHealthTest.jpg"
 import BoneAndJointTest from "../../assets/BoneAndJointTest.jpg"

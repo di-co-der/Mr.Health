@@ -7,7 +7,9 @@ import ImageSlider from "../components/homePage/ImageSlider";
 import HealthCheckupSlider from "../components/homePage/HealthCheckupSlider";
 import SymptomsTracker from "../components/homePage/SymptomsTracker";
 import BookYourAppointments from "../components/homePage/BookYourAppointments";
+import Order from "../components/homePage/Order";
 import FooterList from "../components/homePage/FooterList";
+import HealthTips from "../components/homePage/HealthTips";
 
 const HomePage = () => {
   return (
@@ -24,6 +26,8 @@ const HomePage = () => {
           <HealthCheckupSlider />
           <ImageSlider />
           <BookYourAppointments />
+          <Order />
+          <HealthTips />
           <FooterList />
         </div>
       </div>
