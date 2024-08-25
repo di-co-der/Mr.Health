@@ -135,7 +135,7 @@ function SmartHealthGridSlider() {
         }
       `}</style>
 
-      <div className="border-b-4 pt-4 pb-12">
+      <div className="border-b-4 pt-4 pb-9">
         <Slider {...settings}>
           {SmartHealthSlides.map((slide, index) => (
             <div
