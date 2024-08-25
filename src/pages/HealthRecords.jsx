@@ -32,7 +32,7 @@ const MyHealthRecords = () => {
           />
         </header>
 
-        <div className="bg-red-200">
+        <div className="">
           <SearchBar />
         </div>
         <div className="flex items-center justify-between bg-gray-50 border border-gray-100 hover:border-gray-200 p-4 mx-3 rounded-lg cursor-pointer">
@@ -57,7 +57,7 @@ const MyHealthRecords = () => {
           ].map((item) => (
             <div
               key={item.title}
-              className="flex items-center p-2 bg-gray-50 rounded-lg hover:border-gray-200 cursor-pointer border border-gray-50"
+              className="flex items-center p-2 bg-gray-50 rounded-lg hover:border-gray-200 cursor-pointer border border-gray-100"
             >
               <span className="text-2xl">{item.icon}</span>
               <div className="ml-2 flex-1">

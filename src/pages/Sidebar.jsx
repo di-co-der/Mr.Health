@@ -1,6 +1,6 @@
 import React from "react";
-
 import { IoClose } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 // assets
 import Profile from "../assets/svgs/Profile.svg";
@@ -19,6 +19,13 @@ import InsurancePolicy from "../assets/svgs/InsurancePolicy.svg";
 import HealthCash from "../assets/svgs/HealthCash.svg";
 
 const Sidebar = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
+  const handleMedicalRecordsClick = () => {
+    navigate("/health-records");
+    onClose(); // Close the sidebar after navigation
+  };
+
   return (
     <>
       <div
@@ -35,7 +42,11 @@ const Sidebar = ({ isOpen, onClose }) => {
       >
         <div className="flex items-center justify-between pl-3 py-4 pr-4 border-b-2">
           <div className="flex gap-2">
-            <img src={Profile} alt="Profile" className="bg-yellow-300 rounded-full" />
+            <img
+              src={Profile}
+              alt="Profile"
+              className="bg-yellow-300 rounded-full"
+            />
             <div className="text-lg font-semibold">
               Udit Mahajan
               <p className="text-sm text-[#00cccc] cursor-pointer">
@@ -47,78 +58,79 @@ const Sidebar = ({ isOpen, onClose }) => {
             <IoClose className="text-gray-700 text-2xl" />
           </button>
         </div>
-        <div className="bg-white py-4 pt-6 h-[calc(100vh-64px)] overflow-y-auto custom-scrollbar">
-          <ul className="space-y-8 pb-6">
-            <li className="flex items-center px-4">
-              <span className="text-purple-600 text-xl"><img src={Aabha} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">ABHA</span>
+        <div className="bg-white pt-2 h-[calc(100vh-64px)] overflow-y-auto custom-scrollbar">
+          <ul className="pb-2">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={Aabha} alt="" />
+              <span className="ml-3 text-[#0086ff]">ABHA</span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-blue-600 text-xl"><img src={MyAppointments} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={MyAppointments} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 My Appointments
               </span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-pink-600 text-xl"><img src={LabTestBookings} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={LabTestBookings} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 Lab Test Bookings
               </span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-purple-600 text-xl"><img src={MyDoctors} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={MyDoctors} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 My Doctors
               </span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-pink-600 text-xl"><img src={MyOrders} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={MyOrders} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 My Orders
               </span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-purple-600 text-xl"><img src={MedicalRecords} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
-                My Medical Records
-              </span>
+            <li
+              className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointe cursor-pointerr"
+              onClick={handleMedicalRecordsClick}
+            >
+              <img src={MedicalRecords} alt="" />
+              <span className="ml-3 text-[#0086ff]">My Medical Records</span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-purple-600 text-xl"><img src={InsurancePolicy} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={InsurancePolicy} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 My Insurance Policy
               </span>
             </li>
-            <li className="flex items-center px-4">
-              <span className="text-purple-600 text-xl"><img src={HealthCash} alt="" /></span>
-              <span className="ml-3 text-[#0086ff] cursor-pointer">
+            <li className="hover:bg-gray-100 py-4 my-1 mx-2 rounded-md flex items-center px-2 cursor-pointer">
+              <img src={HealthCash} alt="" />
+              <span className="ml-3 text-[#0086ff]">
                 Payments & HealthCash
               </span>
             </li>
           </ul>
           <div className="bg-white py-4 pb-24 border-t-4 border-gray-200">
-            <ul className="space-y-5 pb-3">
-              <li className="flex items-center px-4">
-                <span className="text-blue-600 text-xl"><img src={HelpCenter} alt="" /></span>
-                <span className="ml-3 text-gray-700 cursor-pointer">
+            <ul className="pb-3">
+              <li className="hover:bg-gray-100 py-2 my-1 mx-2 rounded-md flex items-center px-4">
+                <img src={HelpCenter} alt="" />
+                <span className="ml-3 text-gray-700">
                   Help Center
                 </span>
               </li>
-              <li className="flex items-center px-4">
-                <span className="text-gray-600 text-xl"><img src={Settings} alt="" /></span>
-                <span className="ml-3 text-gray-700 cursor-pointer">
+              <li className="hover:bg-gray-100 py-2 my-1 mx-2 rounded-md flex items-center px-4">
+                <img src={Settings} alt="" />
+                <span className="ml-3 text-gray-700">
                   Settings
                 </span>
               </li>
-              <li className="flex items-center px-4">
-                <span className="text-blue-600 text-xl"><img src={Likeus} alt="" /></span>
-                <span className="ml-3 text-gray-700 cursor-pointer">
+              <li className="hover:bg-gray-100 py-2 my-1 mx-2 rounded-md flex items-center px-4">
+                <img src={Likeus} alt="" />
+                <span className="ml-3 text-gray-700">
                   Like us? Give us Feedback
                 </span>
               </li>
-              <li className="flex items-center px-4">
-                <span className="text-blue-600 text-xl"><img src={AreyouDoctor} alt="" /></span>
-                <span className="ml-3 text-gray-700 cursor-pointer">
+              <li className="hover:bg-gray-100 py-2 my-1 mx-2 rounded-md flex items-center px-4">
+                <img src={AreyouDoctor} alt="" />
+                <span className="ml-3 text-gray-700">
                   Are you a doctor?
                 </span>
               </li>
