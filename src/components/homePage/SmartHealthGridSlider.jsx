@@ -142,7 +142,7 @@ function SmartHealthGridSlider() {
               key={index}
               className="flex justify-center items-center"
             >
-              <div className="mx-3 py-4 pb-4 my-2 rounded-lg shadow-md border-2">
+              <div className="mx-3 py-4 pb-5 my-2 rounded-lg shadow-md border-2">
                 <h3 className="font-semibold text-[#0086FF] text-base mb-2 text-center">
                   For Your Smart Health
                 </h3>
@@ -150,15 +150,15 @@ function SmartHealthGridSlider() {
                   {slide.map((item) => (
                     <div
                       key={item.name}
-                      className="flex flex-col items-center border-2 border-[#00CCCC] rounded-lg rounded-t-xl cursor-pointer transition-all duration-100 hover:border-[#00CCCC] hover:shadow-md mx-2"
+                      className="flex flex-col items-center border-2 border-gray-300 rounded-lg rounded-t-xl cursor-pointer transition-all duration-100 hover:border-[#00CCCC] hover:shadow-md mx-2"
                       onClick={() => handleServiceClick(item.route)}
                     >
                       <img
                         src={item.icon}
                         alt={item.name}
-                        className="w-32 h-20 object-cover rounded-t-xl"
+                        className="w-28 h-24 object-cover rounded-t-xl"
                       />
-                      <span className="text-center text-sm font-semibold tracking-tight leading-4 py-2">
+                      <span className="text-center text-[13.5px] font-semibold tracking-tight leading-4 py-1.5">
                         {item.name}
                       </span>
                     </div>
