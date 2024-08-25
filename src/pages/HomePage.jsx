@@ -10,6 +10,7 @@ import BookYourAppointments from "../components/homePage/BookYourAppointments";
 import Order from "../components/homePage/Order";
 import FooterList from "../components/homePage/FooterList";
 import HealthTips from "../components/homePage/HealthTips";
+import SmartHealthGrid from "../components/homePage/SmartHealthGrid";
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
           <AbhaCard />
           <ServiceGrid />
           <ImageSlider />
+          <SmartHealthGrid />
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />
