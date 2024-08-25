@@ -12,6 +12,8 @@ import BookLabTests from "./pages/homepage/BookLabTests";
 import DiscoverHospitals from "./pages/homepage/DiscoverHospitals";
 import InsurancePlans from "./pages/homepage/InsurancePlans";
 
+import PregnancyCare from "./pages/homepage/PregnancyCare.jsx";
+
 //BookAppointment
 import GeneralPhysicianPage from "./pages/homepage/bookAppointment/categories/GeneralPhysicianPage";
 import DentalCarePage from "./pages/homepage/bookAppointment/categories/DentalCarePage";
@@ -315,6 +317,8 @@ const App = () => {
 
           {/* Insurance Plans */}
           <Route path="/insurance-plans" element={<InsurancePlans />} />
+
+          <Route path="/pregnancy-care" element={<PregnancyCare />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
