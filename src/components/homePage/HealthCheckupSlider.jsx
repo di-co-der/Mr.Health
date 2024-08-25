@@ -5,37 +5,43 @@ import "slick-carousel/slick/slick-theme.css";
 import HealthCheckupImage1 from "../../assets/HealthCheckupImage1.png";
 import HealthCheckupImage2 from "../../assets/HealthCheckupImage2.png";
 import HealthCheckupHeadingSVG from "../../assets/svgs/HealthCheckupHeadingSVG.svg";
+import SexualHealthTest from "../../assets/SexualHealthTest.jpg"
+import BoneAndJointTest from "../../assets/BoneAndJointTest.jpg"
+import DiabetesTest from "../../assets/DiabetesTest.jpg"
+import RTPCRtest from "../../assets/RTPCR test.jpg"
+import TestForSkinIssue from "../../assets/TestForSkinIssue.jpg"
+import EyeTest from "../../assets/EyeTest.avif"
 
 const images = [
   {
-    src: HealthCheckupImage1,
+    src: TestForSkinIssue,
     title: "Tests for skin issues",
     price: "Starting from ₹160",
   },
   {
-    src: HealthCheckupImage2,
+    src: EyeTest,
     title: "Eyesight Checkup",
     price: "Starting from ₹150",
   },
   {
-    src: HealthCheckupImage1,
-    title: "Tests for skin issues",
-    price: "Starting from ₹160",
+    src: RTPCRtest,
+    title: "RTPCR Test",
+    price: "Starting from ₹200",
   },
   {
-    src: HealthCheckupImage2,
-    title: "Tests for skin issues",
-    price: "Starting from ₹160",
-  },
-  {
-    src: HealthCheckupImage1,
-    title: "Eyesight Checkup",
+    src: DiabetesTest,
+    title: "Diabetes Tests",
     price: "Starting from ₹150",
   },
   {
-    src: HealthCheckupImage2,
-    title: "Eyesight Checkup",
-    price: "Starting from ₹150",
+    src: BoneAndJointTest,
+    title: "Tests for Bone & Joints",
+    price: "Starting from ₹147",
+  },
+  {
+    src: SexualHealthTest,
+    title: "Sexual Wellness Tests",
+    price: "Starting from ₹100",
   },
 ];
 
@@ -134,7 +140,7 @@ const HealthCheckupSlider = () => {
                   style={{ width: "150px" }}
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-75 rounded-b-xl">
-                  <h3 className="w-full pt-1 text-[15px] text-center font-semibold">
+                  <h3 className="w-full pt-1 text-[15px] text-center font-semibold overflow-hidden whitespace-nowrap text-ellipsis">
                     {image.title}
                   </h3>
                   <p className="w-full text-sm text-center font-normal italic text-[#25D366]">
