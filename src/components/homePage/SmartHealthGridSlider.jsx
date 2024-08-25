@@ -142,7 +142,7 @@ function SmartHealthGridSlider() {
               key={index}
               className="flex justify-center items-center"
             >
-              <div className="mx-3 py-3 my-2 rounded-lg shadow-md border-2">
+              <div className="mx-3 py-4 pb-5 my-2 rounded-lg shadow-md bg-red-300 border-2">
                 <h3 className="font-semibold text-[#0086FF] text-base mb-2 text-center">
                   For Your Smart Health
                 </h3>
