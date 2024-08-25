@@ -11,6 +11,7 @@ import Header from "../../components/common/Header";
 import heart from "../../assets/svgs/Heart.svg";
 import apple from "../../assets/svgs/Green Apple.svg"
 import baby from "../../assets/svgs/Baby.svg"
+import arrows from "../../assets/svgs/arrows.svg"
 
 function PregnancyCare() {
   const navigate = useNavigate();
@@ -77,12 +78,12 @@ function PregnancyCare() {
           </div>
 
           <div className="mt-5 border-b-1 py-5">
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-center items-center gap-10">
                 <div className="rounded-full p-3 bg-[#C4E49C]"><img src={apple}></img></div>
-                <div></div>
+                <div ><img src={arrows}></img></div>
                 <div className="rounded-full p-3 bg-[#F9CC80]"><img src={baby}></img></div>
             </div>
-
+                <div className="text-center text-wrap p-2 mx-16 font-bold ">I’m currently the size of an Apple </div>
           </div>
         </div>
       </div>

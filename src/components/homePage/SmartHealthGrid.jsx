@@ -81,7 +81,7 @@ function SmartHealthGrid() {
             <img
               src={SmartHealth.icon}
               alt={SmartHealth.name}
-              className="w-full h-28 object-cover rounded-t-xl"
+              className="w-full h-20 object-cover rounded-t-xl"
             />
             <span className="text-center text-sm font-bold p-2 leading-tight max-w-[90px]">
               {SmartHealth.name}
