@@ -9,9 +9,11 @@ import Header from "../../components/common/Header";
 
 //assets
 import heart from "../../assets/svgs/Heart.svg";
-import apple from "../../assets/svgs/Green Apple.svg"
-import baby from "../../assets/svgs/Baby.svg"
-import arrows from "../../assets/svgs/arrows.svg"
+import apple from "../../assets/svgs/Green Apple.svg";
+import baby from "../../assets/svgs/Baby.svg";
+import arrows from "../../assets/svgs/arrows.svg";
+import lengthen from "../../assets/svgs/Lengthen.svg";
+import scale from "../../assets/svgs/Scale.svg";
 
 function PregnancyCare() {
   const navigate = useNavigate();
@@ -77,13 +79,48 @@ function PregnancyCare() {
             </div>
           </div>
 
-          <div className="mt-5 border-b-1 py-5">
+          <div className="mt-5 py-5">
             <div className="flex justify-center items-center gap-10">
-                <div className="rounded-full p-3 bg-[#C4E49C]"><img src={apple}></img></div>
-                <div ><img src={arrows}></img></div>
-                <div className="rounded-full p-3 bg-[#F9CC80]"><img src={baby}></img></div>
+              <div className="rounded-full p-3 bg-[#C4E49C]">
+                <img src={apple}></img>
+              </div>
+              <div>
+                <img src={arrows}></img>
+              </div>
+              <div className="rounded-full p-3 bg-[#F9CC80]">
+                <img src={baby}></img>
+              </div>
             </div>
-                <div className="text-center text-wrap p-2 mx-16 font-bold ">I’m currently the size of an Apple </div>
+            <div className="text-center text-wrap p-2 mx-16 font-bold leading-none">
+              I’m currently the size of an Apple{" "}
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center">
+            <div className="flex justify-center items-center gap-1">
+              <div>
+                <img
+                  src={lengthen}
+                  className="bg-zinc-200 p-2 mr-3 rounded-full"
+                ></img>
+              </div>
+              <div>
+                <div className="leading-none">Height</div>
+                <div className="font-semibold">10.1 cm</div>
+              </div>
+            </div>
+            <div className="flex justify-center items-center gap-1">
+              <div>
+                <img
+                  src={scale}
+                  className="bg-zinc-200 p-2 rounded-full mr-3"
+                ></img>
+              </div>
+              <div>
+                <div className="leading-none">Weight</div>
+                <div className="font-semibold">200 gm</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

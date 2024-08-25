@@ -71,11 +71,11 @@ function SmartHealthGrid() {
       <h3 className="pl-2 font-bold text-[#0086FF] m-3">
         For Your Smart Health
       </h3>
-      <div className="grid grid-cols-3 gap-4 px-4 mb-4">
+      <div className="grid grid-cols-3 gap-2 px-4 mb-4">
         {SmartHealth.map((SmartHealth) => (
           <div
             key={SmartHealth.name}
-            className="flex flex-col items-center shadow-md rounded-xl cursor-pointer transition-all duration-100 hover:outline outline-1 outline-[#00CCCC]"
+            className="flex flex-col items-center shadow-xl rounded-xl cursor-pointer transition-all duration-100 hover:outline outline-1 outline-[#00CCCC]"
             onClick={() => handleServiceClick(SmartHealth.route)}
           >
             <img
