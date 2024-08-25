@@ -48,7 +48,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               className="bg-yellow-300 rounded-full"
             />
             <div className="text-lg font-semibold">
-              Udit Mahajan
+              Neeraj Kumar
               <p className="text-sm text-[#00cccc] cursor-pointer">
                 View and edit profile
               </p>

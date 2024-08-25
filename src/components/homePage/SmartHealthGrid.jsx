@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //assets
-import diabetesCare from "../../assets/svgs/DiabetesCare.svg"
+import DiabetesCare from "../../assets/svgs/DiabetesCare.svg"
 import PregnancyCare from "../../assets/svgs/PregnancyCare.svg"
 import BabyCare from "../../assets/svgs/BabyCare.svg"
 import WeightLoss from "../../assets/WeightLoss.webp"
@@ -15,7 +15,7 @@ import SkinCare from "../../assets/Korean-skincare.webp"
 const SmartHealth = [
   {
     name: "Diabetes Care",
-    icon: diabetesCare,
+    icon: DiabetesCare,
     route: "/Pregnancy-Car",
   },
   {

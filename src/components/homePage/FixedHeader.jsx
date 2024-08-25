@@ -1,4 +1,6 @@
 import React from "react";
+
+// components
 import HomepageHeader from "./fixedHeader/HomepageHeader";
 import SearchBar from "../common/SearchBar";
 

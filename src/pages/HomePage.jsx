@@ -11,6 +11,7 @@ import Order from "../components/homePage/Order";
 import FooterList from "../components/homePage/FooterList";
 import HealthTips from "../components/homePage/HealthTips";
 import SmartHealthGrid from "../components/homePage/SmartHealthGrid";
+import SmartHealthGridSlider from "../components/homePage/SmartHealthGridSlider";
 
 const HomePage = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
           <ServiceGrid />
           <ImageSlider />
           <SmartHealthGrid />
+          {/* <SmartHealthGridSlider /> */}
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />

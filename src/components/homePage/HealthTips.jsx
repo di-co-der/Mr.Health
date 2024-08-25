@@ -107,7 +107,7 @@ function HealthTips() {
       </div>
 
       <div className="">
-        <Slider {...settings} className="pb-5">
+        <Slider {...settings} className="">
           {images.map((image, index) => (
             <div key={index} className="outline-none">
               <div className=" w-full flex flex-col items-center">
