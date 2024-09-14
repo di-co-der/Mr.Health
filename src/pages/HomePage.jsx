@@ -24,8 +24,8 @@ const HomePage = () => {
           <AbhaCard />
           <ServiceGrid />
           <ImageSlider />
-          {/* <SmartHealthGrid /> */}
-          <SmartHealthGridSlider />
+          <SmartHealthGrid />
+          {/* <SmartHealthGridSlider /> */}
           <SymptomsTracker />
           <HealthCheckupSlider />
           <ImageSlider />

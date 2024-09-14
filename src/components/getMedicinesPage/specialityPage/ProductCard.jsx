@@ -36,8 +36,6 @@ function ProductCard({ product, highlightedFilters = [],onProductSelect }) {
       />
       <div onClick={handleCardClick}>
 
-
-    
       <img
         src={product.image}
         alt={product.name}
@@ -48,7 +46,7 @@ function ProductCard({ product, highlightedFilters = [],onProductSelect }) {
           className="text-[#0086FF] text-center font-medium text-wrap leading-none truncate p-[2.5px]"
           style={{
             display: "-webkit-box",
-            WebkitLineClamp: 1,
+            WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
           }}

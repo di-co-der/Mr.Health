@@ -81,9 +81,11 @@ function SmartHealthGridSlider() {
     slidesToShow: 1, // Show 1 card with 3 images at a time
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000, // Autoplay every 2 seconds (2000 milliseconds)
     dots: true,
     centerMode: false,
+    fade: false, // Disable fade for smoother transitions
+    pauseOnHover: false, // Keeps autoplay going even when hovering over the slider
     customPaging: (i) => <div className="custom-dot"></div>,
     appendDots: (dots) => (
       <div>
@@ -109,6 +111,7 @@ function SmartHealthGridSlider() {
       },
     ],
   };
+  
 
   return (
     <div className="w-full">
@@ -153,11 +156,7 @@ function SmartHealthGridSlider() {
                       className="flex flex-col items-center border-2 border-gray-300 rounded-lg rounded-t-xl cursor-pointer transition-all duration-100 hover:border-[#00CCCC] hover:shadow-md mx-2"
                       onClick={() => handleServiceClick(item.route)}
                     >
-                      <img
-                        src={item.icon}
-                        alt={item.name}
-                        className="w-28 h-24 object-cover rounded-t-xl"
-                      />
+
                       <span className="text-center text-[13.5px] font-semibold tracking-tight leading-4 py-1.5">
                         {item.name}
                       </span>
