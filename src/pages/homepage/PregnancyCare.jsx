@@ -136,7 +136,7 @@ function PregnancyCare() {
             <div className="cursor-pointer bg-blue-500 text-white px-20 py-1 rounded-full shadow-md">
               <div className="flex items-center">
                 <p>See More</p>
-                <div className="pt-1 text-2xl">
+                <div className="pt-0.5 text-2xl">
                 <MdOutlineKeyboardArrowRight />
                 </div>
               </div>
