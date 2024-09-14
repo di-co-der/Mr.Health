@@ -68,7 +68,7 @@ function SmartHealthGrid() {
   };
 
   return (
-    <div className="relative py-4 bg-[#d7f1f4]" style={{ clipPath: "polygon(0 3%, 50% 0 ,100% 3%, 100% 100%, 0 100%)" }}>
+    <div className="relative py-4 bg-[#d7f1f4]" style={{ clipPath: "polygon(0 2%, 50% 0 ,100% 2%, 100% 100%, 0 100%)" }}>
       <div className="flex items-center justify-center">
         <h3 className="font-semibold text-white bg-[#0086ff] rounded-3xl py-1.5 px-10 mb-5 mt-5">
           For Your Smart Health
