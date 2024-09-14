@@ -48,7 +48,7 @@ function PregnancyCare() {
   return (
     <div className="min-h-screen flex justify-center">
       <div className="max-w-sm w-full bg-[#f2f6f9] shadow-md rounded-lg overflow-hidden">
-        <header className="pt-14">
+        <header className="pt-16">
           <Header title="Pregnancy Care" onClick={handleAppointmentClick} />
         </header>
 

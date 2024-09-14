@@ -2,60 +2,60 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 //assets
-import DiabetesCare from "../../assets/svgs/DiabetesCare.svg";
-import PregnancyCare from "../../assets/svgs/PregnancyCare.svg";
-import BabyCare from "../../assets/svgs/BabyCare.svg";
-import WeightLoss from "../../assets/WeightLoss.webp";
-import MuscleGain from "../../assets/MuscleGain.webp";
-import DentalCare from "../../assets/DentalCare.webp";
-import FungalInfection from "../../assets/FungalInfection.webp";
-import BeautyCare from "../../assets/beautyCare.webp";
-import SkinCare from "../../assets/Korean-skincare.webp";
+import MothersFitness from "../../assets/MothersFitness.png";
+import PregnancyComplications from "../../assets/PregnancyComplications.png";
+import StretchMarks from "../../assets/StretchMarks.png";
+import HealthyDiet from "../../assets/HealthyDiet.png";
+import BabyKicks from "../../assets/BabyKicks.png";
+import PostpartumNutrition from "../../assets/PostpartumNutrition.png";
+import PostpartumWeightLoss from "../../assets/PostpartumWeightLoss.png";
+import ReduceHairFalls from "../../assets/ReduceHairFalls.png";
+import BoostBreastMilk from "../../assets/BoostBreastMilk.png";
 
 const SmartHealth = [
   {
     name: "Mother's Fitness",
-    icon: DiabetesCare,
+    icon: MothersFitness,
     route: "/Pregnancy-Car",
   },
   {
     name: "Pregnancy Complications",
-    icon: PregnancyCare,
+    icon: PregnancyComplications,
     route: "/pregnancy-care",
   },
   {
     name: "Stretch Marks",
-    icon: BabyCare,
     route: "/Pregnancy-Car",
+    icon: StretchMarks,
   },
   {
     name: "Healthy Diet Plans",
-    icon: WeightLoss,
+    icon: HealthyDiet,
     route: "/Pregnancy-Car",
   },
   {
     name: "Baby Kicks",
-    icon: MuscleGain,
+    icon: BabyKicks,
     route: "/Pregnancy-Car",
   },
   {
     name: "Postpartum Nutrition",
-    icon: DentalCare,
+    icon: PostpartumNutrition,
     route: "/Pregnancy-Car",
   },
   {
     name: "Postpartum Weight Loss ?",
-    icon: FungalInfection,
+    icon: PostpartumWeightLoss,
     route: "/Pregnancy-Car",
   },
   {
     name: "Reduce Hair Falls",
-    icon: BeautyCare,
+    icon: ReduceHairFalls,
     route: "/Pregnancy-Car",
   },
   {
     name: "Boost Breast Milk",
-    icon: SkinCare,
+    icon: BoostBreastMilk,
     route: "/Pregnancy-Car",
   },
 ];
@@ -85,7 +85,7 @@ function SmartHealthGrid() {
               alt={SmartHealth.name}
               className="w-full h-24 object-cover rounded-t-lg"
             />
-            <span className="text-center text-sm text-[#0086ff] font-bold py-1.5 leading-tight">
+            <span className="text-center text-sm text-[#0086ff] font-semibold py-1.5 leading-tight">
               {SmartHealth.name}
             </span>
           </div>

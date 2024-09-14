@@ -2,6 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import doctor1 from "../../assets/doctor1.png";
+import doctor_image_url from "../../assets/doctor_image_url.png";
+import doctor_image2_url from "../../assets/doctor_image2_url.png";
+
+import Star from "../../assets/svgs/Star.svg";
+import PatientCare from "../../assets/svgs/PatientCare.svg";
 
 const doctors = [
   {
@@ -14,7 +20,7 @@ const doctors = [
     fees: "₹700",
     location: "1.2 Km",
     nextSlot: "10 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor_image_url,
   },
   {
     id: 2,
@@ -26,7 +32,7 @@ const doctors = [
     fees: "₹900",
     location: "2 Km",
     nextSlot: "12 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor1,
   },
   {
     id: 3,
@@ -38,7 +44,7 @@ const doctors = [
     fees: "₹600",
     location: "500 m",
     nextSlot: "15 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor_image_url,
   },
   {
     id: 4,
@@ -50,7 +56,7 @@ const doctors = [
     fees: "₹800",
     location: "3 Km",
     nextSlot: "18 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor_image2_url,
   },
   {
     id: 5,
@@ -62,7 +68,7 @@ const doctors = [
     fees: "₹750",
     location: "1 Km",
     nextSlot: "20 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor_image_url,
   },
   {
     id: 6,
@@ -74,14 +80,14 @@ const doctors = [
     fees: "₹1000",
     location: "2.5 Km",
     nextSlot: "22 Sept",
-    image: "https://via.placeholder.com/80", // Replace with your image URL
+    image: doctor1,
   },
 ];
 
 const DoctorCard = ({ doctor }) => {
   return (
     <div className="">
-            <style>{`
+      <style>{`
         .custom-dots {
           display: flex !important;
           justify-content: center;
@@ -104,57 +110,52 @@ const DoctorCard = ({ doctor }) => {
         }
       `}</style>
       <div
-      className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer bg-white hover:bg-slate-50 hover:outline outline-2 outline-gray-200"
-      // onClick={onClick}
-    >
-      <div className="flex items-center">
-        <img
-          src={doctor.image}
-          alt={doctor.name}
-          className="w-16 h-16 rounded-full"
-        />
-        <div className="ml-4">
-          <h3 className="text-lg font-semibold">{doctor.name}</h3>
-          <p className="text-sm text-[#0086ff]">
-            {doctor.specialty}
-          </p>
-          <div className="flex items-center mt-2">
-            <span className="text-green-500">
-              {/* <MdThumbUp /> */}
-            </span>
-            <span className="ml-1 italic text-gray-600">
-              {doctor.rating}
-            </span>
-            <span className="ml-3 mt-1 text-green-500">
-              {/* <MdMessage /> */}
-            </span>
-            <span className="italic ml-1 text-gray-700">
-              {doctor.patients} Patient Stories
-            </span>
+        className="p-4 border rounded-lg mb-4 shadow-md cursor-pointer bg-white hover:bg-slate-50 hover:outline outline-2 outline-gray-200"
+        // onClick={onClick}
+      >
+        <div className="flex items-center">
+          <img
+            src={doctor.image}
+            alt={doctor.name}
+            className="w-20 h-20 rounded-full"
+          />
+          <div className="ml-4">
+            <h3 className="text-lg font-semibold">{doctor.name}</h3>
+            <p className="text-sm text-[#0086ff]">{doctor.specialty}</p>
+            <div className="flex items-center mt-2">
+              <span className="text-green-500">
+                <img src={Star} alt="" />
+              </span>
+              <span className="ml-1 italic text-gray-700">{doctor.rating}</span>
+              <span className="ml-3 mt-1 text-green-500">
+                <img src={PatientCare} alt="" />
+              </span>
+              <span className="italic ml-1 text-gray-700">
+                {doctor.patients} Patient Stories
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex pt-2 mt-2 justify-around border-t-2 border-zinc-300">
+          <div className="text-center">
+            <p className="text-[#0086ff] font-medium">{doctor.experience}</p>
+            <p className="text-sm text-gray-500">Experience</p>
+          </div>
+          <div className="text-center">
+            <p className="text-[#0086ff] font-medium">{doctor.fees}</p>
+            <p className="text-sm text-gray-500">Fees</p>
+          </div>
+          <div className="text-center">
+            <p className="text-[#0086ff] font-medium">{doctor.location}</p>
+            <p className="text-sm text-gray-500">Location</p>
+          </div>
+          <div className="text-center">
+            <p className="text-[#0086ff] font-medium">{doctor.nextSlot}</p>
+            <p className="text-sm text-gray-500">Next Slot</p>
           </div>
         </div>
       </div>
-
-      <div className="flex pt-2 mt-2 justify-around border-t-2 border-zinc-300">
-        <div className="text-center">
-          <p className="text-[#0086ff] font-medium">{doctor.experience}</p>
-          <p className="text-sm text-gray-500">Experience</p>
-        </div>
-        <div className="text-center">
-          <p className="text-[#0086ff] font-medium">{doctor.fees}</p>
-          <p className="text-sm text-gray-500">Fees</p>
-        </div>
-        <div className="text-center">
-          <p className="text-[#0086ff] font-medium">{doctor.location}</p>
-          <p className="text-sm text-gray-500">Location</p>
-        </div>
-        <div className="text-center">
-          <p className="text-[#0086ff] font-medium">{doctor.nextSlot}</p>
-          <p className="text-sm text-gray-500">Next Slot</p>
-        </div>
-      </div>
-    </div>
-
     </div>
   );
 };
@@ -195,11 +196,9 @@ const PregnancyExpertsCarousel = () => {
       },
     ],
   };
-  
 
   return (
     <div className="p-2 pb-8">
-      
       <div className="flex justify-between items-center mb-4 px-2 pt-3">
         <h2 className="text-xl font-semibold text-[#0086ff]">
           Meets Our Experts
