@@ -66,10 +66,11 @@ function SmartHealthGrid() {
   const handleServiceClick = (route) => {
     navigate(route);
   };
+
   return (
-    <div className="border-b-4 py-4 bg-[#d7f1f4]">
+    <div className="relative py-4 bg-[#d7f1f4]" style={{ clipPath: "polygon(0 3%, 50% 0 ,100% 3%, 100% 100%, 0 100%)" }}>
       <div className="flex items-center justify-center">
-        <h3 className="font-semibold text-white bg-[#0086ff] rounded-3xl py-1.5 px-10 mb-5 mt-2">
+        <h3 className="font-semibold text-white bg-[#0086ff] rounded-3xl py-1.5 px-10 mb-5 mt-5">
           For Your Smart Health
         </h3>
       </div>

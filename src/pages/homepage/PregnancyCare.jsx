@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MethiSeedOil from "../../assets/svgs/MethiSeedOil.svg"
-import HealthProductCard from "./HealthProductCard"
+import MethiSeedOil from "../../assets/svgs/MethiSeedOil.svg";
+import HealthProductCard from "./HealthProductCard";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 //components
 import Header from "../../components/common/Header";
@@ -132,9 +133,14 @@ function PregnancyCare() {
             </div>
           </div>
           <div className="flex justify-center items-center pt-4">
-            <button className="bg-blue-500 text-white px-20 py-2 rounded-full shadow-md">
-              See More &rarr;
-            </button>
+            <div className="cursor-pointer bg-blue-500 text-white px-20 py-1 rounded-full shadow-md">
+              <div className="flex items-center">
+                <p>See More</p>
+                <div className="pt-1 text-2xl">
+                <MdOutlineKeyboardArrowRight />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <MedicineReminderCard />
