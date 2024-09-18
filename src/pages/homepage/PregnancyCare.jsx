@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MethiSeedOil from "../../assets/svgs/MethiSeedOil.svg";
-import HealthProductCard from "./HealthProductCard";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+// import MethiSeedOil from "../../assets/svgs/MethiSeedOil.svg";
+// import HealthProductCard from "./HealthProductCard";
+// import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 //components
 import Header from "../../components/common/Header";
@@ -17,15 +17,15 @@ import baby from "../../assets/svgs/Baby.svg";
 import arrows from "../../assets/svgs/arrows.svg";
 import lengthen from "../../assets/svgs/Lengthen.svg";
 import scale from "../../assets/svgs/Scale.svg";
-import forward from "../../assets/svgs/Forward.svg"
+// import forward from "../../assets/svgs/Forward.svg"
 import MedicineCard from "../../components/pregnancyPage/MedicineCard";
 
-import MedicineReminderCard from "../../components/homePage/MedicineReminderCard";
-import SmartCareGrid from "../../components/homePage/SmartCareGrid";
-import ImageSlider from "../../components/homePage/ImageSlider";
-import PregnancyExpertsCarousel from "./PregnancyExpertsCarousel";
-import HealthTips from "../../components/homePage/HealthTips";
-import Order from "../../components/homePage/Order";
+// import MedicineReminderCard from "../../components/homePage/MedicineReminderCard";
+// import SmartCareGrid from "../../components/homePage/SmartCareGrid";
+// import ImageSlider from "../../components/homePage/ImageSlider";
+// import PregnancyExpertsCarousel from "./PregnancyExpertsCarousel";
+// import HealthTips from "../../components/homePage/HealthTips";
+// import Order from "../../components/homePage/Order";
 
 function PregnancyCare() {
   const navigate = useNavigate();
@@ -134,7 +134,7 @@ function PregnancyCare() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center pt-4">
+          {/* <div className="flex justify-center pt-4">
           <button
           className="flex justify-center gap-2 w-[80%] bg-[#0086ff] text-white py-2 rounded-full font-bold hover:bg-[#0080ee] "
         >
@@ -150,24 +150,25 @@ function PregnancyCare() {
                 <MdOutlineKeyboardArrowRight />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
+
+{/*
         <MedicineReminderCard />
         <SmartCareGrid />
         <PregnancyExpertsCarousel />
         <div className="p-4 mt-2 border-t-4 border-gray-200">
           <img src={MethiSeedOil} alt="" className="w-full" />
-        </div>
+        </div> */} 
         
-        <MedicineCard />
+        {/* <MedicineCard /> */}
 
-        <ImageSlider />
+        {/* <ImageSlider />
         <HealthTips />
         <HealthProductCard />
         {/* <Order /> */}
-      </div>
-    </div>
+      </div> 
   );
 }
 
