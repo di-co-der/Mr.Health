@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { IoNotifications } from "react-icons/io5";
-import HomePageUserIcon from "../../../assets/svgs/HomePageUserIcon.svg";
-import Sidebar from "../../../pages/Sidebar"; // Import Sidebar component
+
+// components
+import Sidebar from "../../../pages/Sidebar";
+
+// assets
+import Profile from "../../../assets/svgs/Profile.svg";
 
 const HomepageHeader = ({ companyName = "Medico" }) => {
   const [showAlert, setShowAlert] = useState(false);
@@ -18,13 +22,13 @@ const HomepageHeader = ({ companyName = "Medico" }) => {
 
   return (
     <>
-      <header className="bg-white shadow-md pt-3 px-6 flex items-center justify-between sticky top-0 z-10">
+      <header className="bg-white shadow-md pt-3 px-4 flex items-center justify-between sticky top-0 z-10">
         <div className="mt-1 flex items-center">
           <img
-            src={HomePageUserIcon}
-            alt="HomePageUserIcon"
-            className="text-gray-500 text-2xl cursor-pointer"
-            onClick={toggleSidebar} // Open sidebar on click
+            src={Profile}
+            alt="Profile"
+            className="text-gray-500 text-2xl cursor-pointer bg-yellow-300 rounded-full"
+            onClick={toggleSidebar}
           />
         </div>
 
