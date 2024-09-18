@@ -14,6 +14,8 @@ import baby from "../../assets/svgs/Baby.svg";
 import arrows from "../../assets/svgs/arrows.svg";
 import lengthen from "../../assets/svgs/Lengthen.svg";
 import scale from "../../assets/svgs/Scale.svg";
+import forward from "../../assets/svgs/Forward.svg"
+import MedicineCard from "../../components/pregnancyPage/MedicineCard";
 
 function PregnancyCare() {
   const navigate = useNavigate();
@@ -122,7 +124,18 @@ function PregnancyCare() {
               </div>
             </div>
           </div>
+          <div className="flex justify-center pt-4">
+          <button
+          className="flex justify-center gap-2 w-[80%] bg-[#0086ff] text-white py-2 rounded-full font-bold hover:bg-[#0080ee] "
+        >
+          <p>See More</p>
+          <img src={forward}></img>
+        </button>
         </div>
+        </div>
+        
+        <MedicineCard />
+
       </div>
     </div>
   );
